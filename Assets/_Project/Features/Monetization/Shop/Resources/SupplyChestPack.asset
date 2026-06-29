@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7498016104ae848a17d783bc9ea7e9, type: 3}
+  m_Name: SupplyChestPack
+  m_EditorClassIdentifier: Assembly-CSharp::SupplyChestPackCollection
+  dataGroups:
+  - id: 1
+    rewards:
+    - resType: 2
+      resId: 18067
+      resNumber: 1
+      customValue:
+      - 18067
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 2
+      purchaseCount: 1
+    iapCost: 0
+    costRequire:
+      costType: 2
+      costId: 2
+      costNumber: 90
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: supply_chest_1
+    googleProductIdPremium: 
+    appleProductId: supply_chest_1
+    packName: supply_chest_1
+    isBestSeller: 0
+  - id: 2
+    rewards:
+    - resType: 2
+      resId: 18068
+      resNumber: 1
+      customValue:
+      - 18068
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 2
+      purchaseCount: 1
+    iapCost: 0
+    costRequire:
+      costType: 2
+      costId: 2
+      costNumber: 280
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: supply_chest_2
+    googleProductIdPremium: 
+    appleProductId: supply_chest_2
+    packName: supply_chest_2
+    isBestSeller: 0
+  - id: 3
+    rewards:
+    - resType: 2
+      resId: 18069
+      resNumber: 1
+      customValue:
+      - 18069
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 2
+      purchaseCount: 1
+    iapCost: 0
+    costRequire:
+      costType: 2
+      costId: 2
+      costNumber: 280
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: supply_chest_3
+    googleProductIdPremium: 
+    appleProductId: supply_chest_3
+    packName: supply_chest_3
+    isBestSeller: 0

@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LuxuriousOffer
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: iOS
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: d2b6c0a02dcada240bfe5ee9c6089f92, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 2b108e83db7bd284da85d3ab7b0b4b29: 21300000
+    - 186014444cd04c341ab838daaf0d60c5: 21300000
+    - 3dbde6555226fce42a02675b707e352e: 21300000
+    - 9d5983c778374ab4ba85998c965797ac: 21300000
+    - 53099d8841c7b5845adbcd9dac6d75c3: 21300000
+    - 9f73e19af9b5bae4185d191eca1f048a: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2b108e83db7bd284da85d3ab7b0b4b29, type: 3}
+  - {fileID: 21300000, guid: 186014444cd04c341ab838daaf0d60c5, type: 3}
+  - {fileID: 21300000, guid: 3dbde6555226fce42a02675b707e352e, type: 3}
+  - {fileID: 21300000, guid: 9d5983c778374ab4ba85998c965797ac, type: 3}
+  - {fileID: 21300000, guid: 53099d8841c7b5845adbcd9dac6d75c3, type: 3}
+  - {fileID: 21300000, guid: 9f73e19af9b5bae4185d191eca1f048a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - luxurios
+  - frame_yellow_decor
+  - re_yellow_in
+  - re_yellow_out
+  - frame_yellow
+  - Re_Yellow_Inside
+  m_RenderDataMap: {}
+  m_Tag: LuxuriousOffer
+  m_IsVariant: 0

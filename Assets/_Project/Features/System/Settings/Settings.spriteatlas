@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Settings
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: iOS
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 43a1510d467c9c741a983c94dc168237, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 88eeb1b0f3cac834db63dddfedf4f768: 21300000
+    - e336cd41272330c4ba674195e2cae692: 21300000
+    - 55ea6861804025c4ab160b86e8620649: 21300000
+    - 5c607e91bd2570444b041824551851d9: 21300000
+    - 371af3320d9bf184c9e7397214fbb9cb: 21300000
+    - a0bdc2c2fe789414580921d67a8097d3: 21300000
+    - 1249b1133c05e2c47ad65828376b9a24: 21300000
+    - 92447844945f28944b61ce77feea3d6a: 21300000
+    - 202a0584e27d9b944b76b2c5cf612bfd: 21300000
+    - 5a9fe7a4ac5356a4fa589edb7c57bd2a: 21300000
+    - 315f62e44775662448afb6cb413ac150: 21300000
+    - ab68cb05d6b1601469b9663fd70c5ed8: 21300000
+    - 481200b6f17e1624080cd30b3f316777: 21300000
+    - 0e391f57493321948a648f3d8553baba: 21300000
+    - be1eb03805c4be1499c094363ae233d8: 21300000
+    - 0e1ad60bfc6da464bac46bf8e24e2313: 21300000
+    - 05cb14fbe2b432247a6efc6b461e0313: 21300000
+    - 4fcb97bce80bdaa4bb78d13bcc0756fb: 21300000
+    - e232818d4b7b0a54ca150b197e3a1e60: 21300000
+    - b59e682eb955dc0469db0402ebb23bad: 21300000
+    - cc2d019eef6cc9a4daf33f106755cf4f: 21300000
+    - 8484b5cfe2836574aa12cf4324bcfbb3: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 88eeb1b0f3cac834db63dddfedf4f768, type: 3}
+  - {fileID: 21300000, guid: e336cd41272330c4ba674195e2cae692, type: 3}
+  - {fileID: 21300000, guid: 55ea6861804025c4ab160b86e8620649, type: 3}
+  - {fileID: 21300000, guid: 5c607e91bd2570444b041824551851d9, type: 3}
+  - {fileID: 21300000, guid: 371af3320d9bf184c9e7397214fbb9cb, type: 3}
+  - {fileID: 21300000, guid: a0bdc2c2fe789414580921d67a8097d3, type: 3}
+  - {fileID: 21300000, guid: 1249b1133c05e2c47ad65828376b9a24, type: 3}
+  - {fileID: 21300000, guid: 92447844945f28944b61ce77feea3d6a, type: 3}
+  - {fileID: 21300000, guid: 202a0584e27d9b944b76b2c5cf612bfd, type: 3}
+  - {fileID: 21300000, guid: 5a9fe7a4ac5356a4fa589edb7c57bd2a, type: 3}
+  - {fileID: 21300000, guid: 315f62e44775662448afb6cb413ac150, type: 3}
+  - {fileID: 21300000, guid: ab68cb05d6b1601469b9663fd70c5ed8, type: 3}
+  - {fileID: 21300000, guid: 481200b6f17e1624080cd30b3f316777, type: 3}
+  - {fileID: 21300000, guid: 0e391f57493321948a648f3d8553baba, type: 3}
+  - {fileID: 21300000, guid: be1eb03805c4be1499c094363ae233d8, type: 3}
+  - {fileID: 21300000, guid: 0e1ad60bfc6da464bac46bf8e24e2313, type: 3}
+  - {fileID: 21300000, guid: 05cb14fbe2b432247a6efc6b461e0313, type: 3}
+  - {fileID: 21300000, guid: 4fcb97bce80bdaa4bb78d13bcc0756fb, type: 3}
+  - {fileID: 21300000, guid: e232818d4b7b0a54ca150b197e3a1e60, type: 3}
+  - {fileID: 21300000, guid: b59e682eb955dc0469db0402ebb23bad, type: 3}
+  - {fileID: 21300000, guid: cc2d019eef6cc9a4daf33f106755cf4f, type: 3}
+  - {fileID: 21300000, guid: 8484b5cfe2836574aa12cf4324bcfbb3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Sd_avatar
+  - icon_bell
+  - El_avatar
+  - icon_setting_toggle_haptic_On
+  - icon_giftcode
+  - Rectangle 1
+  - icon_setting_toggle_noti_Off
+  - Icon_mail
+  - icon_setting_toggle_sound_On
+  - icon_setting_toggle_noti_On
+  - icon_world
+  - icon_acc
+  - icon_setting_toggle_Music_On
+  - icon_setting_toggle_haptic_Off
+  - Re_in
+  - Layer 159
+  - icon_setting_toggle_sound_Off
+  - icon_edit
+  - icon_setting_toggle_Music_Off
+  - icon_support
+  - line
+  - icon_copy
+  m_RenderDataMap: {}
+  m_Tag: Settings
+  m_IsVariant: 0

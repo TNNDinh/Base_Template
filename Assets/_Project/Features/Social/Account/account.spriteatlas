@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: account
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: iOS
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5ae24730303ee814480dbe5557a73f3f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 54996d539c12df64b81a6b00a74bd208: 21300000
+    - 747e5af33a51c0e4b8e70dde1beeffe6: 21300000
+    - db4c6a3581fe67a469de6c945c9eef37: 21300000
+    - be984ec5f3110cb4ba26d07d5e397c7c: 21300000
+    - 046cf4f52dd4da5449e5b4da298d46f2: 21300000
+    - 22405f46262a91c47ae33b70b151d683: 21300000
+    - 3bc2d1768a3488749b593db74dd1c563: 21300000
+    - 81878a19e0ae54d49a734fdffd2b60dc: 21300000
+    - 5bf2ccb9fe2ebbc48bc3bd1a0ac90bf7: 21300000
+    - da9e199a78f50384c84083ac05151bde: 21300000
+    - 7acca44c180ffb94d879245b13699bb9: 21300000
+    - 41fe0b2d1b525ed42918da6acfc9c59e: 21300000
+    - ec89079dc79108646a9f4ba822853c02: 21300000
+    - f96414cdb3548834e9d185f49896f67b: 21300000
+    - fab58bdd2de31174d9fd2268e693931a: 21300000
+    - 8d1041ff094776e429cb7a533aa17ac8: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 54996d539c12df64b81a6b00a74bd208, type: 3}
+  - {fileID: 21300000, guid: 747e5af33a51c0e4b8e70dde1beeffe6, type: 3}
+  - {fileID: 21300000, guid: db4c6a3581fe67a469de6c945c9eef37, type: 3}
+  - {fileID: 21300000, guid: be984ec5f3110cb4ba26d07d5e397c7c, type: 3}
+  - {fileID: 21300000, guid: 046cf4f52dd4da5449e5b4da298d46f2, type: 3}
+  - {fileID: 21300000, guid: 22405f46262a91c47ae33b70b151d683, type: 3}
+  - {fileID: 21300000, guid: 3bc2d1768a3488749b593db74dd1c563, type: 3}
+  - {fileID: 21300000, guid: 81878a19e0ae54d49a734fdffd2b60dc, type: 3}
+  - {fileID: 21300000, guid: 5bf2ccb9fe2ebbc48bc3bd1a0ac90bf7, type: 3}
+  - {fileID: 21300000, guid: da9e199a78f50384c84083ac05151bde, type: 3}
+  - {fileID: 21300000, guid: 7acca44c180ffb94d879245b13699bb9, type: 3}
+  - {fileID: 21300000, guid: 41fe0b2d1b525ed42918da6acfc9c59e, type: 3}
+  - {fileID: 21300000, guid: ec89079dc79108646a9f4ba822853c02, type: 3}
+  - {fileID: 21300000, guid: f96414cdb3548834e9d185f49896f67b, type: 3}
+  - {fileID: 21300000, guid: fab58bdd2de31174d9fd2268e693931a, type: 3}
+  - {fileID: 21300000, guid: 8d1041ff094776e429cb7a533aa17ac8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - re_f_green
+  - Re_Blue
+  - sd_re_f
+  - layer_480
+  - layer_34_copy
+  - icon_v
+  - sd_re_f-001
+  - rectangle_3_copy_5
+  - layer_34_copy-001
+  - iocn
+  - re_white
+  - rectangle_3_copy_5-001
+  - triangle_2
+  - layer_886
+  - re_f
+  - icon_phone
+  m_RenderDataMap: {}
+  m_Tag: account
+  m_IsVariant: 0

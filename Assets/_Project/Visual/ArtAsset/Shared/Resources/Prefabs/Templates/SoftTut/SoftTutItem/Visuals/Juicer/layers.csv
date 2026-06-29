@@ -1,0 +1,15 @@
+filename,layer_name,layer_type,parent_group,x,y,width,height,canvas_width,canvas_height,font_size,shadow_color,text_content,text_color
+"hand_copy.psd","hand_copy",image,"",422,1583,115,132,1080,2400,,,"",
+"hand.psd","hand",image,"",807,1087,115,132,1080,2400,,,"",
+"steps_3.psd","steps_3",image,"",203,1331,674,387,1080,2400,,,"",
+"step_2.psd","step_2",image,"",191,940,696,233,1080,2400,,,"",
+"step_1.psd","step_1",image,"",283,298,565,340,1080,2400,,,"",
+"iocn.psd","iocn",image,"",483,1759,114,120,1080,2400,,,"",
+"layer_390_copy_2.psd","layer_390_copy_2",image,"",483,754,114,120,1080,2400,,,"",
+"when_cooking_is_finished_touch_the_device_again_to_r.psd","when_cooking_is_finished_touch_the_device_again_to_r",text,"",59,1952,959,99,1080,2400,,,"         When cooking is finished, touch the
+ device again to retrieve the finished product.",
+"tap_the_button_to_start_cooking.psd","tap_the_button_to_start_cooking",text,"",202,1245,676,47,1080,2400,,,"Tap the button to start cooking.",
+"drag_the_ingredients_into_the_correct_device.psd","drag_the_ingredients_into_the_correct_device",text,"",71,667,947,47,1080,2400,,,"Drag the ingredients into the correct device.",
+"tap_to_continue.psd","tap_to_continue",text,"",299,2251,482,68,1080,2400,,,"Tap to continue",
+"cooking_steps.psd","cooking_steps",text,"",195,162,701,107,1080,2400,,,"Cooking Steps",
+"layer_732.psd","layer_732",image,"",0,0,1080,2400,1080,2400,,,"",

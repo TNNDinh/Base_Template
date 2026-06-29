@@ -1,0 +1,37 @@
+{
+  "importDate": "2026-03-17T10:55:26Z",
+  "canvasWidth": 1080.0,
+  "canvasHeight": 2400.0,
+  "layers": [
+    {
+      "layerName": "re_purple",
+      "scenePath": "popup_container/container_content/popup/panel_new_round",
+      "prefabRoot": "screen_speed_feast_race_preview/popup_template",
+      "prefabAssetPath": "Assets/_Project/Visual/ArtAsset/UI/Prefab/Popup_Template/popup_template.prefab"
+    },
+    {
+      "layerName": "gift",
+      "scenePath": "gift",
+      "prefabRoot": "screen_home_screen",
+      "prefabAssetPath": "Assets/_Project/Features/UI/HomeScene/Resources/screen_home_screen.prefab"
+    },
+    {
+      "layerName": "layer_150",
+      "scenePath": "btn_container/container/diamond",
+      "prefabRoot": "screen_home_screen/layout/mid_layout/main_layout/right_function/button_starter_pack",
+      "prefabAssetPath": "Assets/_Project/Visual/ArtAsset/UI/Prefab/Button_Template/button_template_common_txt&icon/button_template_home_side.prefab"
+    },
+    {
+      "layerName": "re_pirple",
+      "scenePath": "btn_container/container/panel_time",
+      "prefabRoot": "screen_home_screen/layout/mid_layout/main_layout/right_function/button_starter_pack",
+      "prefabAssetPath": "Assets/_Project/Visual/ArtAsset/UI/Prefab/Button_Template/button_template_common_txt&icon/button_template_home_side.prefab"
+    },
+    {
+      "layerName": "11h_58m",
+      "scenePath": "text_time",
+      "prefabRoot": "screen_home_screen/layout/mid_layout/main_layout/right_function/button_starter_pack/btn_container/container/panel_time/text_time",
+      "prefabAssetPath": "Assets/_Project/Visual/ArtAsset/UI/Prefab/Text_Template/text_body.prefab"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+id,pack_name,res_type,res_id,res_number,first_time_purchase_bonus,purchase_type,purchase_count,iap_cost,cost_type,cost_id,cost_number,sale,google_product_id,google_product_id_premium,apple_product_id
+0,golden_bundle,1,1,6000,0,IAP,1,9.99,,,,300,com.ezg013.coffeepack.unblock.puzzle.game.golden_bundle,,com.ezg013.coffeepack.unblock.puzzle.game.golden_bundle
+,,1,11,60,,,,,,,,,,,
+1,platinum_bundle,1,1,10000,0,IAP,1,19.99,,,,500,com.ezg013.coffeepack.unblock.puzzle.game.platinum_bundle,,com.ezg013.coffeepack.unblock.puzzle.game.platinum_bundle
+,,1,11,120,,,,,,,,,,,
+,,1,5,4,,,,,,,,,,,
+,,1,6,4,,,,,,,,,,,
+,,1,7,4,,,,,,,,,,,
+,,1,8,4,,,,,,,,,,,
+2,diamond_bundle,1,1,18000,0,IAP,1,29.99,,,,700,com.ezg013.coffeepack.unblock.puzzle.game.diamond_bundle,,com.ezg013.coffeepack.unblock.puzzle.game.diamond_bundle
+,,1,11,240,,,,,,,,,,,
+,,1,5,6,,,,,,,,,,,
+,,1,6,6,,,,,,,,,,,
+,,1,7,6,,,,,,,s,,,,
+,,1,8,6,,,,,,,,,,,

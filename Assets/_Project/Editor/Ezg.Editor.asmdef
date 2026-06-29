@@ -1,0 +1,36 @@
+{
+    "name": "Ezg.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Ezg.Core",
+        "Ezg.Features",
+        "Ezg.ThirdParty",
+        "Ezg.Package.CsvReader",
+        "UniTask",
+        "DOTween.Modules",
+        "TigerForge.EasyEventManager",
+        "Unity.TextMeshPro",
+        "Google.Android.AppBundle.Editor",
+        "Unity.2D.Psdimporter.Editor",
+        "UIEffect-Editor",
+        "UnityScreenNavigator.Runtime",
+        "BrunoMikoski.AnimationSequencer",
+        "Ezg.Package.CsvReader.Editor",
+        "UIEffect",
+        "spine-csharp",
+        "spine-unity",
+        "Ezg.Dictionary",
+        "Ezg.Package.Factory"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

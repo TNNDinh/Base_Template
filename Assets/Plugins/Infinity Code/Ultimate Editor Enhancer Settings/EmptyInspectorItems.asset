@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321ac51ffcc82334caeb9529f8469721, type: 3}
+  m_Name: EmptyInspectorItems
+  m_EditorClassIdentifier: UltimateEditorEnhancer-Editor::InfinityCode.UltimateEditorEnhancer.References.EmptyInspectorReferences
+  _items:
+  - title: Ultimate Editor Enhancer
+    enabled: 1
+    items:
+    - title: Bookmarks
+      menuPath: Tools/Ultimate Editor Enhancer/Bookmarks
+      enabled: 1
+    - title: Distance Tool
+      menuPath: Tools/Ultimate Editor Enhancer/Distance Tool
+      enabled: 1
+    - title: View Gallery
+      menuPath: Tools/Ultimate Editor Enhancer/View Gallery
+      enabled: 1
+    - title: Documentation
+      menuPath: Tools/Ultimate Editor Enhancer/Documentation
+      enabled: 1
+    - title: Settings
+      menuPath: Tools/Ultimate Editor Enhancer/Settings
+      enabled: 1
+  - title: Settings
+    enabled: 1
+    items:
+    - title: Project Settings
+      menuPath: Edit/Project Settings...
+      enabled: 1
+    - title: Preferences
+      menuPath: Edit/Preferences...
+      enabled: 1
+    - title: Shortcuts
+      menuPath: Edit/Shortcuts...
+      enabled: 1
+  - title: Packages
+    enabled: 1
+    items:
+    - title: Import Custom Package
+      menuPath: Assets/Import Package/Custom Package...
+      enabled: 1

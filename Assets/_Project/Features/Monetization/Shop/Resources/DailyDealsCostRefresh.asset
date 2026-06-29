@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6823be72be3f8544783a6ae750d15609, type: 3}
+  m_Name: DailyDealsCostRefresh
+  m_EditorClassIdentifier: Assembly-CSharp::DailyDealsCostRefreshCollection
+  dataGroups:
+  - index: 0
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 10
+      customValue: []
+  - index: 1
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 20
+      customValue: []
+  - index: 2
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 30
+      customValue: []
+  - index: 3
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 40
+      customValue: []
+  - index: 4
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 50
+      customValue: []
+  - index: 5
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 60
+      customValue: []
+  - index: 6
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 70
+      customValue: []
+  - index: 7
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 80
+      customValue: []
+  - index: 8
+    cost:
+      resType: 1
+      resId: 2
+      resNumber: 90
+      customValue: []

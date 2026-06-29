@@ -1,0 +1,115 @@
+{
+  "importDate": "2026-04-10T06:36:25Z",
+  "canvasWidth": 1080.0,
+  "canvasHeight": 2400.0,
+  "layers": [
+    {
+      "layerName": "layer_703",
+      "scenePath": "layer_703",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "grow",
+      "scenePath": "grow",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "light",
+      "scenePath": "light",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "star_bling",
+      "scenePath": "star_bling",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "star",
+      "scenePath": "star",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "npc",
+      "scenePath": "npc",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "cat",
+      "scenePath": "cat",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "hand",
+      "scenePath": "hand",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "re_blue",
+      "scenePath": "re_blue",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "re_line",
+      "scenePath": "re_line",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "nameplate",
+      "scenePath": "nameplate",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "iocn_quit_copy",
+      "scenePath": "iocn_quit_copy",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "rating",
+      "scenePath": "rating",
+      "prefabRoot": "screen_rating/rating",
+      "prefabAssetPath": "Assets/_Project/Visual/ArtAsset/UI/Prefab/Text_Template/text_body.prefab"
+    },
+    {
+      "layerName": "layer_713_copy_3",
+      "scenePath": "layer_713_copy_3",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "icon_star",
+      "scenePath": "icon_star",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "icon_staroff",
+      "scenePath": "icon_staroff",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    },
+    {
+      "layerName": "do_you_enjoy_this_game_please_leave_a_review_for_us",
+      "scenePath": "do_you_enjoy_this_game_please_leave_a_review_for_us",
+      "prefabRoot": "screen_rating/do_you_enjoy_this_game_please_leave_a_review_for_us",
+      "prefabAssetPath": "Assets/_Project/Visual/ArtAsset/UI/Prefab/Text_Template/text_body.prefab"
+    },
+    {
+      "layerName": "layer_34_copy_3",
+      "scenePath": "layer_34_copy_3",
+      "prefabRoot": "screen_rating",
+      "prefabAssetPath": "Assets/_Project/Features/UI/Rating/Resources/screen_rating.prefab"
+    }
+  ]
+}

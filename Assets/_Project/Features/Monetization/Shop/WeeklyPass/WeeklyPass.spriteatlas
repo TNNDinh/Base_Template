@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WeeklyPass
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: iOS
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5f69e107873e4be489da8abe4180f74e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 4f056160a2656eb4fa4b68a124ca0705: 21300000
+    - 4179f2f0c36e62d458ab809ea9505440: 21300000
+    - b522771170a49284e90ea309090e7b98: 21300000
+    - d0b9cf0295cf19d43bf44482b1b3ae35: 21300000
+    - 9ade353283ca0b14aad847a21ffdd192: 21300000
+    - c42d26b2148f874478bc44890f32da02: 21300000
+    - 475993d31649bd84d8aa3e5191431a72: 21300000
+    - 079f74f324426714e9b344b2e0ccde52: 21300000
+    - 18905b4613d847f4b80cf166d9fa2b39: 21300000
+    - a5f34ca7ca250c049b6f03444a6378e7: 21300000
+    - d110778875dad024093a317131bbf484: 21300000
+    - 0626c6f846d30404685ebf1ccb6da22b: 21300000
+    - d28e56daffd8fde4b951bbb802219ce8: 21300000
+    - 88186c6b55100664a95539ffdea6fe63: 21300000
+    - 5e5f99ab47b8a1b42a14133514044c7d: 21300000
+    - 3a916d2c5b80f6a4d97bf4840f036200: 21300000
+    - 51fdaf4c1836fcf4299a6f6c7d7ad750: 21300000
+    - 7ccceb9c08daa6b44961b86a7a05a2b5: 21300000
+    - b3a02fac0af3cd6408e4ab325ce575e1: 21300000
+    - 4fb7fccc157bf004e9e947cfd003cbf4: 21300000
+    - 31313edcbcfe98c4586b398d5b29065f: 21300000
+    - 337c9cec9b7fd9b409221fdbf5a8d87e: 21300000
+    - 1a8c206de8d34914f86de08bc9d739f4: 21300000
+    - 24919e2e000bcab429c1ea075d2c1afc: 21300000
+    - 616625efe943acb458326c6aee8463db: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4f056160a2656eb4fa4b68a124ca0705, type: 3}
+  - {fileID: 21300000, guid: 4179f2f0c36e62d458ab809ea9505440, type: 3}
+  - {fileID: 21300000, guid: b522771170a49284e90ea309090e7b98, type: 3}
+  - {fileID: 21300000, guid: d0b9cf0295cf19d43bf44482b1b3ae35, type: 3}
+  - {fileID: 21300000, guid: 9ade353283ca0b14aad847a21ffdd192, type: 3}
+  - {fileID: 21300000, guid: c42d26b2148f874478bc44890f32da02, type: 3}
+  - {fileID: 21300000, guid: 475993d31649bd84d8aa3e5191431a72, type: 3}
+  - {fileID: 21300000, guid: 079f74f324426714e9b344b2e0ccde52, type: 3}
+  - {fileID: 21300000, guid: 18905b4613d847f4b80cf166d9fa2b39, type: 3}
+  - {fileID: 21300000, guid: a5f34ca7ca250c049b6f03444a6378e7, type: 3}
+  - {fileID: 21300000, guid: d110778875dad024093a317131bbf484, type: 3}
+  - {fileID: 21300000, guid: 0626c6f846d30404685ebf1ccb6da22b, type: 3}
+  - {fileID: 21300000, guid: d28e56daffd8fde4b951bbb802219ce8, type: 3}
+  - {fileID: 21300000, guid: 88186c6b55100664a95539ffdea6fe63, type: 3}
+  - {fileID: 21300000, guid: 5e5f99ab47b8a1b42a14133514044c7d, type: 3}
+  - {fileID: 21300000, guid: 3a916d2c5b80f6a4d97bf4840f036200, type: 3}
+  - {fileID: 21300000, guid: 51fdaf4c1836fcf4299a6f6c7d7ad750, type: 3}
+  - {fileID: 21300000, guid: 7ccceb9c08daa6b44961b86a7a05a2b5, type: 3}
+  - {fileID: 21300000, guid: b3a02fac0af3cd6408e4ab325ce575e1, type: 3}
+  - {fileID: 21300000, guid: 4fb7fccc157bf004e9e947cfd003cbf4, type: 3}
+  - {fileID: 21300000, guid: 31313edcbcfe98c4586b398d5b29065f, type: 3}
+  - {fileID: 21300000, guid: 337c9cec9b7fd9b409221fdbf5a8d87e, type: 3}
+  - {fileID: 21300000, guid: 1a8c206de8d34914f86de08bc9d739f4, type: 3}
+  - {fileID: 21300000, guid: 24919e2e000bcab429c1ea075d2c1afc, type: 3}
+  - {fileID: 21300000, guid: 616625efe943acb458326c6aee8463db, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - re_gold
+  - frame_weekly_yellow_glow
+  - Re_Gold_small
+  - golden_ticket
+  - Line_Blue
+  - golden
+  - silver
+  - frame_weekly_inside_blue
+  - frame_blue
+  - arrow_up
+  - frame_weekly_inside_yellow
+  - frame_weekly_blue_glow
+  - frame_weekly_yellow
+  - Re_Small_Blue
+  - decor_weekly_pass
+  - frame_weekly_blue
+  - tag_sale
+  - frame_time
+  - Re_big_Blue
+  - Re_Gold_Big
+  - refresh
+  - line_gold
+  - re_silver_blue
+  - sliver_ticket
+  - frame_gold
+  m_RenderDataMap: {}
+  m_Tag: WeeklyPass
+  m_IsVariant: 0

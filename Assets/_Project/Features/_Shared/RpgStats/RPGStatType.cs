@@ -1,0 +1,73 @@
+﻿namespace Ezg.Package.RpgStats
+{
+    /// <summary>
+    ///     Used to list off all stats that can be used
+    ///     within the RPGStatCollection class
+    /// </summary>
+    public enum RPGStatType
+    {
+        None = 0,
+        Damage = 1,
+        Health = 2,
+        AttackSpeed = 3,
+        Cooldown = 4,
+        MoveSpeed = 5,
+        CritRate = 6,
+        CritDamage = 7,
+        Reflection = 8,
+        ExpGain = 9,
+        ProjectileSize = 10,
+        InstantKill = 11,
+        SkillDuration = 12,
+        HealthRegen = 13,
+        ProjectileSpeed = 14,
+        EffectResistance = 15,
+        AttackRange = 16,
+        GoldGain = 17,
+        StatusEffectDuration = 18,
+        BossChestBonus = 19,
+        ProjectileNumber = 20,
+        MagicProjectileNumber = 21,
+        PhysicProjectileNumber = 22,
+        ChanceDoubleProjectile = 23,
+        StatusBonusDmg = 24,
+        BonusHealPotion = 25,
+        ResourceBonus = 26,
+        KeyDropChance = 27,
+        Evasion = 28,
+        ExtraResource = 29,
+        PickupRange = 30,
+        ExtraRageDuration = 31,
+        PowerUpSpawnChance = 32,
+        BonusDmgToBoss = 33,
+        Piercing = 34,
+        KnockBack = 35,
+        DetectRange = 36,
+        Defense = 37,
+        ThornDamage = 38,
+
+        StartingUpgrade = 39,
+        DustGain = 40,
+        HeroOrbGain = 41,
+        SilverKeyDropChance = 42,
+        GoldenKeyDropChance = 43,
+        ScrollBonus = 44,
+
+        BonusDmgToBurning = 45,
+        BonusDmgToFreezing = 46,
+        BonusDmgToSlow = 47,
+        BonusDmgToPoison = 48,
+        BonusDmgToBleeding = 49,
+        BonusDmgToStun = 50,
+        BonusDmgByLostHp = 51,
+        BuffDuration = 52,
+        Explosion = 53,
+        ChanceDoubleProjectileP = 54,
+        ChanceDoubleProjectileM = 55,
+        UltimateSkillDuration = 56,
+        UltimateSkillPoint = 57,
+        EndWaveChestChance = 58,
+        Weakness = 59,
+        Vulnerability = 60
+    }
+}

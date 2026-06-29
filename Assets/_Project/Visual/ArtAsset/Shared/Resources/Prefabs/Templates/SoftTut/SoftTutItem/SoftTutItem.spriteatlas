@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SoftTutItem
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: iOS
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: fe4610643870ae54ab2ea225f4d84bc4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - a6302b006ca58094899b6e3b46a55943: 21300000
+    - 7ea6ccb3c94361a4bbc916c3be367120: 21300000
+    - a898f8c3cc5d744469788990ccd78c4b: 21300000
+    - a12766057c95b554787b9b95edb233b9: 21300000
+    - 1a1acee550d89644780fab650558f2dc: 21300000
+    - a42db096139a92b4ebb63de6232d09e2: 21300000
+    - f17c84d647d6ea14a95fc2c6a561bcf1: 21300000
+    - d990d288c33c5d64a924950a8c8d0063: 21300000
+    - 2d24bfb94db51df4abf5fc3e6c52f3e9: 21300000
+    - ef7ba9fa2566057469694b24648af21c: 21300000
+    - 200a174bfe6605a478b104cd09d0215e: 21300000
+    - 92a4e58c022ae234887c84c156e03c39: 21300000
+    - 7c29156e30e9f0f429e52b2c53a96aaf: 21300000
+    - c4c80c0f5bc98b44895c40b4d734eb3b: 21300000
+    - 28afd0af66c228e4089214c389c29310: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a6302b006ca58094899b6e3b46a55943, type: 3}
+  - {fileID: 21300000, guid: 7ea6ccb3c94361a4bbc916c3be367120, type: 3}
+  - {fileID: 21300000, guid: a898f8c3cc5d744469788990ccd78c4b, type: 3}
+  - {fileID: 21300000, guid: a12766057c95b554787b9b95edb233b9, type: 3}
+  - {fileID: 21300000, guid: 1a1acee550d89644780fab650558f2dc, type: 3}
+  - {fileID: 21300000, guid: a42db096139a92b4ebb63de6232d09e2, type: 3}
+  - {fileID: 21300000, guid: f17c84d647d6ea14a95fc2c6a561bcf1, type: 3}
+  - {fileID: 21300000, guid: d990d288c33c5d64a924950a8c8d0063, type: 3}
+  - {fileID: 21300000, guid: 2d24bfb94db51df4abf5fc3e6c52f3e9, type: 3}
+  - {fileID: 21300000, guid: ef7ba9fa2566057469694b24648af21c, type: 3}
+  - {fileID: 21300000, guid: 200a174bfe6605a478b104cd09d0215e, type: 3}
+  - {fileID: 21300000, guid: 92a4e58c022ae234887c84c156e03c39, type: 3}
+  - {fileID: 21300000, guid: 7c29156e30e9f0f429e52b2c53a96aaf, type: 3}
+  - {fileID: 21300000, guid: c4c80c0f5bc98b44895c40b4d734eb3b, type: 3}
+  - {fileID: 21300000, guid: 28afd0af66c228e4089214c389c29310, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - gem
+  - Icon_Pig_Dia
+  - arrow_left
+  - Light
+  - step_2
+  - energy
+  - arrow_right
+  - hand
+  - grow
+  - steps_3
+  - step_1
+  - rec
+  - pig
+  - arrow
+  - iocn
+  m_RenderDataMap: {}
+  m_Tag: SoftTutItem
+  m_IsVariant: 0

@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d339acefe96f5f408219cd5a2a9ac3e, type: 3}
+  m_Name: DailyDealsPack_1
+  m_EditorClassIdentifier: Assembly-CSharp::DailyDealsPack_1Collection
+  dataGroups:
+  - id: 1
+    rewards:
+    - resType: 1
+      resId: 1
+      resNumber: 1500
+      customValue: []
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 2.99
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_1
+    googleProductIdPremium: 
+    appleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_1
+    packName: gold_pack_1
+    isBestSeller: 0
+    manyPurchase: 1
+  - id: 2
+    rewards:
+    - resType: 1
+      resId: 1
+      resNumber: 5500
+      customValue: []
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 9.99
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 10
+    googleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_2
+    googleProductIdPremium: 
+    appleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_2
+    packName: gold_pack_2
+    isBestSeller: 0
+    manyPurchase: 1
+  - id: 3
+    rewards:
+    - resType: 1
+      resId: 1
+      resNumber: 12000
+      customValue: []
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 19.99
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 20
+    googleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_3
+    googleProductIdPremium: 
+    appleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_3
+    packName: gold_pack_3
+    isBestSeller: 0
+    manyPurchase: 1
+  - id: 4
+    rewards:
+    - resType: 1
+      resId: 1
+      resNumber: 35000
+      customValue: []
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 49.99
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 40
+    googleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_4
+    googleProductIdPremium: 
+    appleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_4
+    packName: gold_pack_4
+    isBestSeller: 0
+    manyPurchase: 1
+  - id: 5
+    rewards:
+    - resType: 1
+      resId: 1
+      resNumber: 80000
+      customValue: []
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 99.99
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 60
+    googleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_5
+    googleProductIdPremium: 
+    appleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_5
+    packName: gold_pack_5
+    isBestSeller: 0
+    manyPurchase: 1
+  - id: 6
+    rewards:
+    - resType: 1
+      resId: 1
+      resNumber: 200000
+      customValue: []
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 199.99
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 100
+    googleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_6
+    googleProductIdPremium: 
+    appleProductId: com.ezg013.coffeepack.unblock.puzzle.game.gold_pack_6
+    packName: gold_pack_6
+    isBestSeller: 0
+    manyPurchase: 1

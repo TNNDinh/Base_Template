@@ -1,0 +1,21 @@
+filename,layer_name,layer_type,parent_group,x,y,width,height,canvas_width,canvas_height,font_size,shadow_color,text_content,text_color
+"rating.psd","rating",text,"",394,1602,276,99,1080,2400,,,"Rating",
+"layer_34_copy_3.psd","layer_34_copy_3",image,"",298,1554,468,192,1080,2400,,,"",
+"do_you_enjoy_this_game_please_leave_a_review_for_us.psd","do_you_enjoy_this_game_please_leave_a_review_for_us",text,"",124,1396,816,113,1080,2400,13,#525252,"Do you enjoy this game? Please 
+         leave a review for us.",#ffffff
+"icon_staroff.psd","icon_staroff",image,"",801,1179,162,167,1080,2400,,,"",
+"icon_star.psd","icon_star",image,"",121,1177,161,171,1080,2400,,,"",
+"layer_713_copy_3.psd","layer_713_copy_3",image,"",295,1179,497,168,1080,2400,,,"",
+"rating.psd","rating",text,"",432,1037,252,90,1080,2400,13,#525252,"Rating ",#ffffff
+"iocn_quit_copy.psd","iocn_quit_copy",image,"",937,1014,105,111,1080,2400,,,"",
+"nameplate.psd","nameplate",image,"",182,1001,718,166,1080,2400,,,"",
+"re_line.psd","re_line",image,"",62,1025,959,760,1080,2400,,,"",
+"re_blue.psd","re_blue",image,"",44,1010,994,796,1080,2400,,,"",
+"hand.psd","hand",image,"",540,959,241,129,1080,2400,,,"",
+"cat.psd","cat",image,"",540,729,291,439,1080,2400,,,"",
+"npc.psd","npc",image,"",220,420,434,603,1080,2400,,,"",
+"star.psd","star",image,"",92,691,840,331,1080,2400,,,"",
+"star_bling.psd","star_bling",image,"",133,650,865,485,1080,2400,,,"",
+"light.psd","light",image,"",28,581,924,516,1080,2400,,,"",
+"grow.psd","grow",image,"",-43,543,1174,958,1080,2400,,,"",
+"layer_703.psd","layer_703",image,"",0,0,1080,2400,1080,2400,,,"",

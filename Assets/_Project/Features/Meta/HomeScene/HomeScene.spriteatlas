@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HomeScene
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: iOS
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c08b44d8605b2b84c80c47472b05a7e1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 1d6a5120b1121d54b8166735a534e173: 21300000
+    - 71d43f5056693044db75e61c6c4d0255: 21300000
+    - 16dd29a019b1eed4f8cb9140a2b04eaa: 21300000
+    - 25d12ab06c4ec6f449813e261c284e2f: 21300000
+    - 0710beb16b38a48479df28dff0339eee: 21300000
+    - 6ba97dd1722c3ec42b25e9b32b07dfc3: 21300000
+    - 201fe2422ee1d554c853e7472f2ffd4b: 21300000
+    - 1af4b342c1a0fa844aa460bb276616fc: 21300000
+    - d7d0e015033d1194d83009813d3ccc6b: 21300000
+    - 22d7dbd69bd2bb243a7db037e313b884: 21300000
+    - d6a98da72905ede44946460049c842a1: 21300000
+    - de9139587b03f974f81ebce6b24273f2: 21300000
+    - cc66be88d64750d4aafbfdc53e5f1c6b: 21300000
+    - 15bd2b891b7d7c54c8ce82e099b90e8b: 21300000
+    - 36a2434bb39f1324ba883d978c0e8d8c: 21300000
+    - 6e04fd0c9ae6eba41a311d056e20dee8: 21300000
+    - 6ba2992d1c0edcf4c8891ac7352552f3: 21300000
+    - 1e5fc21ec4bd4044faa79ebcd1e34851: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1d6a5120b1121d54b8166735a534e173, type: 3}
+  - {fileID: 21300000, guid: 71d43f5056693044db75e61c6c4d0255, type: 3}
+  - {fileID: 21300000, guid: 16dd29a019b1eed4f8cb9140a2b04eaa, type: 3}
+  - {fileID: 21300000, guid: 25d12ab06c4ec6f449813e261c284e2f, type: 3}
+  - {fileID: 21300000, guid: 0710beb16b38a48479df28dff0339eee, type: 3}
+  - {fileID: 21300000, guid: 6ba97dd1722c3ec42b25e9b32b07dfc3, type: 3}
+  - {fileID: 21300000, guid: 201fe2422ee1d554c853e7472f2ffd4b, type: 3}
+  - {fileID: 21300000, guid: 1af4b342c1a0fa844aa460bb276616fc, type: 3}
+  - {fileID: 21300000, guid: d7d0e015033d1194d83009813d3ccc6b, type: 3}
+  - {fileID: 21300000, guid: 22d7dbd69bd2bb243a7db037e313b884, type: 3}
+  - {fileID: 21300000, guid: d6a98da72905ede44946460049c842a1, type: 3}
+  - {fileID: 21300000, guid: de9139587b03f974f81ebce6b24273f2, type: 3}
+  - {fileID: 21300000, guid: cc66be88d64750d4aafbfdc53e5f1c6b, type: 3}
+  - {fileID: 21300000, guid: 15bd2b891b7d7c54c8ce82e099b90e8b, type: 3}
+  - {fileID: 21300000, guid: 36a2434bb39f1324ba883d978c0e8d8c, type: 3}
+  - {fileID: 21300000, guid: 6e04fd0c9ae6eba41a311d056e20dee8, type: 3}
+  - {fileID: 21300000, guid: 6ba2992d1c0edcf4c8891ac7352552f3, type: 3}
+  - {fileID: 21300000, guid: 1e5fc21ec4bd4044faa79ebcd1e34851, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - layer_150
+  - star_chest
+  - icon_Task
+  - layer_695_copy
+  - Star_front
+  - Icon_star
+  - Bt_Line_White
+  - Icon_Album
+  - re_purple
+  - Icon_Setting
+  - Star_back
+  - triangle_2
+  - icon chef
+  - layer_152
+  - Icon_map
+  - bg
+  - Box Gift
+  - Shadow_Icon_Chef
+  m_RenderDataMap: {}
+  m_Tag: HomeScene
+  m_IsVariant: 0

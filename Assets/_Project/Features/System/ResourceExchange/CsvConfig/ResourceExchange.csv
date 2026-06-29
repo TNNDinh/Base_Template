@@ -1,0 +1,5 @@
+﻿source_id,source_type,is_gacha,res_type,res_id,res_number,custom_value,rate,rarity,is_equipment,
+8,1,FALSE,1,1,10,,2,0,FALSE,"gacha = false, bỏ qua rate, nhận toàn bộ resource đã config
+gacha = true, nhận resource theo rate config"
+,,,1,2,20,,4,0,FALSE,
+1000,1,TRUE,1,6,1,,1,0,FALSE,

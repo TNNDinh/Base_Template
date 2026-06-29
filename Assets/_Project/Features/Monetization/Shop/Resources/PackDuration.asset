@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2e168b99421cb42b5130d9b9c35857, type: 3}
+  m_Name: PackDuration
+  m_EditorClassIdentifier: Assembly-CSharp::PackDurationCollection
+  dataGroup:
+  - id: 0
+    rewards:
+    - resType: 2
+      resId: 1000
+      resNumber: 1
+      customValue:
+      - 1000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 2000
+      resNumber: 1
+      customValue:
+      - 2000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 3000
+      resNumber: 0
+      customValue:
+      - 3000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 4000
+      resNumber: 0
+      customValue:
+      - 4000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 5000
+      resNumber: 0
+      customValue:
+      - 5000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 6000
+      resNumber: 0
+      customValue:
+      - 6000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 7000
+      resNumber: 0
+      customValue:
+      - 7000
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 0
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: starter_pack
+    googleProductIdPremium: 
+    appleProductId: starter_pack
+    packName: starter_pack
+    isBestSeller: 0
+    durationPack: 30
+    durationCooldownShowUi: 0
+    type: 0
+  - id: 1
+    rewards:
+    - resType: 2
+      resId: 10000
+      resNumber: 1
+      customValue:
+      - 10000
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 10010
+      resNumber: 1
+      customValue:
+      - 10010
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 10020
+      resNumber: 1
+      customValue:
+      - 10020
+      bonus: 0
+      stageBonus: 0
+    - resType: 2
+      resId: 10030
+      resNumber: 1
+      customValue:
+      - 10030
+      bonus: 0
+      stageBonus: 0
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 1
+    iapCost: 0
+    costRequire:
+      costType: 0
+      costId: 0
+      costNumber: 0
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: a
+    googleProductIdPremium: 
+    appleProductId: a
+    packName: starter_pack1
+    isBestSeller: 0
+    durationPack: 30
+    durationCooldownShowUi: 0
+    type: 0

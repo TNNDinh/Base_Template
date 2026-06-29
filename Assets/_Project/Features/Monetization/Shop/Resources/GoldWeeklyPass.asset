@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20307887d23739d458f8fa59f244a675, type: 3}
+  m_Name: GoldWeeklyPass
+  m_EditorClassIdentifier: Assembly-CSharp::GoldWeeklyPassCollection
+  dataGroup:
+    id: 1
+    rewards: []
+    purchaseList:
+    - purchaseType: 3
+      purchaseCount: 0
+    iapCost: 8.99
+    costRequire:
+      costType: 2
+      costId: 2
+      costNumber: 10
+    firstTimePurchaseBonus: 0
+    sale: 0
+    googleProductId: com.deviloper.m1.food.merge.cooking.puzzle.golden_pass
+    googleProductIdPremium: golden_pack
+    appleProductId: com.deviloper.m1.food.merge.cooking.puzzle.golden_pass
+    packName: golden_pack
+    isBestSeller: 0
+    rewardsInstance:
+    - instanceRwType: 1
+      instanceRwId: 2
+      instanceRwNumber: 220
+      instanceRwCustomValue: []
+    rewardsDaily:
+    - dailyRwType: 1
+      dailyRwId: 2
+      dailyRwNumber: 20
+      dailyRwCustomValue: []
+    rewardsBoost:
+    - boostRwType: 1
+      boostRwId: 3
+      boostRwNumber: 20
+      boostRwCustomValue: []
+    rewardsUpgrade:
+    - upgradeRwType: 1
+      upgradeRwId: 3
+      upgradeRwNumber: 20
+      upgradeRwCustomValue: []
+    timePassInDays: 7

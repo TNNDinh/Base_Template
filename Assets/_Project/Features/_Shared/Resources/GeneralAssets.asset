@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7770d2f43e462b99f818094f8e1f9e, type: 3}
+  m_Name: GeneralAssets
+  m_EditorClassIdentifier: 
+  TooltipElement: {fileID: 4857165981850250667, guid: 8681dd1476f121649a00f83c80946542, type: 3}
+  TooltipImageButtonElement: {fileID: 2620264541674311818, guid: 5f5a5a642bff08c4da62eb563045f8b1, type: 3}
+  TooltipIngredientElement: {fileID: 4857165981850250667, guid: 45655f8c6c28d984db39215e0bd4ce77, type: 3}
+  BattleShockWaveFx: {fileID: 0}
+  BattlePowerUpShieldFx: {fileID: 0}
+  BattlePowerIceFx: {fileID: 0}
+  BattlePowerMagnet: {fileID: 0}
+  BattlePowerRageFx: {fileID: 0}
+  BattlePowerUpGoldRushFx: {fileID: 0}
+  BattleExplodeWhenEnemyDie: {fileID: 0}
+  BattleRageModeEndWave: {fileID: 0}
+  BattleStunFx: {fileID: 0}
+  CharacterDirectionArrow: {fileID: 0}
+  CurrencyEnough:
+    serializedVersion: 2
+    rgba: 4294967295
+  CurrencyNotEnough:
+    serializedVersion: 2
+    rgba: 4278190335
+  BattleFreezeEffect: {fileID: 0}
+  BattleInstantKill: {fileID: 0}
+  itemMerge: {fileID: 6542817535931765501, guid: 6b7b445bac5816d4fadb0b0ddf363ecf, type: 3}
+  LevelObject: {fileID: 3395517755779713226, guid: a5b8af1d66d7b7d4fa875d84af587c0d, type: 3}
+  ButtonInBuildUpGoal: {fileID: 5152261857120168973, guid: 42fa822dc70830442912094f75e7cb3e, type: 3}
+  GameObjectManualLoad:
+  - {fileID: 1992991360134702400, guid: cf15f5144b1b1d14bb1c9dbec20cb04d, type: 3}
+  ColorRarites:
+    m_keys: 010000000200000003000000040000000500000006000000
+    m_values:
+    - serializedVersion: 2
+      rgba: 4289964170
+    - serializedVersion: 2
+      rgba: 4278231612
+    - serializedVersion: 2
+      rgba: 4293425227
+    - serializedVersion: 2
+      rgba: 4294394056
+    - serializedVersion: 2
+      rgba: 4278234351
+    - serializedVersion: 2
+      rgba: 4279310079

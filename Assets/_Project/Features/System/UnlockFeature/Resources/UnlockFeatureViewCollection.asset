@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47781770b78bc6d4083c2be6631ba671, type: 3}
+  m_Name: UnlockFeatureViewCollection
+  m_EditorClassIdentifier: 
+  dataGroups:
+  - feature: 22
+    icon: {fileID: 21300000, guid: b0ddabf48f742724e97eb8cf4a34b19a, type: 3}
+  - feature: 25
+    icon: {fileID: 21300000, guid: f9a96b051424d5b46902c93d3c4b9974, type: 3}
+  - feature: 18
+    icon: {fileID: 21300000, guid: 46c2c14b85ee9af46a6194b5dd3255e4, type: 3}
+  - feature: 20
+    icon: {fileID: 21300000, guid: 0b636943e9e261e4fa433fc63abd410b, type: 3}
+  - feature: 32
+    icon: {fileID: 0}
+  - feature: 56
+    icon: {fileID: 21300000, guid: e6ed4ac11e146d342b525a8d08cda6ba, type: 3}
+  - feature: 52
+    icon: {fileID: 21300000, guid: b82910f2c1fe34289844d7561c61b9cb, type: 3}
+  - feature: 61
+    icon: {fileID: 21300000, guid: d5125977cd3d0644d8145399955b840f, type: 3}
+  - feature: 53
+    icon: {fileID: 21300000, guid: 5ecaafe0c26a90e4a8bc0b19a0231624, type: 3}
+  - feature: 75
+    icon: {fileID: 21300000, guid: dd3a48b99781e684097e1b26c3281ad7, type: 3}

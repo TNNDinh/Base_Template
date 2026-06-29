@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bad253ed8aed974c9eeedfc67aa9b62, type: 3}
+  m_Name: CsvReaderConfig
+  m_EditorClassIdentifier: Ezg.Core::Ezg.Package.CsvReader.CsvReaderConfig
+  collectionCsvRoot: Assets/_Project/Csv/Collection/
+  collectionResourceRoot: Assets/_Project/Resources/Collection/
+  resourcesRoot: Assets/_Project/Resources/
+  csvConfigFolderName: CsvConfig
+  resourcesFolderName: Resources
+  collectionSuffix: Collection
+  dataSuffix: Model
+  fileExtension: .csv
+  assetGenerateRoot: _Project/Resources/Collection/
+  cachedFileName: FileInfo.txt
+  sharedModelPrefixes:
+  - Skill_
+  - Passive_
+  - ItemScaleStage
+  - LevelReward_
+  - LevelOrder_
+  - UnlockFeature_
+  generatedClassDirectory: /Assets/_Project/Features/_Shared/GameData/
+  generatedClassName: CsvAssetDir
