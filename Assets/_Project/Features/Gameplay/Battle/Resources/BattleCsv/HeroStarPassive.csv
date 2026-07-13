@@ -1,0 +1,13 @@
+# Hero tại bậc sao nào có passive gì. star=0 => áp MỌI sao. 1 hero-sao nhiều dòng = nhiều passive
+heroId,star,passiveId
+hero_2001,0,block_t2
+hero_2002,0,block_t1
+hero_2002,0,block_t3
+hero_gladiator,1,block_t1
+hero_gladiator,2,block_t2
+hero_gladiator,3,block_t3
+hero_gladiator,4,block_t4
+hero_gladiator,5,block_t5
+hero_gladiator,6,block_t6
+hero_shadow,0,speed_aura
+hero_shadow,0,shadow_t1

@@ -1,0 +1,11 @@
+# type: Block/SpeedAura/Shadow. Block => value=tỷ lệ đỡ, value2=hệ số phản, flag=có phản.
+# SpeedAura => value=% SPD. Shadow => value=dmgScale, value2=% cướp SPD/đòn, value3=% hút máu.
+id,type,value,value2,value3,flag,refId
+block_t1,Block,0.15,0,0,false,
+block_t2,Block,0.25,0,0,false,
+block_t3,Block,0.25,1.5,0,true,
+block_t4,Block,0.32,1.7,0,true,
+block_t5,Block,0.35,1.9,0,true,
+block_t6,Block,0.40,2.1,0,true,
+speed_aura,SpeedAura,0.15,0,0,false,
+shadow_t1,Shadow,0.4,0.05,0.3,false,

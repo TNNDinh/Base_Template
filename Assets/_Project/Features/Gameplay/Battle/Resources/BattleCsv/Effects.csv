@@ -1,0 +1,6 @@
+# category: Buff/Debuff/Dot/Hot/Control/Shield. modType: Flat/Percent
+id,category,stat,modType,value,tickScaleStat,tickValue,maxStack,dispellable,icon
+burn_dot,Dot,None,Percent,0,Atk,0.30,3,true,ic_burn
+atk_down_25,Debuff,Atk,Percent,-0.25,None,0,1,true,ic_atk_dn
+def_down_30,Debuff,Def,Percent,-0.30,None,0,1,true,ic_def_dn
+atk_up_25,Buff,Atk,Percent,0.25,None,0,1,true,ic_atk_up

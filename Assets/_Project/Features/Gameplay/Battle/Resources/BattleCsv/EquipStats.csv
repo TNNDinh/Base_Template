@@ -1,0 +1,10 @@
+# Cong stat cua trang bi. modType: Flat(cong phang) / Percent(nhan theo base). 1 mon nhieu dong
+equipId,stat,modType,value
+eq_sword_01,Atk,Flat,200
+eq_sword_01,Atk,Percent,0.10
+eq_armor_01,Hp,Flat,1500
+eq_armor_01,Def,Percent,0.20
+eq_boots_01,Spd,Flat,15
+eq_boots_01,CritRate,Flat,0.10
+eq_helm_01,Def,Flat,100
+eq_helm_01,DamageReduction,Flat,0.10

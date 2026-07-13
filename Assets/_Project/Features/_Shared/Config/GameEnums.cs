@@ -145,6 +145,9 @@ public class GameEnums
         [BundleName("features__admin")] Admin = 85,
         [BundleName("features__admin")] AdminGetData = 86,
         GiftCode = 87,
+        StageSelect = 88,
+        BattleResult = 89,
+        TeamFormation = 90,
 
         [BundleName("features__home_scene")] CurrencyBar = 500,
         [BundleName("features__home_scene")] LevelAccount = 501,

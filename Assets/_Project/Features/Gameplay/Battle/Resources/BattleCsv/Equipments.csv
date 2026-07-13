@@ -1,0 +1,6 @@
+# Trang bi. slot: Weapon(kiem)/Armor(giap)/Boots(giay)/Helmet(mu). grantedSkillId = skill mon do cap (rong neu khong)
+id,name,slot,rarity,grantedSkillId,icon
+eq_sword_01,Flame_Sword,Weapon,3,skill_gladi_2,ic_sword
+eq_armor_01,Guardian_Plate,Armor,3,,ic_armor
+eq_boots_01,Swift_Boots,Boots,2,,ic_boots
+eq_helm_01,Iron_Helm,Helmet,2,,ic_helm

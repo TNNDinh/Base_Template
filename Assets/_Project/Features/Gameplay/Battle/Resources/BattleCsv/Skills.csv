@@ -1,0 +1,19 @@
+# type: Basic/Active/Ultimate/Passive. targetType: EnemySingle/EnemyAll/EnemyRow/EnemyLowestHp/EnemyRandom/AllyAll/AllyLowestHp/AllySingle/Self/Inherit
+# energyCost: Ultimate cần đầy Energy (100). manaCost: Active tiêu Mana (=maxMana 100 → đầy mới xài, xài xong về 0). cooldown: không còn dùng
+id,name,desc,type,targetType,energyCost,manaCost,cooldown,hitCount,animKey
+skill_2001,ember_bolt,,Basic,EnemySingle,0,0,0,1,fx_ember
+skill_2002,flame_burst,,Active,EnemyAll,0,100,0,1,fx_burst
+skill_2003,inferno,,Ultimate,EnemyAll,100,0,0,1,fx_inferno
+skill_3001,assassinate,,Ultimate,EnemyLowestHp,100,0,0,1,fx_assassinate
+skill_3002,war_cry_slam,,Ultimate,EnemyAll,100,0,0,1,fx_slam
+skill_3003,aegis_guard,,Ultimate,AllyAll,100,0,0,1,fx_aegis
+skill_gladi_1,power_strike_1,,Active,EnemySingle,0,100,0,1,fx_strike
+skill_gladi_2,power_strike_2,,Active,EnemySingle,0,100,0,1,fx_strike
+skill_gladi_3,power_strike_3,,Active,EnemyRow,0,100,0,1,fx_cleave
+skill_shadow_basic,shadow_strike,,Basic,EnemySingle,0,0,0,1,fx_slash
+skill_shadow_ult,shadow_reap,,Ultimate,EnemyAll,100,0,0,1,fx_reap
+skill_pyroblast,pyroblast,,Active,EnemySingle,0,100,0,1,fx_burst
+skill_heal_wave,heal_wave,,Active,AllyLowestHp,0,100,0,1,fx_heal
+skill_renewal,renewal,,Ultimate,AllyAll,100,0,0,1,fx_renew
+skill_drain_slash,drain_slash,,Active,EnemySingle,0,100,0,1,fx_slash
+skill_atk_buff,rally,,Active,AllyAll,0,100,0,1,fx_rally

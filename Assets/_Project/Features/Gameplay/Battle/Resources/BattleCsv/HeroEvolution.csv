@@ -1,0 +1,5 @@
+# Cây tiến hóa: baseHeroId -> targetHeroId theo nhánh. path: Assassin/Fighter/Tank
+baseHeroId,path,targetHeroId,pathName,icon,reqStar,reqLevel,materialId,materialAmount,goldCost
+hero_1001,Assassin,hero_1001_as,path_assassin,,3,60,evolve_stone,10,100000
+hero_1001,Fighter,hero_1001_fg,path_fighter,,3,60,evolve_stone,10,100000
+hero_1001,Tank,hero_1001_tk,path_tank,,3,60,evolve_stone,10,100000

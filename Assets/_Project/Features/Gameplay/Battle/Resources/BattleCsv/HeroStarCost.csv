@@ -1,0 +1,5 @@
+# costType: Dupe/Material
+fromStar,costType,dupeCount,materialId,materialAmount,goldCost
+3,Material,0,star_dust,20,50000
+4,Material,0,star_dust,40,120000
+5,Material,0,star_crystal,30,300000

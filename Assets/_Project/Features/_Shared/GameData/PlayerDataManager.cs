@@ -1,4 +1,5 @@
 using System.Reflection;
+using Ezg.Feature.Gameplay.Battle;
 using Ezg.Feature.Social.Account;
 using Ezg.Package.Factory;
 
@@ -7,6 +8,8 @@ namespace Ezg.Feature.Shared.GameData
     public static class PlayerDataManager
     {
         private static PlayerAccount _account;
+
+        private static PlayerBattleHero _battleHero;
 
         private static PlayerCampaign _campaign;
 
@@ -30,6 +33,13 @@ namespace Ezg.Feature.Shared.GameData
         {
             get { return _account ??= DataPlayer.GetModule<PlayerAccount>(); }
             set => _account = value;
+        }
+
+        /// <summary>Hero battle: roster tướng đã unlock + đội hình active (persist).</summary>
+        public static PlayerBattleHero BattleHero
+        {
+            get { return _battleHero ??= DataPlayer.GetModule<PlayerBattleHero>(); }
+            set => _battleHero = value;
         }
 
         public static PlayerCampaign Campaign

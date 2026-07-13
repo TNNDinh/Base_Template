@@ -1,0 +1,3 @@
+# Effect (passive) trang bi cap cho hero. passiveId tro Passives.csv
+equipId,passiveId
+eq_armor_01,block_t1

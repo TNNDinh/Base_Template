@@ -1,0 +1,8 @@
+# Mỗi bậc sao đổi skill chính của hero
+heroId,star,activeSkillId
+hero_gladiator,1,skill_gladi_1
+hero_gladiator,2,skill_gladi_2
+hero_gladiator,3,skill_gladi_3
+hero_gladiator,4,skill_gladi_3
+hero_gladiator,5,skill_gladi_3
+hero_gladiator,6,skill_gladi_3

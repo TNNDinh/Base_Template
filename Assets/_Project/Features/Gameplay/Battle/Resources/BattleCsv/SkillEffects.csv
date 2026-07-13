@@ -1,0 +1,27 @@
+# effectType: Damage/Heal/Shield/ApplyBuff/ApplyDebuff/Cleanse/EnergyGain/Taunt/Revive. target Inherit = theo skill cha
+skillId,order,effectType,target,scaleStat,scaleValue,flat,chance,buffId,duration
+skill_2001,0,Damage,Inherit,Atk,1.0,0,1,,0
+skill_2001,1,EnergyGain,Self,None,0,20,1,,0
+skill_2002,0,Damage,Inherit,Atk,0.8,0,1,,0
+skill_2002,1,ApplyDebuff,Inherit,None,0,0,0.7,burn_dot,2
+skill_2003,0,Damage,Inherit,Atk,1.6,0,1,,0
+skill_2003,1,ApplyDebuff,EnemyAll,None,0,0,1,atk_down_25,2
+skill_3001,0,Damage,Inherit,Atk,3.0,0,1,,0
+skill_3002,0,Damage,Inherit,Atk,1.4,0,1,,0
+skill_3002,1,ApplyDebuff,EnemyAll,None,0,0,1,def_down_30,2
+skill_3003,0,Shield,AllyAll,Hp,0.4,0,1,,0
+skill_gladi_1,0,Damage,Inherit,Atk,2.2,0,1,,0
+skill_gladi_2,0,Damage,Inherit,Atk,2.8,0,1,,0
+skill_gladi_3,0,Damage,Inherit,Atk,2.8,0,1,,0
+skill_shadow_basic,0,DamageByLostHp,Inherit,Atk,1.0,0,1,,0
+skill_shadow_basic,1,EnergyGain,Self,None,0,20,1,,0
+skill_shadow_ult,0,Damage,EnemyAll,Atk,1.5,0,1,,0
+skill_shadow_ult,1,SpeedSteal,EnemyAll,None,0.15,0,1,,9999
+skill_shadow_ult,2,Lifesteal,Self,None,0.4,0,1,,0
+skill_pyroblast,0,Damage,Inherit,Atk,2.8,0,1,,0
+skill_heal_wave,0,Heal,Inherit,Atk,1.2,0,1,,0
+skill_renewal,0,Heal,AllyAll,Atk,1.0,0,1,,0
+skill_renewal,1,Cleanse,AllyAll,None,0,0,1,,0
+skill_drain_slash,0,Damage,Inherit,Atk,2.5,0,1,,0
+skill_drain_slash,1,Lifesteal,Self,None,0.4,0,1,,0
+skill_atk_buff,0,ApplyBuff,AllyAll,None,0,0,1,atk_up_25,2
