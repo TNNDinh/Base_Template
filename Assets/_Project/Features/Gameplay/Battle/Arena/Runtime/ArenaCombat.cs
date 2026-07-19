@@ -40,6 +40,29 @@ namespace Ezg.Feature.Gameplay.Battle
             _occ = new ArenaOccupancy(config.RingCount, config.SectorsPerRing);
             if (heroCell.HasValue) _occ.SetHeroCell(heroCell.Value);
             _round = new ArenaEnemyRound(_occ, _enemies, OnEnemyEnteredCell);
+
+            // Round SPAWN cuối của stage — để biết khi nào không còn quái nào sẽ xuất hiện nữa (win sớm).
+            if (_spawns != null)
+            {
+                var list = _spawns.GetByStage(_stageId);
+                for (int i = 0; i < list.Count; i++)
+                    if (list[i].round > LastSpawnRound) LastSpawnRound = list[i].round;
+            }
+        }
+
+        /// <summary>Round mà stage còn spawn quái lần cuối (0 = không có spawn). Qua round này = không còn quái mới.</summary>
+        public int LastSpawnRound { get; private set; }
+
+        /// <summary>Số enemy còn sống hiện tại.</summary>
+        public int AliveCount
+        {
+            get
+            {
+                int c = 0;
+                for (int i = 0; i < _enemies.Count; i++)
+                    if (_enemies[i] != null && _enemies[i].IsAlive) c++;
+                return c;
+            }
         }
 
         public int RoundNo => _roundNo;

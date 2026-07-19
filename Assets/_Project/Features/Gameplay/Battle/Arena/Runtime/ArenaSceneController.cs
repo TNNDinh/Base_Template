@@ -321,15 +321,29 @@ namespace Ezg.Feature.Gameplay.Battle
                 await PlayEnemyAttacks(ct); // enemy vào tầm lao vào đánh TỪNG CON theo ưu tiên
 
                 if (_defeated) { EndBattle(false); return; } // hero chết trong round enemy → THUA
+                if (AllCleared()) { EndBattle(true); return; } // hết spawn + sạch quái → THẮNG NGAY
+
+                // Chưa hết spawn nhưng hiện KHÔNG còn quái → round trống: lướt nhanh (không bắt player bấm),
+                // sang round kế để spawn đợt tiếp — tránh phải đợi lâu khi giết quái đợt trước quá nhanh.
+                if (_combat.AliveCount == 0)
+                {
+                    await UniTask.Delay(TimeSpan.FromSeconds(_roundDelay), cancellationToken: ct);
+                    continue;
+                }
 
                 // ===== PLAYER ROUND — hiện 3 nút vũ khí, chờ user phát động =====
                 await PlayerRound(ct);
 
                 if (_defeated) { EndBattle(false); return; }
+                if (AllCleared()) { EndBattle(true); return; } // player giết con cuối cùng → THẮNG NGAY
             }
 
-            EndBattle(true); // qua hết round mà chưa chết → THẮNG
+            EndBattle(true); // qua hết round mà chưa chết → THẮNG (sống sót giới hạn round)
         }
+
+        /// <summary>Đã dọn sạch stage: qua round spawn cuối + không còn enemy sống → thắng ngay (không đợi hết round).</summary>
+        private bool AllCleared() =>
+            _combat != null && _combat.RoundNo >= _combat.LastSpawnRound && _combat.AliveCount == 0;
 
         /// <summary>Kết thúc trận: dừng vòng lặp, ẩn UI vũ khí, tính sao + nhiệm vụ, hiện màn kết quả.</summary>
         private void EndBattle(bool win)
