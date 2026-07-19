@@ -206,20 +206,24 @@ namespace Ezg.Feature.Gameplay.Battle
             KillTween(_returnIdleTween);
             KillTween(_damagedTween);
             KillTween(_dieLoopTween);
+            if (_animator != null) _animator.speed = 1f;
             PlayBody(_dieState, true);
-            PlayWeapon(_dieState, true); // vũ khí thường không có 'die' → PlayBody sẽ bỏ qua nếu thiếu state
+            PlayWeapon(_dieState, true); // vũ khí thường không có 'die' → PlayOn bỏ qua nếu thiếu state
 
-            // LẶP anim chết: clip 'die' thường không loop → tự phát lại từ đầu mỗi chu kỳ để xác chết vẫn động.
+            // Chơi 1 LẦN rồi GIỮ khung cuối: sau độ dài clip, nhảy tới frame cuối + dừng animator
+            // (an toàn kể cả khi clip 'die' bị bật Loop Time — không cho lặp lại anim chết).
             float len = StateLength(_animator, _dieState);
             if (len > 0.05f)
-                _dieLoopTween = DOVirtual.DelayedCall(len, ReplayDie, false).SetLoops(-1);
+                _dieLoopTween = DOVirtual.DelayedCall(len, FreezeDieLastFrame, false);
         }
 
-        private void ReplayDie()
+        /// <summary>Giữ nguyên khung cuối anim chết (dừng animator) — không loop.</summary>
+        private void FreezeDieLastFrame()
         {
-            if (!_dead) return;
-            PlayBody(_dieState, true);
-            PlayWeapon(_dieState, true);
+            if (!_dead || _animator == null) return;
+            int hash = Animator.StringToHash(_dieState);
+            if (_animator.HasState(0, hash)) _animator.Play(hash, 0, 1f); // frame cuối clip
+            _animator.speed = 0f;
         }
 
         /// <summary>Lật hướng nhìn: dir &gt; 0 nhìn phải, &lt; 0 nhìn trái.</summary>

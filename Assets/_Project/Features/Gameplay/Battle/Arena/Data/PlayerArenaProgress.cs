@@ -29,6 +29,14 @@ namespace Ezg.Feature.Gameplay.Battle
         public string weapons;
     }
 
+    /// <summary>Số sao TỐT NHẤT đã đạt của 1 stage (0..3).</summary>
+    [Serializable]
+    public class StageStarEntry
+    {
+        public string stageId;
+        public int stars;
+    }
+
     /// <summary>
     ///     Payload persist tiến trình NÂNG CẤP arena: cấp độ từng vũ khí + tiền nâng cấp (gold arena, tự chứa
     ///     — không đụng economy game chính). Hero level dùng lại roster <see cref="PlayerBattleHero" />
@@ -43,6 +51,7 @@ namespace Ezg.Feature.Gameplay.Battle
         public List<HeroSkillEntry> heroSkills = new List<HeroSkillEntry>();
         public List<HeroLoadoutEntry> heroLoadouts = new List<HeroLoadoutEntry>();
         public List<string> clearedStages = new List<string>();
+        public List<StageStarEntry> stageStars = new List<StageStarEntry>();
     }
 
     /// <summary>
@@ -73,6 +82,7 @@ namespace Ezg.Feature.Gameplay.Battle
             if (dataBase.heroSkills == null) dataBase.heroSkills = new List<HeroSkillEntry>();
             if (dataBase.heroLoadouts == null) dataBase.heroLoadouts = new List<HeroLoadoutEntry>();
             if (dataBase.clearedStages == null) dataBase.clearedStages = new List<string>();
+            if (dataBase.stageStars == null) dataBase.stageStars = new List<StageStarEntry>();
             if (dataBase.playerLevel < 1) dataBase.playerLevel = 1;
         }
 
@@ -92,6 +102,26 @@ namespace Ezg.Feature.Gameplay.Battle
         {
             if (string.IsNullOrEmpty(stageId) || dataBase.clearedStages.Contains(stageId)) return;
             dataBase.clearedStages.Add(stageId);
+            Save();
+        }
+
+        /// <summary>Số sao đã đạt của stage (0..3, 0 nếu chưa clear).</summary>
+        public int GetStars(string stageId)
+        {
+            if (string.IsNullOrEmpty(stageId)) return 0;
+            var e = dataBase.stageStars.Find(s => s.stageId == stageId);
+            return e != null ? e.stars : 0;
+        }
+
+        /// <summary>Lưu số sao stage (chỉ ghi đè khi nhiều hơn — giữ kỷ lục tốt nhất).</summary>
+        public void SetStars(string stageId, int stars)
+        {
+            if (string.IsNullOrEmpty(stageId)) return;
+            stars = Mathf.Clamp(stars, 0, 3);
+            var e = dataBase.stageStars.Find(s => s.stageId == stageId);
+            if (e == null) dataBase.stageStars.Add(new StageStarEntry { stageId = stageId, stars = stars });
+            else if (stars > e.stars) e.stars = stars;
+            else return; // không cải thiện → khỏi save
             Save();
         }
 

@@ -31,7 +31,9 @@ namespace Ezg.Feature.Gameplay.Battle
         private bool _built;
 
         // Art ST09 (9-slice frame + button + icon). Null = fallback màu phẳng.
-        private Sprite _sprPanel, _sprTitle, _sprBtnGreen, _sprBtnBlue, _sprTick;
+        private Sprite _sprPanel, _sprTitle, _sprBtnGreen, _sprBtnBlue, _sprTick, _sprStar;
+        private static readonly Color StarOn = new Color(1f, 0.82f, 0.2f, 1f);
+        private static readonly Color StarOff = new Color(0.4f, 0.4f, 0.45f, 1f);
 
         protected override void LoadData()
         {
@@ -49,6 +51,7 @@ namespace Ezg.Feature.Gameplay.Battle
             _sprBtnGreen = Resources.Load<Sprite>("art/btn_green");
             _sprBtnBlue = Resources.Load<Sprite>("art/btn_blue");
             _sprTick = Resources.Load<Sprite>("art/icon_tick");
+            _sprStar = Resources.Load<Sprite>("art/star");
 
             Build();
             Refresh();
@@ -91,22 +94,33 @@ namespace Ezg.Feature.Gameplay.Battle
             _rows.Add(row.gameObject);
 
             bool cleared = ArenaHeroUnlockService.IsStageCleared(stage.id);
-            float nameX = -186f;
-            if (cleared && _sprTick != null)
-            {
-                MakeImage(row, "Tick", new Vector2(48f, 42f), new Vector2(-352f, 30f), _sprTick, Color.white);
-                nameX = -150f;
-            }
+            int stars = ArenaHeroUnlockService.GetStars(stage.id);
 
-            string title = (cleared && _sprTick == null ? "★ " : "") + (string.IsNullOrEmpty(stage.name) ? stage.id : stage.name);
+            string title = (string.IsNullOrEmpty(stage.name) ? stage.id : stage.name);
             Color nameCol = cleared ? ClearColor : (_sprPanel != null ? NameColor : Color.white);
-            MakeText(row, "Name", title, 40, new Vector2(nameX, 30f), new Vector2(430f, 60f), TextAnchor.MiddleLeft, nameCol);
-            MakeText(row, "Sub", $"Round: {stage.maxRounds}    Thời tiết: {WeatherLabel(stage.weather)}", 27,
-                new Vector2(-186f, -34f), new Vector2(440f, 50f), TextAnchor.MiddleLeft, new Color(0.32f, 0.3f, 0.26f, 1f));
+            MakeText(row, "Name", title, 38, new Vector2(-186f, 34f), new Vector2(430f, 56f), TextAnchor.MiddleLeft, nameCol);
+            BuildRowStars(row, stars, new Vector2(-236f, -30f)); // 3 sao nhỏ dưới tên
+            MakeText(row, "Sub", $"Round: {stage.maxRounds}    Thời tiết: {WeatherLabel(stage.weather)}", 25,
+                new Vector2(-40f, -34f), new Vector2(340f, 48f), TextAnchor.MiddleLeft, new Color(0.32f, 0.3f, 0.26f, 1f));
 
             string id = stage.id;
             var play = MakeButton(row, "Play", "CHƠI", new Vector2(240f, 100f), new Vector2(268f, 0f), PlayBtn, _sprBtnGreen);
             play.onClick.AddListener(() => EnterStage(id));
+        }
+
+        /// <summary>3 sao nhỏ hiển thị tiến trình stage (đã đạt = vàng, chưa = xám).</summary>
+        private void BuildRowStars(Transform row, int stars, Vector2 start)
+        {
+            const float size = 34f, step = 40f;
+            for (int i = 0; i < 3; i++)
+            {
+                var pos = new Vector2(start.x + i * step, start.y);
+                bool on = i < stars;
+                if (_sprStar != null)
+                    MakeImage(row, "St" + i, new Vector2(size, size), pos, _sprStar, on ? StarOn : StarOff);
+                else
+                    MakeText(row, "St" + i, "★", 28, pos, new Vector2(size, size), TextAnchor.MiddleCenter, on ? StarOn : StarOff);
+            }
         }
 
         /// <summary>Vào stage: nhớ id cho ArenaSceneController, dừng nhạc home rồi đổi sang BattleScene.</summary>

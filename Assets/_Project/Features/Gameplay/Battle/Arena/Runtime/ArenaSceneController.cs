@@ -68,6 +68,7 @@ namespace Ezg.Feature.Gameplay.Battle
         private ArenaWeather _weather = new ArenaWeather(default); // biome CỐ ĐỊNH của map (vd forest cho chương 1)
         private GameObject _weatherOverlay;                        // sprite phủ màu môi trường theo biome
         private bool _weatherOnThisRound;                          // round này biome CÓ phát tác (vd forest = mưa) hay tạnh
+        private GameObject _resultView;                            // overlay kết quả (thắng/thua) khi kết thúc trận
         private GameObject _hero;
         private CharacterRig _heroRig;
         private ArenaHealthBar _heroBar;
@@ -330,21 +331,62 @@ namespace Ezg.Feature.Gameplay.Battle
             EndBattle(true); // qua hết round mà chưa chết → THẮNG
         }
 
-        /// <summary>Kết thúc trận: dừng vòng lặp, ẩn UI vũ khí, hiện panel thắng/thua.</summary>
+        /// <summary>Kết thúc trận: dừng vòng lặp, ẩn UI vũ khí, tính sao + nhiệm vụ, hiện màn kết quả.</summary>
         private void EndBattle(bool win)
         {
             IsPlayerRound = false;
             HideWeaponVisual();
             OnPlayerRoundEnd?.Invoke();
-            if (win && _victoryUi != null) _victoryUi.SetActive(true);
-            if (!win && _defeatUi != null) _defeatUi.SetActive(true);
+
+            int stars = 0, gold = 0;
+            var missions = new List<ResultMission>();
             if (win)
             {
-                ArenaUpgradeService.AddGold(200);                 // thưởng gold nâng cấp
+                // Sao PHỔ QUÁT (mọi stage): thắng = 1 sao, + máu còn ≥50% / ≥90%.
+                float hpPct = _heroMaxHp > 0f ? _heroHp / _heroMaxHp * 100f : 0f;
+                bool s2 = hpPct >= 50f, s3 = hpPct >= 90f;
+                stars = 1 + (s2 ? 1 : 0) + (s3 ? 1 : 0);
+                missions.Add(new ResultMission { desc = "Chien thang man", met = true });
+                missions.Add(new ResultMission { desc = "Mau con >= 50%", met = s2 });
+                missions.Add(new ResultMission { desc = "Mau con >= 90%", met = s3 });
+                gold = 200;
+                ArenaUpgradeService.AddGold(gold);                 // thưởng gold nâng cấp
                 ArenaHeroUnlockService.MarkStageCleared(_stageId); // clear stage → mở hero method=Stage
+                ArenaHeroUnlockService.SetStars(_stageId, stars);  // lưu kỷ lục sao
             }
 
-            Debug.Log(win ? "[Arena] VICTORY" : "[Arena] DEFEAT");
+            // Ẩn label legacy (nếu prefab có) rồi hiện màn kết quả mới.
+            if (_defeatUi != null) _defeatUi.SetActive(false);
+            if (_victoryUi != null) _victoryUi.SetActive(false);
+            if (_resultView != null) Destroy(_resultView);
+            _resultView = ArenaResultView.Show(win, stars, missions, gold, ReloadStage, GoToStageSelect);
+
+            Debug.Log(win ? $"[Arena] VICTORY stars={stars}" : "[Arena] DEFEAT");
+        }
+
+        /// <summary>Nút CHƠI LẠI: chơi lại đúng stage này.</summary>
+        private void ReloadStage()
+        {
+            ArenaLaunch.PendingStageId = _stageId;
+            LoadSceneSafe("BattleScene");
+        }
+
+        /// <summary>Nút VỀ: quay lại màn chính (home) để chọn map khác.</summary>
+        private void GoToStageSelect() => LoadSceneSafe("HomeScene");
+
+        /// <summary>Đổi scene an toàn: ưu tiên GameSystems.ChangeScene (có mask), fallback SceneManager.</summary>
+        private static void LoadSceneSafe(string sceneName)
+        {
+            try
+            {
+                var scene = (Ezg.Feature.Shared.Config.GameEnums.Scenes)Enum.Parse(
+                    typeof(Ezg.Feature.Shared.Config.GameEnums.Scenes), sceneName);
+                Ezg.Feature.Shared.Systems.GameSystems.ChangeScene(scene);
+            }
+            catch
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            }
         }
 
         #endregion

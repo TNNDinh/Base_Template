@@ -129,6 +129,18 @@ namespace Ezg.Feature.Gameplay.Battle
         /// <summary>Stage đã clear chưa (phòng thủ — data chưa init → false). Dùng cho UI chọn stage.</summary>
         public static bool IsStageCleared(string stageId) => StageCleared(stageId);
 
+        /// <summary>Số sao đã đạt của stage (0..3; phòng thủ → 0). Dùng cho UI chọn stage + kết quả.</summary>
+        public static int GetStars(string stageId)
+        {
+            try { return Progress != null ? Progress.GetStars(stageId) : 0; } catch { return 0; }
+        }
+
+        /// <summary>Lưu số sao đạt được (giữ kỷ lục tốt nhất). Phòng thủ khi data chưa init.</summary>
+        public static void SetStars(string stageId, int stars)
+        {
+            try { Progress?.SetStars(stageId, stars); OnChanged?.Invoke(); } catch { /* data chưa init */ }
+        }
+
         private static bool Unlock(string heroId)
         {
             var r = Roster;
