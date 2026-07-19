@@ -306,6 +306,10 @@ namespace Ezg.Feature.Gameplay.Battle
 
             ResolveWeather(stage.weather); // thời tiết map: aura DoT/regen + hệ số damage + màu phủ
 
+            // Cảnh báo rõ ràng khi stage KHÔNG có spawn → arena sẽ trống (thường do map id chưa có dòng trong ArenaSpawns).
+            if (_spawns == null || _spawns.GetByStage(_stageId).Count == 0)
+                Debug.LogWarning($"[Arena] Stage '{_stageId}' không có spawn nào (ArenaSpawns) → arena sẽ TRỐNG. Kiểm tra ArenaSpawns.csv / ArenaSpawnCollection.");
+
             await UniTask.Delay(TimeSpan.FromSeconds(_startDelay), cancellationToken: ct);
 
             for (int r = 0; r < maxRounds; r++)

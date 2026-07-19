@@ -4,72 +4,8 @@ using UnityEngine;
 
 namespace Ezg.Feature.Gameplay.Battle
 {
-    /// <summary>
-    ///     Collection stage arena. Theo convention ItemMergeCollection: giữ mảng <see cref="dataGroup" />
-    ///     (serialize + sửa trong Inspector) và cache lookup dựng lại ở <see cref="Convert" />.
-    /// </summary>
-    [CreateAssetMenu(menuName = "Battle/Arena/Stage Collection", fileName = "ArenaStageCollection")]
-    public class ArenaStageCollection : ScriptableObject
-    {
-        public ArenaStageModel[] dataGroup;
-
-        private Dictionary<string, ArenaStageModel> _byId;
-
-        private void OnEnable() => Convert();
-        private void OnValidate() => Convert();
-
-        public void Convert()
-        {
-            _byId = new Dictionary<string, ArenaStageModel>();
-            if (dataGroup == null) return;
-            foreach (var s in dataGroup) _byId[s.id] = s;
-        }
-
-        public ArenaStageModel GetById(string id)
-        {
-            if (_byId == null) Convert();
-            return _byId.TryGetValue(id, out var v) ? v : default;
-        }
-
-        public IReadOnlyList<ArenaStageModel> All => dataGroup ?? Array.Empty<ArenaStageModel>();
-    }
-
-    /// <summary>Collection enemy spawn (kèm STAT enemy). Nhóm theo stageId, sort theo round rồi ring.</summary>
-    [CreateAssetMenu(menuName = "Battle/Arena/Spawn Collection", fileName = "ArenaSpawnCollection")]
-    public class ArenaSpawnCollection : ScriptableObject
-    {
-        public ArenaSpawnModel[] dataGroup;
-
-        private Dictionary<string, List<ArenaSpawnModel>> _byStage;
-
-        private void OnEnable() => Convert();
-        private void OnValidate() => Convert();
-
-        public void Convert()
-        {
-            _byStage = new Dictionary<string, List<ArenaSpawnModel>>();
-            if (dataGroup == null) return;
-            foreach (var s in dataGroup)
-            {
-                if (!_byStage.TryGetValue(s.stageId, out var list))
-                {
-                    list = new List<ArenaSpawnModel>();
-                    _byStage[s.stageId] = list;
-                }
-
-                list.Add(s);
-            }
-
-            foreach (var kv in _byStage)
-                kv.Value.Sort((a, b) => a.round != b.round ? a.round.CompareTo(b.round) : a.ring.CompareTo(b.ring));
-        }
-
-        public IReadOnlyList<ArenaSpawnModel> GetByStage(string stageId)
-        {
-            if (_byStage == null) Convert();
-            return _byStage.TryGetValue(stageId, out var v) ? v : (IReadOnlyList<ArenaSpawnModel>)Array.Empty<ArenaSpawnModel>();
-        }
-    }
+    // ArenaStageCollection → ArenaStageCollection.cs (own file). ArenaSpawnCollection → ArenaSpawnCollection.cs (own file).
+    // Tách ra để MonoScript ổn định sau domain reload (asset không bị m_Script=0 → load null → arena trống).
 
     /// <summary>Collection nhiệm vụ sao + bonus. Nhóm theo stageId.</summary>
     [CreateAssetMenu(menuName = "Battle/Arena/Objective Collection", fileName = "ArenaObjectiveCollection")]
