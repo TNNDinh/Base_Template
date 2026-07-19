@@ -246,8 +246,10 @@ namespace Ezg.Feature.Gameplay.Battle
         ///     Đẩy lùi 1 enemy theo chuỗi bước (mỗi bước 1 ô). Chạm RÌA/ô hero → dừng tại ô cuối hợp lệ.
         ///     Chạm enemy khác → enemy đó nhận <paramref name="collisionDamage" />, con bị đẩy VỀ LẠI ô cũ.
         ///     Trả về TRUE nếu bị CHẶN bởi enemy (đã về ô cũ) — dùng cho bẫy lặp (nổ lại khi bị chặn).
+        ///     <paramref name="triggerTrapOnLand" />=true: nếu đáp vào ô CÓ BẪY thì kích hoạt bẫy đó
+        ///     (dùng cho đẩy lùi từ đòn hero/ult; KHÔNG bật khi đẩy lùi trong vòng lặp bẫy để tránh nổ trùng).
         /// </summary>
-        public bool ApplyKnockback(ArenaEnemyUnit unit, List<Vector2Int> steps, float collisionDamage)
+        public bool ApplyKnockback(ArenaEnemyUnit unit, List<Vector2Int> steps, float collisionDamage, bool triggerTrapOnLand = false)
         {
             if (unit == null || !unit.IsAlive || steps == null || steps.Count == 0) return false;
 
@@ -274,7 +276,14 @@ namespace Ezg.Feature.Gameplay.Battle
 
             if (collided) cur = origin; // bị chặn → về lại ô cũ
             _occ.Set(cur, unit);
-            if (cur.ring != origin.ring || cur.sector != origin.sector) unit.SetCellForced(cur);
+            bool moved = cur.ring != origin.ring || cur.sector != origin.sector;
+            if (moved) unit.SetCellForced(cur);
+
+            // Bị đẩy VÀO ô có bẫy → dính bẫy (damage + đẩy lùi của bẫy). Chỉ khi đẩy thật sang ô mới.
+            if (triggerTrapOnLand && moved && unit.IsAlive
+                && _traps.TryGetValue(TrapKey(cur), out var trap) && trap.Alive)
+                TriggerTrap(trap, unit);
+
             return collided;
         }
 

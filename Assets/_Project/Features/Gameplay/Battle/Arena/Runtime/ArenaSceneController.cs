@@ -509,7 +509,7 @@ namespace Ezg.Feature.Gameplay.Battle
                         float dmg = ScaleHeroDmg(wDamage * (1f + wCombo * combo)); // thời tiết: chỉnh damage hero
                         combo++;
                         t.TakeDamage(dmg, _combat.Occupancy);
-                        if (t.IsAlive) _combat.ApplyKnockback(t, kb, w.collisionDamage);
+                        if (t.IsAlive) _combat.ApplyKnockback(t, kb, w.collisionDamage, triggerTrapOnLand: true); // đẩy vào ô bẫy → dính bẫy
                         await UniTask.Delay(TimeSpan.FromSeconds(0.12f), cancellationToken: ct);
                     }
 
@@ -652,7 +652,7 @@ namespace Ezg.Feature.Gameplay.Battle
                     var e = all[i];
                     if (e == null || !e.IsAlive) continue;
                     e.TakeDamage(dmg, _combat.Occupancy);
-                    if (shock && e.IsAlive) _combat.ApplyKnockback(e, kb, 0f);
+                    if (shock && e.IsAlive) _combat.ApplyKnockback(e, kb, 0f, triggerTrapOnLand: true);
                 }
             }
 
