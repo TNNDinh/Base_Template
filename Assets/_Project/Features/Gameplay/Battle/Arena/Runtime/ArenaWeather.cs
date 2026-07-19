@@ -21,6 +21,9 @@ namespace Ezg.Feature.Gameplay.Battle
         public WeatherType Type => Active ? (WeatherType)Model.type : WeatherType.None;
         public string Name => Active ? Model.name : null;
 
+        /// <summary>Xác suất mỗi round biome phát tác (mưa…). &lt;=0 = luôn bật.</summary>
+        public float ActiveChance => Active ? Model.activeChance : 0f;
+
         // ----- Hệ số nhân damage (mul <=0 coi như 1) -----
         public float HeroDamageMul => Active && Model.heroDmgMul > 0f ? Model.heroDmgMul : 1f;
         public float EnemyDamageMul => Active && Model.enemyDmgMul > 0f ? Model.enemyDmgMul : 1f;

@@ -22,6 +22,7 @@ MonoBehaviour:
     enemyRegenPct: 0.03
     heroDmgMul: 0.9
     enemyDmgMul: 0.9
+    activeChance: 0.6
     tint: '#3C785030'
   - id: w_desert
     name: Sa Mac Nong
@@ -32,6 +33,7 @@ MonoBehaviour:
     enemyRegenPct: 0
     heroDmgMul: 1
     enemyDmgMul: 1.15
+    activeChance: 0.6
     tint: '#E6C86E2E'
   - id: w_volcano
     name: Nui Lua
@@ -42,6 +44,7 @@ MonoBehaviour:
     enemyRegenPct: 0
     heroDmgMul: 1.2
     enemyDmgMul: 1.1
+    activeChance: 0.65
     tint: '#DC50283A'
   - id: w_snow
     name: Tuyet Lanh
@@ -52,4 +55,5 @@ MonoBehaviour:
     enemyRegenPct: 0
     heroDmgMul: 1
     enemyDmgMul: 0.8
+    activeChance: 0.6
     tint: '#B4D7EB33'

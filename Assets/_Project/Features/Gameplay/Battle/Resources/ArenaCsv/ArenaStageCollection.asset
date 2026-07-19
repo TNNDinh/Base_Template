@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: arena_1_1
     name: 1-1 Dong Co
     maxRounds: 15
-    weather: random
+    weather: w_forest
   - id: arena_1_2
     name: 1-2 Bia Rung
     maxRounds: 15
@@ -28,28 +28,28 @@ MonoBehaviour:
   - id: arena_1_4
     name: 1-4 Khe Nui
     maxRounds: 16
-    weather: w_snow
+    weather: w_forest
   - id: arena_1_5
     name: 1-5 Hang Ogre
     maxRounds: 16
-    weather: w_volcano
+    weather: w_forest
   - id: arena_1_6
     name: 1-6 Dat Chet
     maxRounds: 18
-    weather: w_desert
+    weather: w_forest
   - id: arena_1_7
     name: 1-7 Mo Da
     maxRounds: 18
-    weather: w_volcano
+    weather: w_forest
   - id: arena_1_8
     name: 1-8 Thap Am
     maxRounds: 20
-    weather: w_snow
+    weather: w_forest
   - id: arena_1_9
     name: 1-9 Cong Dia Nguc
     maxRounds: 20
-    weather: w_volcano
+    weather: w_forest
   - id: arena_1_10
     name: 1-10 Sao Huyet Long
     maxRounds: 20
-    weather: random
+    weather: w_forest

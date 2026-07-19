@@ -65,12 +65,9 @@ namespace Ezg.Feature.Gameplay.Battle
 
         private ArenaCombat _combat;
         private string _stageId;
-        private ArenaWeather _weather = new ArenaWeather(default); // thời tiết map (mặc định: không có)
-        private GameObject _weatherOverlay;                        // sprite phủ màu môi trường theo thời tiết
-        private bool _randomWeather;                               // true = đổi thời tiết NGẪU NHIÊN mỗi round (stage.weather = "random")
-        private List<WeatherModel> _weatherPool;                   // pool biome để roll khi random
-        private const string RandomWeatherKey = "random";
-        private const float WeatherClearChance = 0.25f;            // xác suất round "trời quang" (không thời tiết) khi random
+        private ArenaWeather _weather = new ArenaWeather(default); // biome CỐ ĐỊNH của map (vd forest cho chương 1)
+        private GameObject _weatherOverlay;                        // sprite phủ màu môi trường theo biome
+        private bool _weatherOnThisRound;                          // round này biome CÓ phát tác (vd forest = mưa) hay tạnh
         private GameObject _hero;
         private CharacterRig _heroRig;
         private ArenaHealthBar _heroBar;
@@ -314,11 +311,11 @@ namespace Ezg.Feature.Gameplay.Battle
 
             for (int r = 0; r < maxRounds; r++)
             {
-                if (_randomWeather && r > 0) RollRandomWeather(); // random: đổi thời tiết mỗi round (r=0 đã roll ở ResolveWeather)
+                RollWeatherRound(); // biome cố định nhưng mỗi round random BẬT/TẮT hiệu ứng (forest: mưa hay tạnh)
 
                 // ===== ENEMY ROUND — hành động TRƯỚC =====
                 _combat.RunEnemyRound();
-                ApplyWeatherToEnemies(); // aura thời tiết: bỏng/tê cóng/hồi máu enemy mỗi enemy round
+                if (_weatherOnThisRound) ApplyWeatherToEnemies(); // chỉ áp aura ở round biome phát tác
                 await UniTask.Delay(TimeSpan.FromSeconds(_roundDelay), cancellationToken: ct);
                 await PlayEnemyAttacks(ct); // enemy vào tầm lao vào đánh TỪNG CON theo ưu tiên
 
@@ -361,7 +358,7 @@ namespace Ezg.Feature.Gameplay.Battle
             if (_ultCdLeft > 0) _ultCdLeft--;  // giảm cooldown ult mỗi round player
             _ultSelected = false;
             ApplyHeroRegen();                  // passive hồi máu mỗi round
-            ApplyWeatherToHero();              // aura thời tiết: nắng/lạnh/dung nham đốt hoặc mưa hồi máu hero
+            if (_weatherOnThisRound) ApplyWeatherToHero(); // aura biome (round phát tác): mưa hồi máu / nắng-lạnh-dung nham đốt hero
             if (_defeated) { IsPlayerRound = false; return; } // hero gục vì thời tiết → thoát để Run kết thúc trận
             if (_weaponVisual != null) _weaponVisual.ResetAim(); // reset trigger về vị trí ban đầu mỗi round
             EquipSlot(Mathf.Clamp(_lastUsedSlot, 0, Mathf.Max(0, SlotCount - 1))); // mặc định = vũ khí dùng ở round gần nhất
@@ -453,7 +450,7 @@ namespace Ezg.Feature.Gameplay.Battle
                         if (!t.IsAlive) continue; // đã chết (do đẩy lùi va chạm) → bỏ qua
 
                         await DashHeroTo(t.Cell, ct);
-                        float dmg = _weather.ScaleHeroDamage(wDamage * (1f + wCombo * combo)); // thời tiết: chỉnh damage hero
+                        float dmg = ScaleHeroDmg(wDamage * (1f + wCombo * combo)); // thời tiết: chỉnh damage hero
                         combo++;
                         t.TakeDamage(dmg, _combat.Occupancy);
                         if (t.IsAlive) _combat.ApplyKnockback(t, kb, w.collisionDamage);
@@ -485,7 +482,7 @@ namespace Ezg.Feature.Gameplay.Battle
                     int facing = _weaponVisual != null ? _weaponVisual.CurrentFacingSector() : 0;
                     int sectors = _arena.Config.SectorsPerRing;
                     int wl = ArenaUpgradeService.WeaponLevel(id);
-                    float dmg = _weather.ScaleHeroDamage(_weapons.DamageAt(id, wl)); // thời tiết: chỉnh damage bẫy
+                    float dmg = ScaleHeroDmg(_weapons.DamageAt(id, wl)); // thời tiết: chỉnh damage bẫy
                     var kb = _weapons.KnockbackSteps(id);
                     int rounds = _weapons.TrapRounds(id);
                     int maxHits = _weapons.TrapMaxHits(id);
@@ -591,7 +588,7 @@ namespace Ezg.Feature.Gameplay.Battle
             else
             {
                 bool shock = eff == ArenaSkillEffect.Shockwave;
-                float dmg = _weather.ScaleHeroDamage(atk * power); // thời tiết: chỉnh damage ult hero
+                float dmg = ScaleHeroDmg(atk * power); // thời tiết: chỉnh damage ult hero
                 var kb = new List<Vector2Int> { new Vector2Int(0, 1), new Vector2Int(0, 1) }; // đẩy ra 2 ô
                 var all = new List<ArenaEnemyUnit>(_combat.Enemies);
                 for (int i = 0; i < all.Count; i++)
@@ -877,51 +874,39 @@ namespace Ezg.Feature.Gameplay.Battle
         #region Weather (thời tiết map)
 
         /// <summary>
-        ///     Chọn thời tiết map: debug ép trước, không có thì theo stage. Giá trị <c>"random"</c> =
-        ///     đổi NGẪU NHIÊN mỗi round (roll từ pool biome, kèm xác suất trời quang). Dựng lớp phủ màu.
+        ///     Chọn BIOME CỐ ĐỊNH của map (debug ép trước, không có thì theo stage). Biome giữ nguyên suốt trận;
+        ///     mỗi round <see cref="RollWeatherRound" /> random BẬT/TẮT hiệu ứng (vd forest: round mưa / round tạnh).
         /// </summary>
         private void ResolveWeather(string stageWeatherId)
         {
             string id = !string.IsNullOrEmpty(_debugWeatherId) ? _debugWeatherId : stageWeatherId;
-            _randomWeather = !string.IsNullOrEmpty(id) &&
-                             string.Equals(id.Trim(), RandomWeatherKey, StringComparison.OrdinalIgnoreCase);
-
-            if (_randomWeather)
-            {
-                BuildWeatherPool();
-                RollRandomWeather(); // thời tiết round đầu
-                return;
-            }
-
             var model = _weathers != null && !string.IsNullOrEmpty(id) ? _weathers.GetById(id) : default;
             _weather = new ArenaWeather(model);
-            BuildWeatherOverlay();
-            if (_weather.Active) Debug.Log($"[Arena] Weather: {_weather.Name} ({_weather.Type})");
+            EnsureWeatherOverlay();     // dựng lớp phủ màu biome (ẩn) — bật/tắt theo round
+            ShowWeatherOverlay(false);
+            if (_weather.Active) Debug.Log($"[Arena] Biome: {_weather.Name} ({_weather.Type}), activeChance={_weather.ActiveChance}");
         }
 
-        /// <summary>Gom các biome khả dụng vào pool để roll random (bỏ entry rỗng id).</summary>
-        private void BuildWeatherPool()
+        /// <summary>
+        ///     Mỗi round: biome cố định nhưng random CÓ "phát tác" hay không (forest → round mưa / round tạnh).
+        ///     <see cref="ArenaWeather.ActiveChance" /> &lt;=0 = luôn phát tác; 0..1 = xác suất mỗi round.
+        /// </summary>
+        private void RollWeatherRound()
         {
-            _weatherPool = new List<WeatherModel>();
-            if (_weathers == null) return;
-            var all = _weathers.All;
-            for (int i = 0; i < all.Count; i++)
-                if (!string.IsNullOrEmpty(all[i].id)) _weatherPool.Add(all[i]);
+            if (!_weather.Active) { _weatherOnThisRound = false; ShowWeatherOverlay(false); return; }
+            float chance = _weather.ActiveChance;
+            _weatherOnThisRound = chance <= 0f || UnityEngine.Random.value < chance;
+            ShowWeatherOverlay(_weatherOnThisRound);
+            Debug.Log(_weatherOnThisRound
+                ? $"[Arena] {_weather.Name}: round CÓ hiệu ứng"
+                : $"[Arena] {_weather.Name}: round TẠNH");
         }
 
-        /// <summary>Roll 1 thời tiết ngẫu nhiên cho round (xác suất <see cref="WeatherClearChance" /> ra trời quang). Cập nhật aura + màu phủ.</summary>
-        private void RollRandomWeather()
-        {
-            WeatherModel picked = default; // default = trời quang (không thời tiết)
-            if (_weatherPool != null && _weatherPool.Count > 0 && UnityEngine.Random.value >= WeatherClearChance)
-                picked = _weatherPool[UnityEngine.Random.Range(0, _weatherPool.Count)];
+        /// <summary>Nhân damage đòn HERO theo biome — CHỈ khi round đang phát tác.</summary>
+        private float ScaleHeroDmg(float dmg) => _weatherOnThisRound ? dmg * _weather.HeroDamageMul : dmg;
 
-            _weather = new ArenaWeather(picked);
-            BuildWeatherOverlay();
-            Debug.Log(_weather.Active
-                ? $"[Arena] Weather(round): {_weather.Name} ({_weather.Type})"
-                : "[Arena] Weather(round): Troi quang");
-        }
+        /// <summary>Nhân damage đòn ENEMY (đánh hero) theo biome — CHỈ khi round đang phát tác.</summary>
+        private float ScaleEnemyDmg(float dmg) => _weatherOnThisRound ? dmg * _weather.EnemyDamageMul : dmg;
 
         /// <summary>Aura thời tiết lên hero mỗi PLAYER round: hồi (mưa) rồi mất máu môi trường (nắng/lạnh/dung nham).</summary>
         private void ApplyWeatherToHero()
@@ -971,35 +956,31 @@ namespace Ezg.Feature.Gameplay.Battle
         }
 
         /// <summary>
-        ///     Lớp sprite phủ màu môi trường theo thời tiết (nằm DƯỚI unit, TRÊN grid — chỉ tô nền nhẹ).
-        ///     TÁI DÙNG object: chỉ đổi màu mỗi round (random) thay vì huỷ/dựng lại; trời quang → ẩn.
+        ///     Dựng (1 LẦN) lớp sprite phủ màu biome — nằm DƯỚI unit, TRÊN grid (chỉ tô nền nhẹ).
+        ///     Màu cố định theo biome; bật/tắt theo round qua <see cref="ShowWeatherOverlay" />.
         /// </summary>
-        private void BuildWeatherOverlay()
+        private void EnsureWeatherOverlay()
         {
-            Color tint = default;
-            bool hasTint = _arena != null && _weather.TryGetTint(out tint);
-            if (!hasTint)
-            {
-                if (_weatherOverlay != null) _weatherOverlay.SetActive(false);
-                return;
-            }
+            if (_weatherOverlay != null || _arena == null) return;
+            if (!_weather.TryGetTint(out var tint)) return;
 
-            if (_weatherOverlay == null)
-            {
-                var go = new GameObject("WeatherOverlay");
-                go.transform.SetParent(_arena.transform, false);
-                Vector3 c = _arena.CenterWorld;
-                go.transform.position = new Vector3(c.x, c.y, c.z + 0.1f); // hơi sau mặt phẳng chơi
-                var srNew = go.AddComponent<SpriteRenderer>();
-                srNew.sprite = WeatherOverlaySprite();
-                srNew.sortingOrder = -5; // grid = -10 → phủ trên nền lưới nhưng dưới unit (>=0)
-                float d = _arena.Config.OuterRadius * 2.4f;
-                go.transform.localScale = new Vector3(d, d, 1f);
-                _weatherOverlay = go;
-            }
+            var go = new GameObject("WeatherOverlay");
+            go.transform.SetParent(_arena.transform, false);
+            Vector3 c = _arena.CenterWorld;
+            go.transform.position = new Vector3(c.x, c.y, c.z + 0.1f); // hơi sau mặt phẳng chơi
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = WeatherOverlaySprite();
+            sr.color = tint;
+            sr.sortingOrder = -5; // grid = -10 → phủ trên nền lưới nhưng dưới unit (>=0)
+            float d = _arena.Config.OuterRadius * 2.4f;
+            go.transform.localScale = new Vector3(d, d, 1f);
+            _weatherOverlay = go;
+        }
 
-            _weatherOverlay.SetActive(true);
-            _weatherOverlay.GetComponent<SpriteRenderer>().color = tint;
+        /// <summary>Bật/tắt lớp phủ biome (round phát tác → hiện màu; round tạnh → ẩn).</summary>
+        private void ShowWeatherOverlay(bool on)
+        {
+            if (_weatherOverlay != null) _weatherOverlay.SetActive(on);
         }
 
         private static Sprite _overlaySprite;
@@ -1050,7 +1031,7 @@ namespace Ezg.Feature.Gameplay.Battle
         {
             if (_heroMaxHp <= 0f) return;
             dmg = Mathf.Max(0f, dmg) * (1f - Mathf.Clamp01(_heroDmgReduce)); // passive giảm damage
-            dmg = _weather.ScaleEnemyDamage(dmg);                            // thời tiết: chỉnh damage đòn enemy
+            dmg = ScaleEnemyDmg(dmg);                                        // thời tiết (round phát tác): chỉnh damage đòn enemy
             _heroHp = Mathf.Max(0f, _heroHp - dmg);
             if (_heroBar != null) _heroBar.SetRatio(_heroHp / _heroMaxHp);
             if (_heroHp <= 0f)

@@ -34,6 +34,9 @@ namespace Ezg.Feature.Gameplay.Battle
         public float heroDmgMul;   // nhân damage đòn HERO (vd 1.2 = +20%, 0.9 = -10%)
         public float enemyDmgMul;  // nhân damage đòn ENEMY đánh hero
 
+        public float activeChance; // xác suất MỖI ROUND biome "phát tác" (vd forest: mưa). 0..1. <=0 = luôn bật.
+                                   // Round bật → áp DoT/regen/hệ số damage + phủ màu; round tắt → tạnh (không hiệu ứng).
+
         public string tint;        // màu phủ môi trường "#RRGGBBAA" (view). Rỗng = không phủ.
     }
 }

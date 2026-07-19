@@ -1,8 +1,9 @@
 # Thoi tiet (biome) cua map arena. type: 1=Forest(mua) 2=Desert(nong) 3=Volcano(macma) 4=Snow(tuyet)
-# heroDotPct/heroRegenPct = % maxHp hero mat/hoi moi PLAYER round. enemyDotPct/enemyRegenPct = % maxHp enemy moi ENEMY round.
-# heroDmgMul/enemyDmgMul = he so nhan damage don hero / don enemy danh hero (<=0 = 1). tint = mau phu moi truong #RRGGBBAA.
-id,name,type,heroDotPct,heroRegenPct,enemyDotPct,enemyRegenPct,heroDmgMul,enemyDmgMul,tint
-w_forest,Rung Mua,1,0,0,0,0.03,0.9,0.9,#3C785030
-w_desert,Sa Mac Nong,2,0.03,0,0,0,1,1.15,#E6C86E2E
-w_volcano,Nui Lua,3,0.04,0,0.06,0,1.2,1.1,#DC50283A
-w_snow,Tuyet Lanh,4,0.02,0,0.03,0,1,0.8,#B4D7EB33
+# heroDotPct/heroRegenPct = % maxHp hero moi PLAYER round. enemyDotPct/enemyRegenPct = % maxHp enemy moi ENEMY round.
+# heroDmgMul/enemyDmgMul = he so nhan damage don hero / don enemy (<=0 = 1).
+# activeChance = xac suat MOI ROUND biome phat tac (vd forest: mua). 0..1. <=0 = luon bat. tint = mau phu #RRGGBBAA.
+id,name,type,heroDotPct,heroRegenPct,enemyDotPct,enemyRegenPct,heroDmgMul,enemyDmgMul,activeChance,tint
+w_forest,Rung Mua,1,0,0,0,0.03,0.9,0.9,0.6,#3C785030
+w_desert,Sa Mac Nong,2,0.03,0,0,0,1,1.15,0.6,#E6C86E2E
+w_volcano,Nui Lua,3,0.04,0,0.06,0,1.2,1.1,0.65,#DC50283A
+w_snow,Tuyet Lanh,4,0.02,0,0.03,0,1,0.8,0.6,#B4D7EB33
