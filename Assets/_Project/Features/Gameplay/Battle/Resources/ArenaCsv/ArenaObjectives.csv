@@ -1,0 +1,8 @@
+# Nhiem vu sao (group=Star) + bonus (group=Bonus)
+# amount: HpRemaining=% mau con lai, BeforeRound=round. killSpec cho KillSet dang "id:count|id:count"
+stageId,group,type,amount,killSpec
+arena_1_1,Star,HpRemaining,100,
+arena_1_1,Star,BeforeRound,12,
+arena_1_1,Star,KillSet,0,11001:2|11002:3
+arena_1_1,Bonus,BeforeRound,8,
+arena_1_1,Bonus,KillSet,0,11003:2

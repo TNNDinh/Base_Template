@@ -1,0 +1,11 @@
+# Vu khi hero. triggerShape = tap o nham "x y" (x=ngang so voi huong nham, y=tien ra 1..range)
+# knockback = cac buoc day lui "x y". comboBonus=cong don moi lan chuyen enemy. collisionDamage=dmg khi tong enemy khac
+# maxLevel/damagePerLevel/comboBonusPerLevel/upgradeCostBase = config nang cap (upgradeCost = base * level hien tai)
+# weaponType: 0=Normal, 1=Trap. trapRounds=so round bay ton tai. trapMaxHits=so lan trung enemy thi bay mat.
+id,name,rarity,damage,triggerShape,knockback,comboBonus,collisionDamage,modelKey,maxLevel,damagePerLevel,comboBonusPerLevel,upgradeCostBase,weaponType,trapRounds,trapMaxHits
+wp_wood_sword,Kiem Go,1,20,-1 1;0 1;1 1;-1 2;0 2;1 2;-1 3;0 3;1 3,0 1,0.2,10,41000,10,4,0.02,80,0,0,0
+wp_scythe,Liem,2,26,0 1;0 2;-1 3;0 3;1 3,0 1,0.25,12,41001,10,5,0.02,100,0,0,0
+wp_hammer,Bua,3,40,-1 1;0 1;1 1;-1 2;0 2;1 2,0 2,0.15,20,41002,10,8,0.015,140,0,0,0
+wp_spear,Thuong,2,30,0 1;0 2;0 3;0 4,0 2,0.15,15,41003,10,6,0.015,110,0,0,0
+wp_arrow,arrow,1,10,-11 4;-1 4;0 4;1 4;11 4;12 4,0 1,0.2,10,,10,2,0.02,60,0,0,0
+wp_trap,Bay Gai,2,25,-1 2;0 2;1 2;0 3,0 1,0,15,,10,5,0,120,1,3,2

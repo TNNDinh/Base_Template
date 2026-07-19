@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: EnemyStatCollection
+  m_EditorClassIdentifier: Ezg.Features:Ezg.Feature.Gameplay.Battle:EnemyStatCollection
+  dataGroup:
+  - id: 11001
+    name: Kiem Si
+    hp: 50
+    atk: 8
+    def: 2
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: 
+    hpPerLevel: 8
+    atkPerLevel: 1
+    defPerLevel: 0.4
+  - id: 11002
+    name: Soi
+    hp: 70
+    atk: 10
+    def: 3
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 4
+    attackType: 2
+    skills: sk_enemy_nuke
+    hpPerLevel: 10
+    atkPerLevel: 1.2
+    defPerLevel: 0.5
+  - id: 11003
+    name: Slime
+    hp: 120
+    atk: 14
+    def: 5
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 4
+    attackType: 1
+    skills: sk_enemy_heal
+    hpPerLevel: 16
+    atkPerLevel: 1.6
+    defPerLevel: 0.8
+  - id: 11004
+    name: Xe Goong
+    hp: 90
+    atk: 12
+    def: 4
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 5
+    attackType: 2
+    skills: 
+    hpPerLevel: 12
+    atkPerLevel: 1.4
+    defPerLevel: 0.6
+  - id: 11005
+    name: De
+    hp: 80
+    atk: 11
+    def: 4
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 4
+    attackType: 1
+    skills: 
+    hpPerLevel: 11
+    atkPerLevel: 1.3
+    defPerLevel: 0.6
+  - id: 11007
+    name: Voi
+    hp: 160
+    atk: 16
+    def: 7
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 4
+    attackType: 2
+    skills: sk_enemy_heal;sk_pas_hp_1;sk_pas_def_1
+    hpPerLevel: 20
+    atkPerLevel: 1.8
+    defPerLevel: 1
+  - id: 11008
+    name: Ky Binh
+    hp: 100
+    atk: 13
+    def: 5
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 3
+    attackType: 3
+    skills: 
+    hpPerLevel: 13
+    atkPerLevel: 1.5
+    defPerLevel: 0.7
+  - id: 11009
+    name: Luc Si
+    hp: 110
+    atk: 15
+    def: 4
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: 
+    hpPerLevel: 14
+    atkPerLevel: 1.6
+    defPerLevel: 0.6
+  - id: 11010
+    name: Ky Si Giap
+    hp: 130
+    atk: 14
+    def: 8
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: sk_pas_def_1
+    hpPerLevel: 16
+    atkPerLevel: 1.5
+    defPerLevel: 1.1
+  - id: 11011
+    name: Viking Chuy
+    hp: 140
+    atk: 17
+    def: 6
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 4
+    attackType: 1
+    skills: 
+    hpPerLevel: 18
+    atkPerLevel: 1.9
+    defPerLevel: 0.9
+  - id: 11012
+    name: Slime Chua
+    hp: 200
+    atk: 12
+    def: 6
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: sk_split_slime
+    hpPerLevel: 24
+    atkPerLevel: 1.5
+    defPerLevel: 1

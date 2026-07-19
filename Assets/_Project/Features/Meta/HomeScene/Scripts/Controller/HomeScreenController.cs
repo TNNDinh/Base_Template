@@ -40,7 +40,8 @@ namespace Ezg.Feature.Meta.HomeScene
         public void OpenScreenGame()
         {
             EventManager.EmitEvent(EventName.ClickButtonPlay);
-            // removed: Utils.OpenScreenGamePlay (gameplay removed)
+            // Vào luồng arena: Home → PreBattle → CHỌN MÀN (ArenaStageSelect) → BattleScene.
+            UIManager.Instance.Show(GameEnums.Features.PreBattle, isAsync: true).Forget();
         }
 
         private void OpenView()

@@ -2195,7 +2195,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3201519131244841045
 CanvasRenderer:
@@ -2483,7 +2483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1973982972008671345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7361,7 +7361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2916428717737624031, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
       propertyPath: m_Text
-      value: PLAY
+      value: "V\xC0O TR\u1EACN"
       objectReference: {fileID: 0}
     - target: {fileID: 3524909044250338138, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
       propertyPath: m_EffectColor.b
@@ -7551,10 +7551,18 @@ PrefabInstance:
       propertyPath: Key
       value: play
       objectReference: {fileID: 0}
+    - target: {fileID: 7640270114779888372, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7924988507959515636, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7990168886208579052, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e00385c6ac9200d4cabf5ba5078b38cb, type: 3}
     - target: {fileID: 7999389337717263417, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
       propertyPath: m_Name
       value: button_play
@@ -7566,7 +7574,7 @@ PrefabInstance:
     - target: {fileID: 8121079311545610319, guid: ea44a7345a561ec459152fe0d60b9c70, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 15a45bfd28100234aa8485a7f66090dd, type: 3}
+      objectReference: {fileID: 21300000, guid: 1bab86a720cda7d4ea839a0cd30ff9b2, type: 3}
     - target: {fileID: 1205542943256418176, guid: b07da52589c68ca4eb5469940ab8e8a6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 369

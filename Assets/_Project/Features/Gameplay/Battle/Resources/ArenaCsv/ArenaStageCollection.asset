@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434f42cf974caac4f973275f8f739404, type: 3}
+  m_Name: ArenaStageCollection
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.ArenaStageCollection
+  dataGroup:
+  - id: arena_1_1
+    name: 1-1 Ngau Nhien
+    maxRounds: 15
+    weather: random
+  - id: arena_1_2
+    name: 1-2 Nui Lua
+    maxRounds: 15
+    weather: w_volcano
+  - id: arena_1_3
+    name: 1-3 Tuyet Lanh
+    maxRounds: 15
+    weather: w_snow

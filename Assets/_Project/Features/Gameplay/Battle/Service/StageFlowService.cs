@@ -35,7 +35,9 @@ namespace Ezg.Feature.Gameplay.Battle
                 return false;
             }
 
-            BattleLaunch.PendingStageId = stageId;
+            // Vào ARENA (micro-RPG) trong BattleScene. Map stage menu → arena stage theo chapter_index
+            // (vd stage_1_1 → arena_1_1). ArenaSceneController đọc ArenaLaunch.PendingStageId lúc Start.
+            ArenaLaunch.PendingStageId = $"arena_{stage.chapter}_{stage.index}";
             GameSystems.ChangeScene(GameEnums.Scenes.BattleScene);
             return true;
         }

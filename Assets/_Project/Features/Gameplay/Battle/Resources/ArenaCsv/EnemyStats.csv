@@ -1,0 +1,15 @@
+# Stat goc + growth/level cua enemy arena. id = id prefab (11xxx). critRate 0..1, critDmg he so (1.5=+50%)
+# attackType: 0=Melee(gan), 1=Ranged(xa dung yen ban hero), 2=Charge(lao vao bo huc), 3=Blink(dich chuyen)
+# attackRange = so ring vao tam thi bat dau chuan bi danh (ranged/charge/blink de lon de danh tu xa)
+# Stat hieu dung = (base + perLevel*(level-1)) * mul (mul o ArenaSpawns.csv)
+id,name,hp,atk,def,spd,critRate,critDmg,attackRange,attackType,hpPerLevel,atkPerLevel,defPerLevel
+11001,Kiem Si,50,8,2,1,0.05,1.5,1,0,8,1,0.4
+11002,Soi,70,10,3,1,0.05,1.5,4,2,10,1.2,0.5
+11003,Slime,120,14,5,1,0.05,1.5,4,1,16,1.6,0.8
+11004,Xe Goong,90,12,4,1,0.05,1.5,5,2,12,1.4,0.6
+11005,De,80,11,4,1,0.05,1.5,4,1,11,1.3,0.6
+11007,Voi,160,16,7,1,0.05,1.5,4,2,20,1.8,1
+11008,Ky Binh,100,13,5,1,0.05,1.5,3,3,13,1.5,0.7
+11009,Luc Si,110,15,4,1,0.05,1.5,1,0,14,1.6,0.6
+11010,Ky Si Giap,130,14,8,1,0.05,1.5,1,0,16,1.5,1.1
+11011,Viking Chuy,140,17,6,1,0.05,1.5,4,1,18,1.9,0.9

@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c5bfd5f06a23f48a0a1530835ec2ef, type: 3}
+  m_Name: HeroUnlockCollection
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.HeroUnlockCollection
+  dataGroup:
+  - heroId: 44000
+    method: 0
+    reqLevel: 0
+    cost: 0
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 0
+  - heroId: 44001
+    method: 4
+    reqLevel: 0
+    cost: 0
+    iapProduct: 
+    reqStage: arena_1_1
+    gachaWeight: 0
+  - heroId: 44003
+    method: 2
+    reqLevel: 0
+    cost: 500
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 0
+  - heroId: 44004
+    method: 1
+    reqLevel: 3
+    cost: 0
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 0
+  - heroId: 44005
+    method: 2
+    reqLevel: 0
+    cost: 700
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 0
+  - heroId: 44006
+    method: 5
+    reqLevel: 0
+    cost: 0
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 30
+  - heroId: 44008
+    method: 5
+    reqLevel: 0
+    cost: 0
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 20
+  - heroId: 44010
+    method: 1
+    reqLevel: 5
+    cost: 0
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 0
+  - heroId: 44011
+    method: 3
+    reqLevel: 0
+    cost: 0
+    iapProduct: hero_meo
+    reqStage: 
+    gachaWeight: 0
+  - heroId: 44013
+    method: 5
+    reqLevel: 0
+    cost: 0
+    iapProduct: 
+    reqStage: 
+    gachaWeight: 10

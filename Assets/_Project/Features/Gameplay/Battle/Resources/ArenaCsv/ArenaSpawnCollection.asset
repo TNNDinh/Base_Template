@@ -1,0 +1,255 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: ArenaSpawnCollection
+  m_EditorClassIdentifier: Ezg.Features:Ezg.Feature.Gameplay.Battle:ArenaSpawnCollection
+  dataGroup:
+  - stageId: arena_1_1
+    round: 1
+    enemyId: 11001
+    ring: 5
+    sector: 0
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 1
+    enemyId: 11001
+    ring: 5
+    sector: 6
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 2
+    enemyId: 11002
+    ring: 5
+    sector: 3
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 2
+    enemyId: 11002
+    ring: 5
+    sector: 6
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 2
+    enemyId: 11002
+    ring: 5
+    sector: 9
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 3
+    enemyId: 11003
+    ring: 5
+    sector: 0
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 3
+    enemyId: 11003
+    ring: 5
+    sector: 6
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_1
+    round: 1
+    enemyId: 11008
+    ring: 5
+    sector: 12
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_2
+    round: 1
+    enemyId: 11001
+    ring: 5
+    sector: 0
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_2
+    round: 1
+    enemyId: 11001
+    ring: 5
+    sector: 6
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_2
+    round: 2
+    enemyId: 11002
+    ring: 5
+    sector: 3
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_2
+    round: 2
+    enemyId: 11002
+    ring: 5
+    sector: 9
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_2
+    round: 3
+    enemyId: 11008
+    ring: 5
+    sector: 0
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_2
+    round: 3
+    enemyId: 11008
+    ring: 5
+    sector: 12
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_3
+    round: 1
+    enemyId: 11001
+    ring: 5
+    sector: 0
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_3
+    round: 1
+    enemyId: 11002
+    ring: 5
+    sector: 6
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_3
+    round: 2
+    enemyId: 11003
+    ring: 5
+    sector: 3
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_3
+    round: 2
+    enemyId: 11008
+    ring: 5
+    sector: 9
+    count: 1
+    patternId: approach_straight
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_3
+    round: 3
+    enemyId: 11002
+    ring: 5
+    sector: 0
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1
+  - stageId: arena_1_3
+    round: 3
+    enemyId: 11002
+    ring: 5
+    sector: 12
+    count: 1
+    patternId: approach_zigzag
+    wanderPatternId: wander_circle
+    level: 1
+    hpMul: 1
+    atkMul: 1
+    defMul: 1

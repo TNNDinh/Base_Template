@@ -29,6 +29,8 @@ namespace Ezg.Feature.Shared.GameData
 
         private static PlayerRating _playerRating;
 
+        private static PlayerArenaProgress _arenaProgress;
+
         public static PlayerAccount Account
         {
             get { return _account ??= DataPlayer.GetModule<PlayerAccount>(); }
@@ -110,6 +112,13 @@ namespace Ezg.Feature.Shared.GameData
                 return _playerRating;
             }
             set => _playerRating = value;
+        }
+
+        /// <summary>Tiến trình nâng cấp arena: cấp vũ khí + gold nâng cấp (persist).</summary>
+        public static PlayerArenaProgress ArenaProgress
+        {
+            get { return _arenaProgress ??= DataPlayer.GetModule<PlayerArenaProgress>(); }
+            set => _arenaProgress = value;
         }
 
         public static void ClearCachedModules()

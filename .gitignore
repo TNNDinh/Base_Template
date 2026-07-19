@@ -95,3 +95,7 @@ Assets/Plugins/Infinity Code/Ultimate Editor Enhancer Settings/SceneHistory.asse
 # macOS Finder metadata
 .DS_Store
 **/.DS_Store
+
+# Test screenshots (Claude Code MCP captures)
+Assets/Screenshots/
+Assets/Screenshots.meta

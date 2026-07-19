@@ -1,0 +1,27 @@
+# Skill arena TU DINH NGHIA: trigger (khi nao) + effect (lam gi). Unit chi giu list skill id.
+# trigger: 0=Active(ult tay), 1=Passive, 2=OnDeath, 3=OnMove, 4=OnDamaged, 5=OnLowHp, 6=EveryNRounds
+# effect: 0=Nuke, 1=Shockwave, 2=Heal, 3=Spawn, 4=StatBuff(passive)
+# statType(StatBuff): 0=AtkPct,1=RegenPct,2=DmgReducePct,3=MaxHpPct
+# power: Nuke/Shockwave=he so atk; Heal=% mau; StatBuff=do manh. cooldown=round. param: OnLowHp=% mau, EveryNRounds=N
+# spawnId/spawnCount: cho effect Spawn (vd slime tach)
+id,name,trigger,effect,statType,power,cooldown,param,spawnId,spawnCount,nextSkillId,upgradeCost
+sk_nuke_1,Sao Bang I,0,0,0,3,3,0,,0,sk_nuke_2,150
+sk_nuke_2,Sao Bang II,0,0,0,4.5,3,0,,0,sk_nuke_3,300
+sk_nuke_3,Sao Bang III,0,0,0,6,3,0,,0,,0
+sk_shock_1,Chan Dong I,0,1,0,1.5,2,0,,0,sk_shock_2,150
+sk_shock_2,Chan Dong II,0,1,0,2.5,2,0,,0,sk_shock_3,300
+sk_shock_3,Chan Dong III,0,1,0,3.5,2,0,,0,,0
+sk_heal_1,Hoi Phuc I,0,2,0,0.4,4,0,,0,sk_heal_2,150
+sk_heal_2,Hoi Phuc II,0,2,0,0.6,4,0,,0,sk_heal_3,300
+sk_heal_3,Hoi Phuc III,0,2,0,0.8,4,0,,0,,0
+sk_pas_atk_1,Manh Me I,1,4,0,0.15,0,0,,0,sk_pas_atk_2,120
+sk_pas_atk_2,Manh Me II,1,4,0,0.3,0,0,,0,,0
+sk_pas_regen_1,Hoi Sinh I,1,4,1,0.05,0,0,,0,sk_pas_regen_2,120
+sk_pas_regen_2,Hoi Sinh II,1,4,1,0.1,0,0,,0,,0
+sk_pas_def_1,Giap I,1,4,2,0.12,0,0,,0,sk_pas_def_2,120
+sk_pas_def_2,Giap II,1,4,2,0.22,0,0,,0,,0
+sk_pas_hp_1,Trau I,1,4,3,0.2,0,0,,0,sk_pas_hp_2,120
+sk_pas_hp_2,Trau II,1,4,3,0.4,0,0,,0,,0
+sk_split_slime,Tach Slime,2,3,0,0,0,0,11003,3,,0
+sk_enemy_nuke,No Luc,6,0,0,3,3,3,,0,,0
+sk_enemy_heal,Tu Hoi,5,2,0,0.3,3,0.5,,0,,0

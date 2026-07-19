@@ -36,27 +36,9 @@ namespace Ezg.Feature.Meta.HomeScene
         {
             if (PlayerResource.IsEnough(EnumBase.MoneyTypes.Energy, 1))
             {
-                vfxHeartRemove.SetActive(true);
-                this.DelayMethod(1f, () =>
-                {
-                    // PlayerResource.RemoveCurrency(EnumBase.MoneyTypes.Energy,
-                    //     // PlayerResource.IsInfinityEnergy() ? 0 : DataManager.GeneralConfig.GetData().energyPerStage,
-                    //     0,
-                    //     () =>
-                    //     {
-                    //         //BattleManager.SetMode(EnumBase.BattleModes.Campaign);
-                    //         //PlayerDataManager.BattleData.ResetDataCached();
-                    //         AudioService.Default.StopMusic();
-                    //         GameSystems.ChangeScene(GameEnums.Scenes.BattleScene);
-                    //         PlayerDataManager.PlayerResource.Save();
-                    //     }, unSuccess: () =>
-                    //     {
-                    //         UIManager.Instance.Show(GameEnums.Features.HeartRefill).Forget();
-                    //     });
-                    AudioService.Default.StopMusic();
-                    GameSystems.ChangeScene(GameEnums.Scenes.BattleScene);
-                    PlayerDataManager.PlayerResource.Save();
-                });
+                // Mở màn CHỌN MÀN (arena stage-select); chọn map (nút CHƠI trong đó) mới vào BattleScene.
+                // (Việc dừng nhạc + đổi scene chuyển sang ArenaStageSelectController.EnterStage.)
+                UIManager.Instance.Show(GameEnums.Features.ArenaStageSelect).Forget();
             }
             else
             {

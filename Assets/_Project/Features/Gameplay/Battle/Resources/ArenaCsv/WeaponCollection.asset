@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: WeaponCollection
+  m_EditorClassIdentifier: Ezg.Features:Ezg.Feature.Gameplay.Battle:WeaponCollection
+  dataGroup:
+  - id: wp_wood_sword
+    name: Kiem Go
+    rarity: 1
+    damage: 20
+    triggerShape: -1 1;0 1;1 1;-1 2;0 2;1 2;-1 3;0 3;1 3
+    knockback: 0 1
+    comboBonus: 0.2
+    collisionDamage: 10
+    modelKey: 41000
+    maxLevel: 10
+    damagePerLevel: 4
+    comboBonusPerLevel: 0.02
+    upgradeCostBase: 80
+    weaponType: 0
+    trapRounds: 0
+    trapMaxHits: 0
+  - id: wp_scythe
+    name: Liem
+    rarity: 2
+    damage: 26
+    triggerShape: 0 1;0 2;-1 3;0 3;1 3
+    knockback: 0 1
+    comboBonus: 0.25
+    collisionDamage: 12
+    modelKey: 41001
+    maxLevel: 10
+    damagePerLevel: 5
+    comboBonusPerLevel: 0.02
+    upgradeCostBase: 100
+    weaponType: 0
+    trapRounds: 0
+    trapMaxHits: 0
+  - id: wp_hammer
+    name: Bua
+    rarity: 3
+    damage: 40
+    triggerShape: -1 1;0 1;1 1;-1 2;0 2;1 2
+    knockback: 0 2
+    comboBonus: 0.15
+    collisionDamage: 20
+    modelKey: 41002
+    maxLevel: 10
+    damagePerLevel: 8
+    comboBonusPerLevel: 0.015
+    upgradeCostBase: 140
+    weaponType: 0
+    trapRounds: 0
+    trapMaxHits: 0
+  - id: wp_spear
+    name: Thuong
+    rarity: 2
+    damage: 30
+    triggerShape: 0 1;0 2;0 3;0 4
+    knockback: 0 2
+    comboBonus: 0.15
+    collisionDamage: 15
+    modelKey: 41003
+    maxLevel: 10
+    damagePerLevel: 6
+    comboBonusPerLevel: 0.015
+    upgradeCostBase: 110
+    weaponType: 0
+    trapRounds: 0
+    trapMaxHits: 0
+  - id: wp_arrow
+    name: arrow
+    rarity: 1
+    damage: 10
+    triggerShape: -11 4;-1 4;0 4;1 4;11 4;12 4
+    knockback: 0 1
+    comboBonus: 0.2
+    collisionDamage: 10
+    modelKey: 
+    maxLevel: 10
+    damagePerLevel: 2
+    comboBonusPerLevel: 0.02
+    upgradeCostBase: 60
+    weaponType: 0
+    trapRounds: 0
+    trapMaxHits: 0
+  - id: wp_trap
+    name: Bay Gai
+    rarity: 2
+    damage: 25
+    triggerShape: -1 2;0 2;1 2;0 3
+    knockback: 0 1
+    comboBonus: 0
+    collisionDamage: 15
+    modelKey: 
+    maxLevel: 10
+    damagePerLevel: 5
+    comboBonusPerLevel: 0
+    upgradeCostBase: 120
+    weaponType: 1
+    trapRounds: 3
+    trapMaxHits: 2

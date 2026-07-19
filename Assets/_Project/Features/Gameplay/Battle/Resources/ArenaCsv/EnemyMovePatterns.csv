@@ -1,0 +1,8 @@
+# Pattern di chuyen. loop = toi cuoi chuoi thi lap lai.
+# steps: 1 buoc = "x y" (x: +phai/CW, -trai/CCW ; y: +ra ngoai, -vao tam)
+#        ';' ngan buoc trong 1 nhanh ; '|' ngan nhieu NHANH (bi chan thi de quy sang nhanh sau)
+# vd ky hieu [1 0, 1 0, 0 -1],[1 0, 0 -1]  ->  steps = 1 0;1 0;0 -1|1 0;0 -1
+id,name,loop,steps
+approach_straight,Tien thang vao tam,true,0 -1|1 0;0 -1|-1 0;0 -1
+approach_zigzag,Vao 2 o roi ngang 1 o,true,0 -1;0 -1;1 0|0 -1;1 0
+wander_circle,Di vong quanh tam,true,0 1;1 0;1 0;1 0;1 0;0 -1

@@ -1,0 +1,6 @@
+# id,name,maxRounds,weather
+# weather = id tro toi Weather.csv (vd w_volcano) | "random" = doi thoi tiet ngau nhien moi round | rong = khong co
+id,name,maxRounds,weather
+arena_1_1,1-1 Ngau Nhien,15,random
+arena_1_2,1-2 Nui Lua,15,w_volcano
+arena_1_3,1-3 Tuyet Lanh,15,w_snow

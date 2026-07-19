@@ -1,0 +1,5 @@
+# Mang resource rewards. source: Clear (khi thang stage) | Bonus (khi dat nhiem vu bonus)
+stageId,source,resourceId,amount
+arena_1_1,Clear,gold,100
+arena_1_1,Clear,gem,5
+arena_1_1,Bonus,gem,10

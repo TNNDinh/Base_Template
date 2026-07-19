@@ -52,6 +52,9 @@ public class GameEnums
         AvatarSelect = 31,
         LostStreak = 32,
 
+        ArenaLoadout = 91, // Arena micro-RPG: chọn hero + vũ khí + mở khóa (screen_arena_loadout)
+        ArenaStageSelect = 92, // Arena micro-RPG: chọn stage/map (screen_arena_stage_select)
+
         [BundleName("features__require_internet")]
         RequireInternet = 33,
         [BundleName("packages__piggy_bank")] PiggyBankIngame = 34,

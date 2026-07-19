@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ec5b09216a60145a28f2c4e707047b, type: 3}
+  m_Name: HeroStatCollection
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.HeroStatCollection
+  dataGroup:
+  - id: 44000
+    name: Capy Vua
+    hp: 300
+    atk: 25
+    def: 12
+    spd: 1
+    critRate: 0.1
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: sk_nuke_1;sk_pas_atk_1
+    hpPerLevel: 30
+    atkPerLevel: 3
+    defPerLevel: 1.5
+  - id: 44001
+    name: Capy Trau
+    hp: 420
+    atk: 20
+    def: 18
+    spd: 1
+    critRate: 0.05
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: sk_shock_1;sk_pas_hp_1;sk_pas_def_1
+    hpPerLevel: 45
+    atkPerLevel: 2.5
+    defPerLevel: 2
+  - id: 44003
+    name: Vit Phap Su
+    hp: 220
+    atk: 32
+    def: 6
+    spd: 1
+    critRate: 0.12
+    critDmg: 1.6
+    attackRange: 3
+    attackType: 0
+    skills: sk_nuke_1;sk_pas_atk_1
+    hpPerLevel: 20
+    atkPerLevel: 4
+    defPerLevel: 1
+  - id: 44004
+    name: Tho Kiem
+    hp: 260
+    atk: 28
+    def: 8
+    spd: 1
+    critRate: 0.15
+    critDmg: 1.6
+    attackRange: 1
+    attackType: 0
+    skills: sk_heal_1;sk_pas_regen_1
+    hpPerLevel: 24
+    atkPerLevel: 3.5
+    defPerLevel: 1.2
+  - id: 44005
+    name: Khi Ma
+    hp: 240
+    atk: 30
+    def: 7
+    spd: 1
+    critRate: 0.12
+    critDmg: 1.6
+    attackRange: 2
+    attackType: 0
+    skills: sk_nuke_1
+    hpPerLevel: 22
+    atkPerLevel: 3.8
+    defPerLevel: 1
+  - id: 44006
+    name: Quy Hong
+    hp: 280
+    atk: 27
+    def: 10
+    spd: 1
+    critRate: 0.1
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: sk_shock_1;sk_pas_regen_1
+    hpPerLevel: 26
+    atkPerLevel: 3.2
+    defPerLevel: 1.4
+  - id: 44008
+    name: Quy Lua
+    hp: 320
+    atk: 33
+    def: 9
+    spd: 1
+    critRate: 0.13
+    critDmg: 1.7
+    attackRange: 1
+    attackType: 0
+    skills: sk_nuke_1;sk_pas_atk_1
+    hpPerLevel: 28
+    atkPerLevel: 4.2
+    defPerLevel: 1.2
+  - id: 44010
+    name: Doi Ma
+    hp: 250
+    atk: 29
+    def: 8
+    spd: 1
+    critRate: 0.14
+    critDmg: 1.6
+    attackRange: 2
+    attackType: 0
+    skills: sk_shock_1
+    hpPerLevel: 23
+    atkPerLevel: 3.6
+    defPerLevel: 1.1
+  - id: 44011
+    name: Meo Chien
+    hp: 270
+    atk: 26
+    def: 11
+    spd: 1
+    critRate: 0.1
+    critDmg: 1.5
+    attackRange: 1
+    attackType: 0
+    skills: sk_heal_1;sk_pas_hp_1
+    hpPerLevel: 25
+    atkPerLevel: 3.1
+    defPerLevel: 1.5
+  - id: 44013
+    name: Ngo Khong
+    hp: 340
+    atk: 35
+    def: 10
+    spd: 1
+    critRate: 0.15
+    critDmg: 1.7
+    attackRange: 1
+    attackType: 0
+    skills: sk_nuke_1;sk_pas_atk_1
+    hpPerLevel: 30
+    atkPerLevel: 4.5
+    defPerLevel: 1.3

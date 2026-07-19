@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2db90aa92342404db39a409d796572f, type: 3}
+  m_Name: ArenaPrefabRegistry
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.ArenaPrefabRegistry
+  heroes:
+  - id: 44000
+    prefab: {fileID: 2932255904537678873, guid: a9f4ac062c4af824d81aa7aca1609912, type: 3}
+  - id: 44001
+    prefab: {fileID: 7976200380111668737, guid: dd3a36622b1b7bd4fb1e0a0261733ba4, type: 3}
+  - id: 44003
+    prefab: {fileID: 7650238453814956313, guid: 50ebbc0a8b750394a8cbbea8053c91e7, type: 3}
+  - id: 44004
+    prefab: {fileID: 6414551229337789719, guid: fe0c05da0c17bc242a5175524eb62761, type: 3}
+  - id: 44005
+    prefab: {fileID: 7125145730703093702, guid: f8250ac2e31b6f04c985131fa4c31ed2, type: 3}
+  - id: 44006
+    prefab: {fileID: 6054416373478529410, guid: dccc5aca1a1c03d40939ed54e285c6a4, type: 3}
+  - id: 44008
+    prefab: {fileID: 5004526627076868604, guid: 89fcab038d720a54c953d5b9da0bff33, type: 3}
+  - id: 44010
+    prefab: {fileID: 5644607838956815731, guid: 2c04a13782e91ce45821c6e1c60874f2, type: 3}
+  - id: 44011
+    prefab: {fileID: 8774822735788650122, guid: 706ec8266bbdc394586c92ccf71a36e6, type: 3}
+  - id: 44013
+    prefab: {fileID: 360505942533128106, guid: dc595776ab01a454a90bfe9c48e60229, type: 3}
+  enemies:
+  - id: 11001
+    prefab: {fileID: 4057060113196089135, guid: 389b7e8ca71ea3e44b5011f121c79b98, type: 3}
+  - id: 11002
+    prefab: {fileID: 211467807295885102, guid: 70e86b66ed741544babf27470272c5a7, type: 3}
+  - id: 11003
+    prefab: {fileID: 5390062253345740376, guid: ab7d48147073be645955ea1cefc44b4b, type: 3}
+  - id: 11004
+    prefab: {fileID: 2312206896036891025, guid: 015c3a23d2bd483479abb529f661b23d, type: 3}
+  - id: 11005
+    prefab: {fileID: 8072227683527581118, guid: 5c99499b4c1f3684b95126b2fd5f7764, type: 3}
+  - id: 11007
+    prefab: {fileID: 3386146198263491619, guid: 4c0e659ac3a54bb46895be0514a4e970, type: 3}
+  - id: 11008
+    prefab: {fileID: 8006406164894357035, guid: c65597e9e21ad9a4ab724b351555cdf7, type: 3}
+  - id: 11009
+    prefab: {fileID: 1060271298854328849, guid: 523ebd19fb0c2fe4a9afd861b89ab5b3, type: 3}
+  - id: 11010
+    prefab: {fileID: 8906151123170158185, guid: c1b0f87b5eccf0d46bf97234c9ccb46d, type: 3}
+  - id: 11011
+    prefab: {fileID: 62416092640814012, guid: 88d58800e1bec3a43833119ddfadad63, type: 3}
+  - id: 11012
+    prefab: {fileID: 5390062253345740376, guid: ab7d48147073be645955ea1cefc44b4b, type: 3}
+  weapons:
+  - id: 41000
+    prefab: {fileID: 447239487722631759, guid: c3219625366cbfc4da3bf7fd92f20374, type: 3}
+  - id: 41001
+    prefab: {fileID: 6028136734083823363, guid: 223c11d6b9fdd4a4abf686421e0f3a24, type: 3}
+  - id: 41002
+    prefab: {fileID: 2401277216007319793, guid: 7ceec2aa8f836fe4c92ba2a09ee0b237, type: 3}
+  - id: 41003
+    prefab: {fileID: 791213246426885481, guid: 6353facece7d86444bbb365fee9642b5, type: 3}
+  - id: 41005
+    prefab: {fileID: 8685289953366878167, guid: 66b12feb72c5454428aaf953abcec32a, type: 3}
+  - id: 41006
+    prefab: {fileID: 4143599973286893080, guid: 412fa55449161d042b212e6a92b29bc5, type: 3}
+  - id: 41007
+    prefab: {fileID: 2114006228094297998, guid: 7875223b54cfad64aa6e7c470459ee29, type: 3}
+  - id: 41008
+    prefab: {fileID: 854214551955373736, guid: e4286c958a6daef48b54fa5ecb9fbc30, type: 3}
+  - id: 41011
+    prefab: {fileID: 452431037516845232, guid: b0767d1833b91b2439eadd361e030da5, type: 3}
+  - id: 41013
+    prefab: {fileID: 4854821703769540823, guid: 77e019ad8d8fbee4eb3456dc5fbf7b91, type: 3}

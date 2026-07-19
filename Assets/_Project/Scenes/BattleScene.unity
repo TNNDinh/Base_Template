@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoundText
       objectReference: {fileID: 0}
+    - target: {fileID: 7849424815852396644, guid: 26934da5485def64cb5d9c0501026d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -284,6 +288,134 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3103488166959201389, guid: 26934da5485def64cb5d9c0501026d5b, type: 3}
   m_PrefabInstance: {fileID: 211031513}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &358256237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358256240}
+  - component: {fileID: 358256239}
+  - component: {fileID: 358256238}
+  m_Layer: 0
+  m_Name: ArenaRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &358256238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358256237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91c318af79b580479ab1da00d3bba16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.ArenaSceneController
+  _arena: {fileID: 358256239}
+  _registry: {fileID: 11400000, guid: e024285f1b963214883abed840e36665, type: 2}
+  _weaponVisual: {fileID: 843427763}
+  _stages: {fileID: 11400000, guid: 5edc8265668f9cf4a82412bcc12a52e5, type: 2}
+  _spawns: {fileID: 11400000, guid: 8d539480e5ea7ed4fa5ed17b92fcc3db, type: 2}
+  _enemyStats: {fileID: 11400000, guid: 170a3d3b4148508428d3254e29366a4a, type: 2}
+  _heroStats: {fileID: 11400000, guid: ad9982a52e91b304c843f385b6bafc06, type: 2}
+  _patterns: {fileID: 11400000, guid: 4b84f8e357d893848bac7d2bd44a8c28, type: 2}
+  _weapons: {fileID: 11400000, guid: 6dc0afb90185bab449486908c9809329, type: 2}
+  _heroId: 44000
+  _heroLevel: 1
+  _weaponSlots:
+  - wp_wood_sword
+  - wp_scythe
+  - wp_hammer
+  _debugStageId: arena_1_1
+  _enemyScale: 0.7
+  _uiScreenPrefab: {fileID: 350497087600041370, guid: 12b8b0e7220e749499f180fbb0e271ef, type: 3}
+  _defeatUi: {fileID: 0}
+  _victoryUi: {fileID: 0}
+  _startDelay: 0.8
+  _roundDelay: 0.9
+  _moveDuration: 0.35
+--- !u!114 &358256239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358256237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de6ae4bb8189d8479c5ae94794c8eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.RadialGridArena
+  _config:
+    RingCount: 6
+    SectorsPerRing: 24
+    InnerRadius: 0.6
+    RingThickness: 0.75
+    AngularGapDeg: 2
+    RadialGap: 0.06
+    ArcSegments: 6
+  _cellMaterial: {fileID: 0}
+  _roundedCorners: 1
+  _useRingGradient: 1
+  _ringGradient:
+    serializedVersion: 2
+    key0: {r: 0.85, g: 1, b: 0.75, a: 0.34}
+    key1: {r: 0.45, g: 0.85, b: 0.45, a: 0.12}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  _cellColor: {r: 1, g: 1, b: 1, a: 0.14}
+  _cellColorAlt: {r: 1, g: 1, b: 1, a: 0.07}
+  _sortingLayer: Default
+  _sortingOrder: -10
+  _heroPrefab: {fileID: 0}
+  _buildOnAwake: 1
+--- !u!4 &358256240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358256237}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 843427764}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &451305356
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +574,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e8a9033ded07f47b1c7366a784a44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &843427762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843427764}
+  - component: {fileID: 843427763}
+  m_Layer: 0
+  m_Name: WeaponTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &843427763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843427762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6023a3950b3b16468def0eff134cd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.WeaponTriggerVisual
+  _config:
+    RingCount: 6
+    SectorsPerRing: 24
+    InnerRadius: 0.6
+    RingThickness: 0.75
+    AngularGapDeg: 2
+    RadialGap: 0.06
+    ArcSegments: 6
+  _weapons: {fileID: 11400000, guid: 6dc0afb90185bab449486908c9809329, type: 2}
+  _weaponId: wp_wood_sword
+  _color: {r: 1, g: 0.92, b: 0.15, a: 0.45}
+  _sortingLayer: Default
+  _sortingOrder: -5
+  _spinSpeedDeg: 60
+  _resetAngleDeg: 90
+  _spinning: 1
+  _buildOnAwake: 0
+--- !u!4 &843427764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843427762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 358256240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358301807
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5095415697797033641, guid: 5c592f4b90f4a154491620f96429164e, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7444306077088505641, guid: 5c592f4b90f4a154491620f96429164e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -838,3 +1031,4 @@ SceneRoots:
   - {fileID: 671436386}
   - {fileID: 1358301809}
   - {fileID: 1787144377}
+  - {fileID: 358256240}
