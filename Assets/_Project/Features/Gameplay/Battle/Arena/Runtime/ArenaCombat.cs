@@ -186,9 +186,11 @@ namespace Ezg.Feature.Gameplay.Battle
                 if (trapGone) RemoveTrap(trap);
 
                 // LUÔN đẩy lùi sau khi nổ — kể cả lần nổ cuối làm bẫy mất ("trap mất xong bị đẩy lui").
+                // triggerTrapOnLand=true: nếu bị đẩy sang Ô KHÁC có bẫy → bẫy đó cũng nổ (chuỗi bẫy đinh ba).
+                // Khi bị blocker chặn (về lại ô cũ, moved=false) sẽ KHÔNG tự nổ → vòng while dưới lo nổ lại bẫy này.
                 bool blocked = false;
                 if (e.IsAlive && trap.Knockback != null && trap.Knockback.Count > 0)
-                    blocked = ApplyKnockback(e, trap.Knockback, trap.CollisionDamage);
+                    blocked = ApplyKnockback(e, trap.Knockback, trap.CollisionDamage, triggerTrapOnLand: true);
 
                 // Nổ LẠI chỉ khi: bẫy CÒN + con bị blocker chặn (đẩy lại vào ô bẫy) + con còn sống.
                 if (trapGone || !blocked || !e.IsAlive) break;
