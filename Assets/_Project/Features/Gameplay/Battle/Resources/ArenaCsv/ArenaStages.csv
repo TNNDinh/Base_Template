@@ -1,8 +1,8 @@
 # id,name,maxRounds,weather
-# weather = id Weather.csv | rong = khong co. Chuong 1 = forest (rung/mua).
+# weather = id Weather.csv (vd w_forest) | RONG = KHONG co thoi tiet. Config tung man doc lap.
 id,name,maxRounds,weather
-arena_1_1,1-1 Dong Co,15,w_forest
-arena_1_2,1-2 Bia Rung,15,w_forest
+arena_1_1,1-1 Dong Co,15,
+arena_1_2,1-2 Bia Rung,15,
 arena_1_3,1-3 Rung Sau,15,w_forest
 arena_1_4,1-4 Khe Nui,16,w_forest
 arena_1_5,1-5 Hang Ogre,16,w_forest

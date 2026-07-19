@@ -35,18 +35,18 @@ MonoBehaviour:
     reqStage: 
     gachaWeight: 0
   - heroId: 44004
-    method: 1
-    reqLevel: 3
+    method: 4
+    reqLevel: 0
     cost: 0
     iapProduct: 
-    reqStage: 
+    reqStage: arena_1_3
     gachaWeight: 0
   - heroId: 44005
-    method: 2
+    method: 4
     reqLevel: 0
-    cost: 700
+    cost: 0
     iapProduct: 
-    reqStage: 
+    reqStage: arena_1_5
     gachaWeight: 0
   - heroId: 44006
     method: 5
@@ -56,18 +56,18 @@ MonoBehaviour:
     reqStage: 
     gachaWeight: 30
   - heroId: 44008
-    method: 5
+    method: 4
     reqLevel: 0
     cost: 0
     iapProduct: 
-    reqStage: 
-    gachaWeight: 20
+    reqStage: arena_1_7
+    gachaWeight: 0
   - heroId: 44010
-    method: 1
-    reqLevel: 5
+    method: 4
+    reqLevel: 0
     cost: 0
     iapProduct: 
-    reqStage: 
+    reqStage: arena_1_9
     gachaWeight: 0
   - heroId: 44011
     method: 3

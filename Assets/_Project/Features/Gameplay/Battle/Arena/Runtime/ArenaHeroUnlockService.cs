@@ -58,11 +58,19 @@ namespace Ezg.Feature.Gameplay.Battle
             {
                 case HeroUnlockMethod.Level: return "Lv " + u.reqLevel;
                 case HeroUnlockMethod.Currency: return u.cost + "g";
-                case HeroUnlockMethod.Stage: return "Clear " + u.reqStage;
+                case HeroUnlockMethod.Stage: return "Clear màn " + StageLabel(u.reqStage);
                 case HeroUnlockMethod.IAP: return "IAP";
                 case HeroUnlockMethod.Gacha: return "Gacha";
                 default: return "";
             }
+        }
+
+        /// <summary>Rút gọn id stage cho UI: "arena_1_3" → "1-3".</summary>
+        private static string StageLabel(string stageId)
+        {
+            if (string.IsNullOrEmpty(stageId)) return "?";
+            string s = stageId.StartsWith("arena_") ? stageId.Substring(6) : stageId;
+            return s.Replace('_', '-');
         }
 
         /// <summary>Mở khóa hero nếu đủ điều kiện (tốn gold nếu Currency). Trả về true nếu mở thành công.</summary>
