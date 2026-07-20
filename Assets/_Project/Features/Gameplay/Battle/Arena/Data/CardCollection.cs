@@ -53,5 +53,19 @@ namespace Ezg.Feature.Gameplay.Battle
                     list.Add(c);
             return list;
         }
+
+        /// <summary>
+        ///     Pool thẻ dựng bộ của 1 hero: card "neutral" + card của <paramref name="heroClass" /> + card RIÊNG
+        ///     hero (heroClass == <paramref name="heroId" />). Dùng cho deck-builder.
+        /// </summary>
+        public List<CardModel> PoolForHero(string heroId, string heroClass)
+        {
+            var list = new List<CardModel>();
+            if (dataGroup == null) return list;
+            foreach (var c in dataGroup)
+                if (c.heroClass == "neutral" || c.heroClass == heroClass || c.heroClass == heroId)
+                    list.Add(c);
+            return list;
+        }
     }
 }

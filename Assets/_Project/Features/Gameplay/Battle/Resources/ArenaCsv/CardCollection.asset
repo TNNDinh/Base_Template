@@ -16,6 +16,7 @@ MonoBehaviour:
   - id: card_bash
     name: Huc
     heroClass: tank
+    stat: 
     cost: 1
     type: 0
     shape: 1
@@ -31,6 +32,7 @@ MonoBehaviour:
   - id: card_stomp
     name: Giam Dap
     heroClass: tank
+    stat: 
     cost: 2
     type: 0
     shape: 3
@@ -46,6 +48,7 @@ MonoBehaviour:
   - id: card_guard
     name: Phong Ngu
     heroClass: tank
+    stat: 
     cost: 1
     type: 1
     shape: 0
@@ -61,6 +64,7 @@ MonoBehaviour:
   - id: card_rage
     name: Cuong No
     heroClass: tank
+    stat: 
     cost: 2
     type: 2
     shape: 0
@@ -76,6 +80,7 @@ MonoBehaviour:
   - id: card_spikes
     name: Chong
     heroClass: tank
+    stat: 
     cost: 2
     type: 3
     shape: 0
@@ -88,3 +93,51 @@ MonoBehaviour:
     rarity: 2
     art: card_spikes
     desc: 'Dat bay: 25 dmg day lui ton tai 3 round'
+  - id: card_sharpen
+    name: Mai Vuot
+    heroClass: neutral
+    stat: atk
+    cost: 1
+    type: 6
+    shape: 0
+    power: 8
+    knockback: 
+    shapeSize: 0
+    ring: -1
+    dur: 3
+    hits: 0
+    rarity: 1
+    art: card_sharpen
+    desc: Tang 8 ATK trong 3 round
+  - id: card_fortify
+    name: Cuong Giap
+    heroClass: tank
+    stat: def
+    cost: 1
+    type: 6
+    shape: 0
+    power: 12
+    knockback: 
+    shapeSize: 0
+    ring: -1
+    dur: 3
+    hits: 0
+    rarity: 2
+    art: card_fortify
+    desc: Tang 12 DEF trong 3 round
+  - id: card_buffalo_rage
+    name: Trau Long
+    heroClass: 44001
+    stat: 
+    cost: 3
+    type: 0
+    shape: 4
+    power: 20
+    knockback: 0 1;0 1
+    shapeSize: 0
+    ring: -1
+    dur: 0
+    hits: 0
+    rarity: 3
+    art: card_buffalo_rage
+    desc: 'Rieng Capy Trau: dam toan san + day moi enemy ra xa 2 ring'

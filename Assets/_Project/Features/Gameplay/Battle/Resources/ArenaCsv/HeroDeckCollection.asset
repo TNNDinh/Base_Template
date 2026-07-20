@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.Gameplay.Battle.HeroDeckCollection
   dataGroup:
   - heroId: 44001
-    cards: card_bash;card_bash;card_bash;card_stomp;card_stomp;card_guard;card_rage;card_spikes
+    cards: card_bash;card_bash;card_bash;card_stomp;card_stomp;card_guard;card_rage;card_spikes;card_fortify;card_buffalo_rage

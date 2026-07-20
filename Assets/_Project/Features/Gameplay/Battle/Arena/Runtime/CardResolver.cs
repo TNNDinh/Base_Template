@@ -15,6 +15,7 @@ namespace Ezg.Feature.Gameplay.Battle
 
         void HealHero(float amount);
         void AddHeroDamageBuff(float mulAdd, int rounds);
+        void AddHeroStatBuff(string stat, float amount, int rounds); // cộng chỉ số (atk/def/maxHp/crit…); rounds<=0 = cả trận
     }
 
     /// <summary>
@@ -40,6 +41,10 @@ namespace Ezg.Feature.Gameplay.Battle
 
                 case CardType.BuffDamage:
                     ctx.AddHeroDamageBuff(card.power, card.dur > 0 ? card.dur : 1);
+                    break;
+
+                case CardType.StatBuff:
+                    ctx.AddHeroStatBuff(card.stat, card.power, card.dur);
                     break;
 
                 case CardType.Trap:

@@ -8,13 +8,18 @@ namespace Ezg.Feature.Gameplay.Battle
     {
         Damage = 0,     // gây damage lên enemy trong <see cref="CardTargetShape" /> (kèm knockback nếu có)
         Heal = 1,       // hồi máu hero (power = lượng máu)
-        BuffDamage = 2, // buff hệ số damage hero trong <see cref="CardModel.dur" /> round (power = mul cộng, 0.5 = +50%)
+        BuffDamage = 2, // buff HỆ SỐ % damage hero trong <see cref="CardModel.dur" /> round (power = mul cộng, 0.5 = +50%)
         Trap = 3,       // đặt bẫy lên ô nhắm (power = damage, dur = round tồn tại, hits = số lần trúng)
         DrawCards = 4,  // rút thêm bài lên tay (power = số lá)
-        GainEnergy = 5  // +energy lượt này (power = số energy)
+        GainEnergy = 5, // +energy lượt này (power = số energy)
+        StatBuff = 6    // CỘNG CHỈ SỐ hero (<see cref="CardModel.stat" /> = atk/def/maxHp/critRate/critDmg; power = lượng cộng; dur = số round, 0 = cả trận)
     }
 
-    /// <summary>Tập ô mục tiêu trên lưới cực (tâm = hero). Xoay theo hướng nhắm của người chơi.</summary>
+    /// <summary>
+    ///     Tập ô mục tiêu trên lưới cực (tâm = hero). Xoay theo hướng NHẮM của người chơi.
+    ///     <para><b>Ràng buộc:</b> HERO ĐỨNG YÊN Ở TÂM — không có shape/loại card nào dịch chuyển hero.
+    ///     Mọi targeting đều quay quanh tâm cố định theo hướng nhắm.</para>
+    /// </summary>
     public enum CardTargetShape
     {
         None = 0,       // không nhắm ô (self: heal/buff/draw/energy)
@@ -35,7 +40,8 @@ namespace Ezg.Feature.Gameplay.Battle
     {
         public string id;
         public string name;
-        public string heroClass; // "tank"/"mage"/... hoặc "neutral" (mọi hero dùng được)
+        public string heroClass; // "tank"/"mage"/... | "neutral" (mọi hero) | HOẶC heroId (vd "44001") = card RIÊNG hero đó
+        public string stat;      // StatBuff: chỉ số cộng — "atk"/"def"/"maxHp"/"critRate"/"critDmg"
         public int cost;         // energy cần để đánh lá này
         public int type;         // CardType
         public int shape;        // CardTargetShape

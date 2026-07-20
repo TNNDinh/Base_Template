@@ -1,11 +1,16 @@
-# Catalog the bai arena. type: 0=Damage 1=Heal 2=BuffDamage 3=Trap 4=DrawCards 5=GainEnergy
+# Catalog the bai arena. type: 0=Damage 1=Heal 2=BuffDamage 3=Trap 4=DrawCards 5=GainEnergy 6=StatBuff
 # shape: 0=None(self) 1=RadialLine(tia) 2=Arc(quat +-shapeSize) 3=Ring(vong ring) 4=Board(toan san)
-# power: Damage/Heal=luong | BuffDamage=mul cong (0.5=+50%) | Draw/Energy=so luong
+# heroClass: "neutral" (moi hero) | ten class | HOAC heroId (vd 44001) = card RIENG hero do
+# stat (chi StatBuff): atk/def/maxHp/critRate/critDmg. power: Damage/Heal=luong | BuffDamage=mul cong | StatBuff=luong cong | Draw/Energy=so luong
 # knockback: "x y;..." day lui tuyet doi (x=sector +-, y=+ra ngoai/-vao tam). RONG = khong day.
-# ring<0 = mac dinh ring 1. dur: Buff=so round | Trap=round ton tai. hits: Trap=so lan trung.
-id,name,heroClass,cost,type,shape,power,knockback,shapeSize,ring,dur,hits,rarity,art,desc
-card_bash,Huc,tank,1,0,1,30,0 1,0,-1,0,0,1,card_bash,Huc thang: sat thuong + day lui 1 o
-card_stomp,Giam Dap,tank,2,0,3,22,,0,1,0,0,1,card_stomp,Giam quanh: sat thuong toan vong trong
-card_guard,Phong Ngu,tank,1,1,0,70,,0,-1,0,0,1,card_guard,Hoi 70 mau cho hero
-card_rage,Cuong No,tank,2,2,0,0.5,,0,-1,1,0,2,card_rage,Tang 50% sat thuong luot nay
-card_spikes,Chong,tank,2,3,0,25,0 1,0,1,3,2,2,card_spikes,Dat bay: 25 dmg day lui ton tai 3 round
+# ring<0 = mac dinh ring 1. dur: Buff/StatBuff=so round (0=ca tran) | Trap=round ton tai. hits: Trap=so lan trung.
+# LUU Y: hero DUNG YEN o tam — khong co card dich chuyen hero.
+id,name,heroClass,stat,cost,type,shape,power,knockback,shapeSize,ring,dur,hits,rarity,art,desc
+card_bash,Huc,tank,,1,0,1,30,0 1,0,-1,0,0,1,card_bash,Huc thang: sat thuong + day lui 1 o
+card_stomp,Giam Dap,tank,,2,0,3,22,,0,1,0,0,1,card_stomp,Giam quanh: sat thuong toan vong trong
+card_guard,Phong Ngu,tank,,1,1,0,70,,0,-1,0,0,1,card_guard,Hoi 70 mau cho hero
+card_rage,Cuong No,tank,,2,2,0,0.5,,0,-1,1,0,2,card_rage,Tang 50% sat thuong luot nay
+card_spikes,Chong,tank,,2,3,0,25,0 1,0,1,3,2,2,card_spikes,Dat bay: 25 dmg day lui ton tai 3 round
+card_sharpen,Mai Vuot,neutral,atk,1,6,0,8,,0,-1,3,0,1,card_sharpen,Tang 8 ATK trong 3 round
+card_fortify,Cuong Giap,tank,def,1,6,0,12,,0,-1,3,0,2,card_fortify,Tang 12 DEF trong 3 round
+card_buffalo_rage,Trau Long,44001,,3,0,4,20,0 1;0 1,0,-1,0,0,3,card_buffalo_rage,Rieng Capy Trau: dam toan san + day moi enemy ra xa 2 ring
