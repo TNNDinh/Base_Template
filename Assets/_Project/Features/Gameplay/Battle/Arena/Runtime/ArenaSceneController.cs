@@ -13,7 +13,7 @@ namespace Ezg.Feature.Gameplay.Battle
     ///     (hiện 3 nút vũ khí: bấm để đổi vũ khí — anim/range/ô target; bấm lại = phát động tấn công).
     ///     Đọc stage từ <see cref="ArenaLaunch.PendingStageId" />. Nối <see cref="ArenaCombat" /> với view.
     /// </summary>
-    public class ArenaSceneController : MonoBehaviour
+    public class ArenaSceneController : MonoBehaviour, ICardContext
     {
         #region Fields
 
@@ -30,6 +30,8 @@ namespace Ezg.Feature.Gameplay.Battle
         [SerializeField] private EnemyMovePatternCollection _patterns;
         [SerializeField] private WeaponCollection _weapons;
         [SerializeField] private WeatherCollection _weathers;
+        [SerializeField] private CardCollection _cards;
+        [SerializeField] private HeroDeckCollection _heroDecks;
 
         [Header("Hero")]
         [SerializeField] private string _heroId = "44000";
@@ -93,6 +95,25 @@ namespace Ezg.Feature.Gameplay.Battle
         private bool _ultSelected;       // đã chọn ult (tap 1) — tap 2 mới kích hoạt
         private float _heroDmgReduce;    // passive: giảm % damage nhận
         private float _heroRegenPct;     // passive: hồi %/round máu tối đa
+
+        // ----- Thẻ bài (Phase 2) -----
+        private CardDeckRuntime _deck;   // bộ bài 1 trận (bốc tay / energy)
+        private ArenaHandView _handView; // thanh bài in-battle
+        private int _playerRoundNo;      // đếm player round (1-based) → energy tăng dần
+        private float _heroBaseAtk;      // atk gốc (sau passive) để cộng StatBuff
+        private float _heroBaseDmgReduce;// giảm damage gốc (passive) để cộng StatBuff def
+        private float _heroBaseMaxHp;    // máu tối đa gốc để cộng StatBuff maxHp
+        private float _cardDmgBonus;     // tổng % damage cộng thêm cho đòn hero (BuffDamage)
+        private readonly List<CardBuffState> _cardBuffs = new List<CardBuffState>();
+
+        /// <summary>1 buff đang chạy do thẻ tạo. kind 0 = BuffDamage (% damage), 1 = StatBuff (cộng chỉ số).</summary>
+        private class CardBuffState
+        {
+            public int kind;
+            public string stat;   // kind=1: atk/def/maxHp
+            public float amount;
+            public int rounds;    // số player round còn lại; <=0 = cả trận
+        }
 
         // Loadout vũ khí mặc định theo hero (mỗi hero 3 "skill" vũ khí khác nhau).
         private static readonly Dictionary<string, string[]> HeroLoadouts = new Dictionary<string, string[]>
@@ -272,6 +293,11 @@ namespace Ezg.Feature.Gameplay.Battle
             _heroMaxHp = newMax;
             _heroHp = delta > 0f ? Mathf.Min(newMax, _heroHp + delta) : Mathf.Min(_heroHp, newMax);
             if (_heroBar != null) _heroBar.SetRatio(_heroHp / _heroMaxHp);
+
+            // Cập nhật base rồi áp lại buff thẻ lên trên (giữ buff khi nâng cấp giữa trận).
+            _heroBaseAtk = _heroStatsCur.atk;
+            _heroBaseMaxHp = _heroMaxHp;
+            RecomputeBuffs();
         }
 
         private async UniTaskVoid Run()
@@ -298,6 +324,8 @@ namespace Ezg.Feature.Gameplay.Battle
             _combat.OnEnemySpawned = HandleEnemySpawned;
             _combat.OnTrapPlaced = HandleTrapPlaced;
             _combat.OnEnemyUseSkill = HandleEnemyUseSkill;
+
+            SetupDeck(); // bộ bài + thanh bài in-battle (bốc bài mở màn)
 
             var stage = _stages != null ? _stages.GetById(_stageId) : default;
             int maxRounds = stage.maxRounds > 0 ? stage.maxRounds : 20;
@@ -350,6 +378,7 @@ namespace Ezg.Feature.Gameplay.Battle
         {
             IsPlayerRound = false;
             HideWeaponVisual();
+            if (_handView != null) _handView.SetVisible(false); // ẩn thanh bài ở màn kết quả
             OnPlayerRoundEnd?.Invoke();
 
             int stars = 0, gold = 0;
@@ -417,14 +446,22 @@ namespace Ezg.Feature.Gameplay.Battle
             if (_weatherOnThisRound) ApplyWeatherToHero(); // aura biome (round phát tác): mưa hồi máu / nắng-lạnh-dung nham đốt hero
             if (_defeated) { IsPlayerRound = false; return; } // hero gục vì thời tiết → thoát để Run kết thúc trận
             if (_weaponVisual != null) _weaponVisual.ResetAim(); // reset trigger về vị trí ban đầu mỗi round
+
+            // ===== THẺ BÀI: giảm hạn buff cũ, nạp energy theo round, bốc bài đầu lượt, hiện thanh bài =====
+            _playerRoundNo++;
+            TickBuffs();                        // giảm số round buff + gỡ buff hết hạn
+            _deck?.StartTurn(_playerRoundNo);    // energy tăng dần + bốc 1 lá
+            if (_handView != null) { _handView.SetVisible(true); RenderHand(); }
+
             EquipSlot(Mathf.Clamp(_lastUsedSlot, 0, Mathf.Max(0, SlotCount - 1))); // mặc định = vũ khí dùng ở round gần nhất
             OnPlayerRoundStart?.Invoke();
             OnUltSelectedChanged?.Invoke();
 
             _fireSignal = new UniTaskCompletionSource();
-            await _fireSignal.Task.AttachExternalCancellation(ct); // chờ tới khi user phát động (FireSelected)
+            await _fireSignal.Task.AttachExternalCancellation(ct); // chờ tới khi user phát động (bấm vũ khí/ult, hoặc bài dọn sạch quái)
 
             IsPlayerRound = false;
+            if (_handView != null) _handView.SetVisible(false); // ẩn thanh bài khi hết lượt player
             HideWeaponVisual();
             OnPlayerRoundEnd?.Invoke();
         }
@@ -605,6 +642,105 @@ namespace Ezg.Feature.Gameplay.Battle
             if (_weaponVisual == null) return;
             _weaponVisual.SetSpinning(false);
             _weaponVisual.gameObject.SetActive(false);
+        }
+
+        #endregion
+
+        #region Card play (Phase 2 — ICardContext)
+
+        // ---- ICardContext: ngữ cảnh cho thẻ áp hiệu ứng ----
+        public ArenaCombat Combat => _combat;
+        public CardDeckRuntime Deck => _deck;
+        /// <summary>Hướng nhắm hiện tại = sector trigger vũ khí đang chỉ (thẻ directional dùng để xoay shape).</summary>
+        public int AimSector => _weaponVisual != null ? _weaponVisual.CurrentFacingSector() : 0;
+
+        /// <summary>Thẻ Heal: hồi máu phẳng cho hero.</summary>
+        public void HealHero(float amount)
+        {
+            if (amount <= 0f || _heroMaxHp <= 0f || _heroHp <= 0f) return;
+            _heroHp = Mathf.Min(_heroMaxHp, _heroHp + amount);
+            if (_heroBar != null) _heroBar.SetRatio(_heroHp / _heroMaxHp);
+        }
+
+        /// <summary>Thẻ BuffDamage: +<paramref name="mulAdd" /> hệ số damage đòn hero trong <paramref name="rounds" /> round.</summary>
+        public void AddHeroDamageBuff(float mulAdd, int rounds)
+        {
+            _cardBuffs.Add(new CardBuffState { kind = 0, amount = mulAdd, rounds = rounds });
+            RecomputeBuffs();
+        }
+
+        /// <summary>Thẻ StatBuff: cộng chỉ số hero (atk→ult, def→giảm damage %, maxHp) trong N round (rounds&lt;=0 = cả trận).</summary>
+        public void AddHeroStatBuff(string stat, float amount, int rounds)
+        {
+            if (string.IsNullOrEmpty(stat) || amount == 0f) return;
+            _cardBuffs.Add(new CardBuffState { kind = 1, stat = stat, amount = amount, rounds = rounds });
+            RecomputeBuffs();
+        }
+
+        /// <summary>UI hand bar gọi khi tap 1 lá: đủ energy → trừ energy + áp hiệu ứng. Bài dọn sạch quái → kết thúc lượt.</summary>
+        public void TryPlayCard(string cardId)
+        {
+            if (!IsPlayerRound || _attacking || _deck == null || _cards == null) return;
+            var card = _cards.GetById(cardId);
+            if (string.IsNullOrEmpty(card.id)) return;
+            if (!_deck.TryPlay(cardId, card.cost)) return; // thiếu energy / không có trên tay
+
+            // Anim phản hồi cho lá tấn công/đặt bẫy (hero vẫn ĐỨNG YÊN ở tâm).
+            var type = (CardType)card.type;
+            if (_heroRig != null && (type == CardType.Damage || type == CardType.Trap)) _heroRig.PlayAttack();
+
+            CardResolver.Resolve(card, this); // áp hiệu ứng (enemy qua _combat, hero qua callback trên)
+            RenderHand();
+
+            // Bài giết sạch quái → kết thúc lượt ngay (vòng Run sẽ xử lý AllCleared → thắng).
+            if (_combat != null && _combat.AliveCount == 0) _fireSignal?.TrySetResult();
+        }
+
+        /// <summary>Đầu mỗi player round: giảm số round các buff, gỡ buff hết hạn, rồi tính lại chỉ số dẫn xuất.</summary>
+        private void TickBuffs()
+        {
+            if (_cardBuffs.Count == 0) return;
+            for (int i = _cardBuffs.Count - 1; i >= 0; i--)
+            {
+                var b = _cardBuffs[i];
+                if (b.rounds <= 0) continue;        // <=0 = cả trận, không giảm
+                b.rounds--;
+                if (b.rounds <= 0) _cardBuffs.RemoveAt(i); // hết hạn
+            }
+
+            RecomputeBuffs();
+        }
+
+        /// <summary>Tính lại chỉ số hero từ GỐC + tổng buff đang chạy (damage bonus, atk, def→giảm dmg, maxHp).</summary>
+        private void RecomputeBuffs()
+        {
+            _cardDmgBonus = 0f;
+            float atkAdd = 0f, defAdd = 0f, maxHpAdd = 0f;
+            for (int i = 0; i < _cardBuffs.Count; i++)
+            {
+                var b = _cardBuffs[i];
+                if (b.kind == 0) { _cardDmgBonus += b.amount; continue; }
+                switch (b.stat)
+                {
+                    case "atk": atkAdd += b.amount; break;
+                    case "def": defAdd += b.amount; break;
+                    case "maxHp": maxHpAdd += b.amount; break;
+                    // "critRate"/"critDmg": chưa có hook trong đòn hero (TODO khi thêm crit)
+                }
+            }
+
+            _heroStatsCur.atk = _heroBaseAtk + atkAdd;                              // atk → ult mạnh hơn
+            _heroDmgReduce = Mathf.Clamp01(_heroBaseDmgReduce + defAdd * 0.01f);    // def buff: mỗi điểm = +1% giảm damage
+
+            float newMax = Mathf.Max(1f, _heroBaseMaxHp + maxHpAdd);
+            if (!Mathf.Approximately(newMax, _heroMaxHp))
+            {
+                float delta = newMax - _heroMaxHp;
+                _heroMaxHp = newMax;
+                if (delta > 0f) _heroHp += delta;             // maxHp tăng → tặng luôn phần máu đó
+                _heroHp = Mathf.Clamp(_heroHp, 1f, _heroMaxHp);
+                if (_heroBar != null) _heroBar.SetRatio(_heroHp / _heroMaxHp);
+            }
         }
 
         #endregion
@@ -842,6 +978,27 @@ namespace Ezg.Feature.Gameplay.Battle
             if (_patterns == null) _patterns = Resources.Load<EnemyMovePatternCollection>("ArenaCsv/EnemyMovePatternCollection");
             if (_weapons == null) _weapons = Resources.Load<WeaponCollection>("ArenaCsv/WeaponCollection");
             if (_weathers == null) _weathers = Resources.Load<WeatherCollection>("ArenaCsv/WeatherCollection");
+            if (_cards == null) _cards = Resources.Load<CardCollection>("ArenaCsv/CardCollection");
+            if (_heroDecks == null) _heroDecks = Resources.Load<HeroDeckCollection>("ArenaCsv/HeroDeckCollection");
+        }
+
+        /// <summary>Dựng bộ bài 1 trận từ deck mặc định của hero + thanh bài in-battle. Bốc bài mở màn.</summary>
+        private void SetupDeck()
+        {
+            var deckIds = _heroDecks != null ? _heroDecks.DeckOf(_heroId) : new List<string>();
+            _deck = new CardDeckRuntime(deckIds);
+            _deck.StartBattle();
+            _playerRoundNo = 0;
+
+            _handView = ArenaHandView.Create(_cards, TryPlayCard);
+            _deck.OnHandChanged = RenderHand;
+            _deck.OnEnergyChanged = RenderHand;
+        }
+
+        /// <summary>Render lại thanh bài theo tay + energy hiện tại (no-op nếu chưa dựng).</summary>
+        private void RenderHand()
+        {
+            if (_handView != null && _deck != null) _handView.Render(_deck.Hand, _deck.Energy);
         }
 
         /// <summary>Dựng màn UI gameplay từ prefab (scene sạch). UI tự tìm & bind vào controller; tìm panel thắng/thua theo tên.</summary>
@@ -913,6 +1070,13 @@ namespace Ezg.Feature.Gameplay.Battle
             _heroRegenPct = passives.regenPct;
             _heroHp = _heroMaxHp;
 
+            // Base cho thẻ StatBuff cộng dồn; buff cũ (đổi hero) bỏ hết rồi tính lại.
+            _heroBaseAtk = _heroStatsCur.atk;
+            _heroBaseDmgReduce = _heroDmgReduce;
+            _heroBaseMaxHp = _heroMaxHp;
+            _cardBuffs.Clear();
+            _cardDmgBonus = 0f;
+
             float top = MeasureVisualTop(_hero);
             _heroBar = ArenaHealthBar.Create(_arena.transform, 1.1f, 0.16f, 600);
             _heroBar.Follow(_hero.transform, top + 0.2f);
@@ -958,8 +1122,12 @@ namespace Ezg.Feature.Gameplay.Battle
                 : $"[Arena] {_weather.Name}: round TẠNH");
         }
 
-        /// <summary>Nhân damage đòn HERO theo biome — CHỈ khi round đang phát tác.</summary>
-        private float ScaleHeroDmg(float dmg) => _weatherOnThisRound ? dmg * _weather.HeroDamageMul : dmg;
+        /// <summary>Nhân damage đòn HERO: biome (round phát tác) × (1 + buff damage từ thẻ BuffDamage).</summary>
+        private float ScaleHeroDmg(float dmg)
+        {
+            if (_weatherOnThisRound) dmg *= _weather.HeroDamageMul;
+            return dmg * (1f + _cardDmgBonus);
+        }
 
         /// <summary>Nhân damage đòn ENEMY (đánh hero) theo biome — CHỈ khi round đang phát tác.</summary>
         private float ScaleEnemyDmg(float dmg) => _weatherOnThisRound ? dmg * _weather.EnemyDamageMul : dmg;
