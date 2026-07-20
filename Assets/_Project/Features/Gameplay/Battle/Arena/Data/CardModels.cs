@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ezg.Feature.Gameplay.Battle
@@ -54,6 +55,76 @@ namespace Ezg.Feature.Gameplay.Battle
         public int rarity;       // 1 common .. cao dần
         public string art;       // key sprite icon (Resources)
         public string desc;      // mô tả hiển thị UI
+    }
+
+    /// <summary>
+    ///     1 LÁ CỤ THỂ trong bộ (khác <see cref="CardModel" /> = định nghĩa gốc): id + sao/cấp (1..3).
+    ///     Sao cao → power mạnh hơn (<see cref="CardLevel.PowerMul" />). Gộp 3 lá cùng id + cùng sao → 1 lá sao+1.
+    /// </summary>
+    [Serializable]
+    public struct CardInstance
+    {
+        public string id;
+        public int level; // 1..3 (sao)
+
+        public CardInstance(string id, int level)
+        {
+            this.id = id;
+            this.level = level < 1 ? 1 : level;
+        }
+    }
+
+    /// <summary>Quy tắc SAO/CẤP thẻ: 3 lá cùng cấp → 1 lá cấp trên (tối đa 3 sao); power scale theo sao.</summary>
+    public static class CardLevel
+    {
+        public const int MaxStar = 3;         // sao cao nhất
+        public const int MergeCount = 3;      // số lá cùng cấp để gộp lên 1
+        public const float PowerPerStar = 0.75f; // mỗi sao +75% power
+
+        /// <summary>Hệ số power theo sao: sao1 = 1.0, sao2 = 1.75, sao3 = 2.5.</summary>
+        public static float PowerMul(int level)
+        {
+            if (level < 1) level = 1;
+            if (level > MaxStar) level = MaxStar;
+            return 1f + PowerPerStar * (level - 1);
+        }
+
+        /// <summary>
+        ///     Gộp bộ lá: cứ đủ <see cref="MergeCount" /> lá CÙNG id + CÙNG sao (chưa tối đa) → 1 lá sao+1.
+        ///     Lặp cho tới khi không còn gộp được (dây chuyền: 9 lá sao1 → 1 lá sao3). Trả về list MỚI.
+        /// </summary>
+        public static List<CardInstance> Merge(IList<CardInstance> cards)
+        {
+            var result = new List<CardInstance>();
+            if (cards != null) result.AddRange(cards);
+
+            bool changed = true;
+            while (changed)
+            {
+                changed = false;
+                for (int i = 0; i < result.Count; i++)
+                {
+                    var c = result[i];
+                    if (c.level >= MaxStar) continue;
+
+                    // Đếm các lá cùng id + cùng sao.
+                    int count = 0;
+                    for (int j = 0; j < result.Count; j++)
+                        if (result[j].id == c.id && result[j].level == c.level) count++;
+                    if (count < MergeCount) continue;
+
+                    // Gỡ MergeCount lá đó, thêm 1 lá sao+1.
+                    int removed = 0;
+                    for (int j = result.Count - 1; j >= 0 && removed < MergeCount; j--)
+                        if (result[j].id == c.id && result[j].level == c.level) { result.RemoveAt(j); removed++; }
+                    result.Add(new CardInstance(c.id, c.level + 1));
+                    changed = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
     }
 
     /// <summary>Quy tắc energy MỖI player round (tăng dần theo round, có trần).</summary>

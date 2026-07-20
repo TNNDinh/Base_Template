@@ -5,10 +5,10 @@ using UnityEngine;
 namespace Ezg.Feature.Gameplay.Battle
 {
     /// <summary>
-    ///     Engine bộ bài 1 trận (THUẦN LOGIC — test được không cần scene; view móc qua callback).
-    ///     Vòng đời: <see cref="StartBattle" /> (xáo deck + bốc bài mở màn) → mỗi player round gọi
-    ///     <see cref="StartTurn" /> (nạp energy theo round + bốc 1 lá) → người chơi <see cref="TryPlay" /> tiêu energy.
-    ///     Hết draw pile thì xáo lại discard. Tay đầy mà bốc thêm → lá bốc bị ĐỐT (vào discard).
+    ///     Engine bộ bài 1 trận (THUẦN LOGIC — test được không cần scene; view móc qua callback). Mỗi lá là
+    ///     <see cref="CardInstance" /> (id + sao). Vòng đời: <see cref="StartBattle" /> (xáo + bốc bài mở màn) →
+    ///     mỗi player round gọi <see cref="StartTurn" /> (nạp energy theo round + bốc 1 lá) → người chơi
+    ///     <see cref="TryPlay" /> tiêu energy. Hết draw pile thì xáo lại discard. Tay đầy mà bốc thêm → lá bị ĐỐT.
     ///     <para>Energy theo <see cref="CardEnergy" /> (tăng dần mỗi round, có trần) — hero giữ bài qua các round.</para>
     /// </summary>
     public class CardDeckRuntime
@@ -17,19 +17,19 @@ namespace Ezg.Feature.Gameplay.Battle
         public const int OpeningHand = 3; // số lá bốc lúc mở màn
         public const int DrawPerTurn = 1; // số lá bốc đầu mỗi player round
 
-        private readonly List<string> _draw = new List<string>();
-        private readonly List<string> _hand = new List<string>();
-        private readonly List<string> _discard = new List<string>();
+        private readonly List<CardInstance> _draw = new List<CardInstance>();
+        private readonly List<CardInstance> _hand = new List<CardInstance>();
+        private readonly List<CardInstance> _discard = new List<CardInstance>();
 
         private int _playerRound;
 
-        /// <param name="deckCardIds">Danh sách id thẻ (được lặp) tạo thành bộ bài.</param>
-        public CardDeckRuntime(IList<string> deckCardIds)
+        /// <param name="deck">Danh sách lá (id + sao) tạo thành bộ bài của trận.</param>
+        public CardDeckRuntime(IList<CardInstance> deck)
         {
-            if (deckCardIds != null)
-                for (int i = 0; i < deckCardIds.Count; i++)
-                    if (!string.IsNullOrEmpty(deckCardIds[i]))
-                        _draw.Add(deckCardIds[i]);
+            if (deck != null)
+                for (int i = 0; i < deck.Count; i++)
+                    if (!string.IsNullOrEmpty(deck[i].id))
+                        _draw.Add(deck[i]);
         }
 
         /// <summary>Energy còn lại của lượt hiện tại.</summary>
@@ -38,7 +38,7 @@ namespace Ezg.Feature.Gameplay.Battle
         /// <summary>Player round hiện tại (1-based) — quyết định energy đầy của lượt.</summary>
         public int PlayerRound => _playerRound;
 
-        public IReadOnlyList<string> Hand => _hand;
+        public IReadOnlyList<CardInstance> Hand => _hand;
         public int DrawCount => _draw.Count;
         public int DiscardCount => _discard.Count;
         public int HandCount => _hand.Count;
@@ -66,13 +66,13 @@ namespace Ezg.Feature.Gameplay.Battle
             OnHandChanged?.Invoke();
         }
 
-        /// <summary>Đánh 1 lá trên tay: đủ energy → trừ energy, chuyển lá vào discard. Trả về true nếu đánh được.</summary>
-        public bool TryPlay(string cardId, int cost)
+        /// <summary>Đánh 1 lá trên tay (khớp id + sao): đủ energy → trừ energy, chuyển vào discard. Trả về true nếu đánh được.</summary>
+        public bool TryPlay(CardInstance card, int cost)
         {
-            int idx = _hand.IndexOf(cardId);
+            int idx = IndexInHand(card);
             if (idx < 0 || cost > Energy) return false;
             _hand.RemoveAt(idx);
-            _discard.Add(cardId);
+            _discard.Add(card);
             Energy -= cost;
             OnEnergyChanged?.Invoke();
             OnHandChanged?.Invoke();
@@ -96,6 +96,13 @@ namespace Ezg.Feature.Gameplay.Battle
         }
 
         // ----- Nội bộ -----
+
+        private int IndexInHand(CardInstance card)
+        {
+            for (int i = 0; i < _hand.Count; i++)
+                if (_hand[i].id == card.id && _hand[i].level == card.level) return i;
+            return -1;
+        }
 
         /// <summary>Bốc tối đa <paramref name="n" /> lá; hết draw pile thì xáo discard vào. Tay đầy → đốt lá bốc.</summary>
         private int DrawN(int n)
@@ -124,7 +131,7 @@ namespace Ezg.Feature.Gameplay.Battle
         }
 
         /// <summary>Fisher–Yates dùng UnityEngine.Random (test: gọi Random.InitState trước để tất định).</summary>
-        private static void Shuffle(List<string> list)
+        private static void Shuffle(List<CardInstance> list)
         {
             for (int i = list.Count - 1; i > 0; i--)
             {

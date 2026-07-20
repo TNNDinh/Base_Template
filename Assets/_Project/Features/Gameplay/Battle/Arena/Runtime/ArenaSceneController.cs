@@ -677,19 +677,19 @@ namespace Ezg.Feature.Gameplay.Battle
             RecomputeBuffs();
         }
 
-        /// <summary>UI hand bar gọi khi tap 1 lá: đủ energy → trừ energy + áp hiệu ứng. Bài dọn sạch quái → kết thúc lượt.</summary>
-        public void TryPlayCard(string cardId)
+        /// <summary>UI hand bar gọi khi tap 1 lá (id + sao): đủ energy → trừ energy + áp hiệu ứng (power theo sao). Bài dọn sạch quái → kết thúc lượt.</summary>
+        public void TryPlayCard(CardInstance inst)
         {
             if (!IsPlayerRound || _attacking || _deck == null || _cards == null) return;
-            var card = _cards.GetById(cardId);
+            var card = _cards.GetById(inst.id);
             if (string.IsNullOrEmpty(card.id)) return;
-            if (!_deck.TryPlay(cardId, card.cost)) return; // thiếu energy / không có trên tay
+            if (!_deck.TryPlay(inst, card.cost)) return; // thiếu energy / không có trên tay
 
             // Anim phản hồi cho lá tấn công/đặt bẫy (hero vẫn ĐỨNG YÊN ở tâm).
             var type = (CardType)card.type;
             if (_heroRig != null && (type == CardType.Damage || type == CardType.Trap)) _heroRig.PlayAttack();
 
-            CardResolver.Resolve(card, this); // áp hiệu ứng (enemy qua _combat, hero qua callback trên)
+            CardResolver.Resolve(card, inst.level, this); // áp hiệu ứng theo sao (enemy qua _combat, hero qua callback)
             RenderHand();
 
             // Bài giết sạch quái → kết thúc lượt ngay (vòng Run sẽ xử lý AllCleared → thắng).
@@ -985,8 +985,11 @@ namespace Ezg.Feature.Gameplay.Battle
         /// <summary>Dựng bộ bài 1 trận từ deck mặc định của hero + thanh bài in-battle. Bốc bài mở màn.</summary>
         private void SetupDeck()
         {
+            // Deck khởi đầu = deck mặc định của hero, mỗi lá SAO 1 (Phase 3 sẽ nạp deck đã tích của run).
             var deckIds = _heroDecks != null ? _heroDecks.DeckOf(_heroId) : new List<string>();
-            _deck = new CardDeckRuntime(deckIds);
+            var deck = new List<CardInstance>();
+            for (int i = 0; i < deckIds.Count; i++) deck.Add(new CardInstance(deckIds[i], 1));
+            _deck = new CardDeckRuntime(deck);
             _deck.StartBattle();
             _playerRoundNo = 0;
 

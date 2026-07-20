@@ -24,44 +24,51 @@ namespace Ezg.Feature.Gameplay.Battle
     /// </summary>
     public static class CardResolver
     {
-        /// <summary>Thực thi hiệu ứng của <paramref name="card" /> trong ngữ cảnh <paramref name="ctx" />.</summary>
-        public static void Resolve(CardModel card, ICardContext ctx)
+        /// <summary>Thực thi hiệu ứng lá bậc SAO 1 (tương thích cũ).</summary>
+        public static void Resolve(CardModel card, ICardContext ctx) => Resolve(card, 1, ctx);
+
+        /// <summary>
+        ///     Thực thi hiệu ứng của <paramref name="card" /> ở SAO <paramref name="level" /> — power scale theo
+        ///     <see cref="CardLevel.PowerMul" /> (cost/duration/hits giữ nguyên) trong ngữ cảnh <paramref name="ctx" />.
+        /// </summary>
+        public static void Resolve(CardModel card, int level, ICardContext ctx)
         {
             if (ctx == null) return;
+            float power = card.power * CardLevel.PowerMul(level); // sao cao → power mạnh hơn
 
             switch ((CardType)card.type)
             {
                 case CardType.Damage:
-                    ApplyDamage(card, ctx);
+                    ApplyDamage(card, power, ctx);
                     break;
 
                 case CardType.Heal:
-                    ctx.HealHero(card.power);
+                    ctx.HealHero(power);
                     break;
 
                 case CardType.BuffDamage:
-                    ctx.AddHeroDamageBuff(card.power, card.dur > 0 ? card.dur : 1);
+                    ctx.AddHeroDamageBuff(power, card.dur > 0 ? card.dur : 1);
                     break;
 
                 case CardType.StatBuff:
-                    ctx.AddHeroStatBuff(card.stat, card.power, card.dur);
+                    ctx.AddHeroStatBuff(card.stat, power, card.dur);
                     break;
 
                 case CardType.Trap:
-                    ApplyTrap(card, ctx);
+                    ApplyTrap(card, power, ctx);
                     break;
 
                 case CardType.DrawCards:
-                    ctx.Deck?.DrawExtra((int)card.power);
+                    ctx.Deck?.DrawExtra(UnityEngine.Mathf.RoundToInt(power));
                     break;
 
                 case CardType.GainEnergy:
-                    ctx.Deck?.GainEnergy((int)card.power);
+                    ctx.Deck?.GainEnergy(UnityEngine.Mathf.RoundToInt(power));
                     break;
             }
         }
 
-        private static void ApplyDamage(CardModel card, ICardContext ctx)
+        private static void ApplyDamage(CardModel card, float power, ICardContext ctx)
         {
             var combat = ctx.Combat;
             if (combat == null) return;
@@ -81,20 +88,20 @@ namespace Ezg.Feature.Gameplay.Battle
             for (int i = 0; i < hit.Count; i++)
             {
                 var e = hit[i];
-                combat.DamageEnemy(e, card.power);
+                combat.DamageEnemy(e, power);
                 if (e.IsAlive && kb.Count > 0)
                     combat.ApplyKnockback(e, kb, 0f, triggerTrapOnLand: true);
             }
         }
 
-        private static void ApplyTrap(CardModel card, ICardContext ctx)
+        private static void ApplyTrap(CardModel card, float power, ICardContext ctx)
         {
             var combat = ctx.Combat;
             if (combat == null) return;
             int ring = card.ring < 0 ? 1 : card.ring;
             var cell = new GridCell(ring, combat.Occupancy.Wrap(ctx.AimSector));
             var kb = CellSet.Parse(card.knockback);
-            combat.PlaceTrap(cell, card.power, kb, card.dur, card.hits, card.power);
+            combat.PlaceTrap(cell, power, kb, card.dur, card.hits, power);
         }
     }
 }

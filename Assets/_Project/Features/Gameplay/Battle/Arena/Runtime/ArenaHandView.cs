@@ -24,14 +24,16 @@ namespace Ezg.Feature.Gameplay.Battle
             new Color(0.55f, 0.4f, 0.75f, 1f)   // 3 rare
         };
 
+        private static readonly Color StarCol = new Color(1f, 0.85f, 0.3f, 1f);
+
         private Font _font;
         private CardCollection _cards;
-        private Action<string> _onTap;
+        private Action<CardInstance> _onTap;
         private Transform _row;
         private Text _energyLabel;
 
         /// <summary>Dựng thanh bài (ẩn sẵn). <paramref name="onTap" /> = controller.TryPlayCard.</summary>
-        public static ArenaHandView Create(CardCollection cards, Action<string> onTap)
+        public static ArenaHandView Create(CardCollection cards, Action<CardInstance> onTap)
         {
             var go = new GameObject("ArenaHandView");
             var v = go.AddComponent<ArenaHandView>();
@@ -74,7 +76,7 @@ namespace Ezg.Feature.Gameplay.Battle
         public void SetVisible(bool on) => gameObject.SetActive(on);
 
         /// <summary>Dựng lại toàn bộ thẻ theo tay hiện tại + cập nhật energy (mờ lá không đủ energy).</summary>
-        public void Render(IReadOnlyList<string> hand, int energy)
+        public void Render(IReadOnlyList<CardInstance> hand, int energy)
         {
             if (_energyLabel != null) _energyLabel.text = "NANG LUONG  " + energy;
 
@@ -88,19 +90,19 @@ namespace Ezg.Feature.Gameplay.Battle
 
             for (int i = 0; i < n; i++)
             {
-                string id = hand[i];
-                var m = _cards != null ? _cards.GetById(id) : default;
+                var inst = hand[i];
+                var m = _cards != null ? _cards.GetById(inst.id) : default;
                 bool afford = energy >= m.cost;
-                BuildCard(id, m, new Vector2(x0 + i * (w + gap), 0f), new Vector2(w, h), afford);
+                BuildCard(inst, m, new Vector2(x0 + i * (w + gap), 0f), new Vector2(w, h), afford);
             }
         }
 
-        private void BuildCard(string id, CardModel m, Vector2 pos, Vector2 size, bool afford)
+        private void BuildCard(CardInstance inst, CardModel m, Vector2 pos, Vector2 size, bool afford)
         {
             int rar = Mathf.Clamp(m.rarity, 0, RarityCol.Length - 1);
             var baseCol = afford ? RarityCol[rar] : DimCard;
 
-            var go = new GameObject("Card_" + id, typeof(RectTransform), typeof(Image), typeof(Button));
+            var go = new GameObject("Card_" + inst.id, typeof(RectTransform), typeof(Image), typeof(Button));
             go.transform.SetParent(_row, false);
             var rt = go.GetComponent<RectTransform>();
             rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0f);
@@ -114,16 +116,22 @@ namespace Ezg.Feature.Gameplay.Battle
                 new Vector2(56f, 56f), TextAnchor.MiddleCenter, afford ? CostCol : new Color(0.8f, 0.8f, 0.85f, 1f));
             badge.fontStyle = FontStyle.Bold;
 
+            // Sao/cấp (góc trên phải): ★ theo level.
+            string stars = "";
+            for (int s = 0; s < Mathf.Clamp(inst.level, 1, CardLevel.MaxStar); s++) stars += "*";
+            MakeText(go.transform, "Star", stars, 30, new Vector2(size.x * 0.5f - 34f, size.y * 0.5f - 26f),
+                new Vector2(80f, 44f), TextAnchor.MiddleRight, StarCol);
+
             // Tên lá.
-            MakeText(go.transform, "Name", m.name ?? id, 30, new Vector2(0f, 40f),
+            MakeText(go.transform, "Name", m.name ?? inst.id, 30, new Vector2(0f, 40f),
                 new Vector2(size.x - 12f, 80f), TextAnchor.MiddleCenter, Color.white);
 
             // Mô tả ngắn.
             MakeText(go.transform, "Desc", m.desc ?? "", 20, new Vector2(0f, -55f),
                 new Vector2(size.x - 16f, 100f), TextAnchor.UpperCenter, new Color(0.9f, 0.92f, 0.95f, 0.95f));
 
-            string cardId = id;
-            go.GetComponent<Button>().onClick.AddListener(() => _onTap?.Invoke(cardId));
+            var tapInst = inst;
+            go.GetComponent<Button>().onClick.AddListener(() => _onTap?.Invoke(tapInst));
         }
 
         private Text MakeText(Transform parent, string name, string content, int size, Vector2 pos, Vector2 sd,
