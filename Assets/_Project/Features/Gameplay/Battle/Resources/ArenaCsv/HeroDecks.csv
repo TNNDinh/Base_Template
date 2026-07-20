@@ -1,0 +1,4 @@
+# Bo bai MAC DINH theo hero. cards = id the (tu ArenaCards.csv) ngan bang ';', duoc lap.
+# Day la config goc; deck-builder se cho nguoi choi tuy bien va luu de sau.
+heroId,cards
+44001,card_bash;card_bash;card_bash;card_stomp;card_stomp;card_guard;card_rage;card_spikes

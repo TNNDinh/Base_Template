@@ -1,0 +1,11 @@
+# Catalog the bai arena. type: 0=Damage 1=Heal 2=BuffDamage 3=Trap 4=DrawCards 5=GainEnergy
+# shape: 0=None(self) 1=RadialLine(tia) 2=Arc(quat +-shapeSize) 3=Ring(vong ring) 4=Board(toan san)
+# power: Damage/Heal=luong | BuffDamage=mul cong (0.5=+50%) | Draw/Energy=so luong
+# knockback: "x y;..." day lui tuyet doi (x=sector +-, y=+ra ngoai/-vao tam). RONG = khong day.
+# ring<0 = mac dinh ring 1. dur: Buff=so round | Trap=round ton tai. hits: Trap=so lan trung.
+id,name,heroClass,cost,type,shape,power,knockback,shapeSize,ring,dur,hits,rarity,art,desc
+card_bash,Huc,tank,1,0,1,30,0 1,0,-1,0,0,1,card_bash,Huc thang: sat thuong + day lui 1 o
+card_stomp,Giam Dap,tank,2,0,3,22,,0,1,0,0,1,card_stomp,Giam quanh: sat thuong toan vong trong
+card_guard,Phong Ngu,tank,1,1,0,70,,0,-1,0,0,1,card_guard,Hoi 70 mau cho hero
+card_rage,Cuong No,tank,2,2,0,0.5,,0,-1,1,0,2,card_rage,Tang 50% sat thuong luot nay
+card_spikes,Chong,tank,2,3,0,25,0 1,0,1,3,2,2,card_spikes,Dat bay: 25 dmg day lui ton tai 3 round

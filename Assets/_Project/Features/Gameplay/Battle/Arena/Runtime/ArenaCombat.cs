@@ -244,6 +244,23 @@ namespace Ezg.Feature.Gameplay.Battle
             return e != null && e.IsAlive ? e : null;
         }
 
+        /// <summary>Gây <paramref name="dmg" /> lên 1 enemy (dùng cho thẻ bài). Dọn ô nếu chết. Trả về true nếu enemy chết.</summary>
+        public bool DamageEnemy(ArenaEnemyUnit e, float dmg)
+        {
+            if (e == null || !e.IsAlive || dmg <= 0f) return false;
+            e.TakeDamage(dmg, _occ);
+            return !e.IsAlive;
+        }
+
+        /// <summary>Gây <paramref name="dmg" /> lên enemy đang đứng ở ô (nếu có). Trả về true nếu có enemy trúng đòn.</summary>
+        public bool DamageCell(GridCell cell, float dmg)
+        {
+            var e = EnemyAt(cell);
+            if (e == null) return false;
+            DamageEnemy(e, dmg);
+            return true;
+        }
+
         /// <summary>
         ///     Đẩy lùi 1 enemy theo chuỗi bước (mỗi bước 1 ô). Chạm RÌA/ô hero → dừng tại ô cuối hợp lệ.
         ///     Chạm enemy khác → enemy đó nhận <paramref name="collisionDamage" />, con bị đẩy VỀ LẠI ô cũ.
