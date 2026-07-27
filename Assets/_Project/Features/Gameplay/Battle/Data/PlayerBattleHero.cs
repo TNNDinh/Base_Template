@@ -33,6 +33,10 @@ namespace Ezg.Feature.Gameplay.Battle
                 BattlePlayerData.SeedDefault(dataBase);
                 Save();
             }
+            else if (BattlePlayerData.TopUpDefault(dataBase))
+            {
+                Save(); // save cũ thiếu tướng so với SO config → bù roster + lấp slot trống
+            }
         }
 
         private void EnsureLists()

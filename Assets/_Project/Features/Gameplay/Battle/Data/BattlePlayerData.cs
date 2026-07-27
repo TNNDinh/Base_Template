@@ -82,5 +82,41 @@ namespace Ezg.Feature.Gameplay.Battle
             data.AddHero("hero_gladiator", 3, 60);
             data.activeTeam = new List<string> { "hero_1001", "hero_1001_tk", "hero_gladiator" };
         }
+
+        /// <summary>
+        ///     Migration mềm cho save cũ (tạo trước khi SO config thêm tướng): unlock các tướng có trong
+        ///     <see cref="DefaultTeamConfig" /> mà save chưa sở hữu, rồi lấp các slot đội hình còn TRỐNG bằng
+        ///     đúng thứ tự config — không bao giờ ghi đè slot người chơi đã tự xếp. Nếu save đã khớp config
+        ///     thì không can thiệp gì. Trả true nếu payload thay đổi (caller cần Save).
+        /// </summary>
+        public static bool TopUpDefault(PlayerHeroData data)
+        {
+            if (data == null || Cfg == null || Cfg.team == null || Cfg.team.Count == 0) return false;
+            if (data.heroes == null) data.heroes = new List<OwnedHero>();
+            if (data.activeTeam == null) data.activeTeam = new List<string>();
+
+            // Chỉ unlock phần còn thiếu so với config.
+            var added = new List<string>();
+            for (int i = 0; i < Cfg.team.Count; i++)
+            {
+                var e = Cfg.team[i];
+                if (string.IsNullOrEmpty(e.heroId) || data.IsUnlocked(e.heroId)) continue;
+                data.AddHero(e.heroId, e.star <= 0 ? 1 : e.star, e.level <= 0 ? 1 : e.level);
+                added.Add(e.heroId);
+            }
+
+            if (added.Count == 0) return false; // save đã đủ tướng → tôn trọng đội hình hiện tại
+
+            while (data.activeTeam.Count < PlayerHeroData.TeamSize) data.activeTeam.Add(string.Empty);
+
+            var next = 0;
+            for (int slot = 0; slot < PlayerHeroData.TeamSize && next < added.Count; slot++)
+            {
+                if (!string.IsNullOrEmpty(data.activeTeam[slot])) continue;
+                data.activeTeam[slot] = added[next++];
+            }
+
+            return true;
+        }
     }
 }
