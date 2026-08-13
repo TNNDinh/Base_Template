@@ -1,0 +1,58 @@
+{
+  "unityPackages": [
+    {
+      "name": "FirebaseAnalytics_13.3.0",
+      "fileName": "FirebaseAnalytics_13.3.0.unitypackage",
+      "sha256": "f5f27a13b283c646def661ee5af60cd42a0316334567ff2728c6ba4d46caddd1",
+      "installedAtUtc": "2026-08-13T14:02:35.8071940Z"
+    },
+    {
+      "name": "FirebaseAuth_13.3.0",
+      "fileName": "FirebaseAuth_13.3.0.unitypackage",
+      "sha256": "376fa715596b30a6e2c4ca8c54d838ebdd81e11c3309244789068fac16d8331b",
+      "installedAtUtc": "2026-08-13T14:16:47.9237420Z"
+    },
+    {
+      "name": "KayKit - Forest Nature Pack for Unity",
+      "fileName": "KayKit - Forest Nature Pack for Unity.unitypackage",
+      "sha256": "055882a995e09f0d3bd1dd901b285a53b012e4e7ce53102d63d6b935c7c95bdb",
+      "installedAtUtc": "2026-08-13T14:21:58.6230347Z"
+    },
+    {
+      "name": "FirebaseCrashlytics_13.3.0",
+      "fileName": "FirebaseCrashlytics_13.3.0.unitypackage",
+      "sha256": "2e40b7dc16aa5a55954c438add83884b7c959d2b7e4445fec6c3dab1f0b8c405",
+      "installedAtUtc": "2026-08-13T14:24:04.6209693Z"
+    },
+    {
+      "name": "FirebaseFirestore_13.3.0",
+      "fileName": "FirebaseFirestore_13.3.0.unitypackage",
+      "sha256": "b7a88d9ac0d292d51c55f4100762f18eee661130ae75fab14899c7275c78a19e",
+      "installedAtUtc": "2026-08-13T14:29:55.3267484Z"
+    },
+    {
+      "name": "FirebaseFunctions_13.3.0",
+      "fileName": "FirebaseFunctions_13.3.0.unitypackage",
+      "sha256": "e2f080ce10978d65fee313aaded7cafc97eb5218fb551bf70c671d2b09014f43",
+      "installedAtUtc": "2026-08-13T14:35:01.9505945Z"
+    },
+    {
+      "name": "FirebaseMessaging_13.3.0",
+      "fileName": "FirebaseMessaging_13.3.0.unitypackage",
+      "sha256": "42c177b424ffb6b645bc853b76728149e2a55eae621de398adba67cf1f052597",
+      "installedAtUtc": "2026-08-13T14:39:59.4480998Z"
+    },
+    {
+      "name": "FirebaseRemoteConfig_13.3.0",
+      "fileName": "FirebaseRemoteConfig_13.3.0.unitypackage",
+      "sha256": "26a4cc3d6834c9bb30186d1d4196ae5f430610404c7a28e5187f667919137506",
+      "installedAtUtc": "2026-08-13T14:43:13.6973411Z"
+    },
+    {
+      "name": "A_Pathfinding_Project_Pro_v4.2.17",
+      "fileName": "A_Pathfinding_Project_Pro_v4.2.17.unitypackage",
+      "sha256": "a04afb68a68c5eedd86bc68108ccb6e675e3b4c4e9477da8af3cff2e554bd688",
+      "installedAtUtc": "2026-08-13T14:47:54.2111540Z"
+    }
+  ]
+}
