@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5074f206817ee4429b4dba65c7003f7, type: 3}
+  m_Name: TdHomeBaseLayout_Farm
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.HomeBase.TdHomeBaseLayout
+  _centerRadius: 30
+  _farmInnerRadius: 34
+  _wallHalfExtent: 72
+  _wallClearance: 6
+  _gateSide: 2
+  _gateWidth: 0
+  _gatePrefab: {fileID: 1057578451854958, guid: cc6e90e397ca3864a88caa6b1b9cb015, type: 3}
+  _wallSegmentPrefab: {fileID: 1935392582097784, guid: 03d5bd6ba09513745b1e6a6c0cffbecb, type: 3}
+  _wallPostPrefab: {fileID: 1673214527782480, guid: c85b262f28bdaa54085b3470f8f825d4, type: 3}
+  _wallYawOffset: 0
+  _wallScale: 4
+  _groundPrefab: {fileID: 1699677130574460, guid: 3a0695e531fc85f4fa3795eec1fef0bc, type: 3}
+  _groundScale: 8
+  _groundPadding: 18
+  _avenuePrefab: {fileID: 1413145884089800, guid: 20f6bd523ebdaf04fa332e6ce565fc03, type: 3}
+  _avenueLift: 0.03
+  _avenueClearance: 16
+  _cameraViewSpan: 105
+  _cameraPitch: 50
+  _cameraFieldOfView: 40
+  _cameraTargetOffset: {x: 0, y: -6}
+  _cameraMinViewSpan: 45
+  _cameraMaxViewSpan: 0
+  _cameraPanMargin: 12
+  _centerPieces:
+  - _prefab: {fileID: 1572243783172642, guid: 72c07751c5ab1274e907d46aa40a3134, type: 3}
+    _offset: {x: 0, y: 7}
+    _yaw: 180
+    _scale: 1
+  - _prefab: {fileID: 1957237772272410, guid: ca2a787328680534488b66d6a68eae8d, type: 3}
+    _offset: {x: -13, y: 13}
+    _yaw: 0
+    _scale: 1
+  - _prefab: {fileID: 1601899402475758, guid: 5c464c52bb892b44b8d6487324c9d5dd, type: 3}
+    _offset: {x: -18, y: 5}
+    _yaw: 0
+    _scale: 1
+  - _prefab: {fileID: 1626482067972224, guid: 0f09218de0063234fa95d7fe64da775b, type: 3}
+    _offset: {x: 14, y: 15}
+    _yaw: 0
+    _scale: 1
+  - _prefab: {fileID: 1853804450421360, guid: 2c837521d4253d74f844a10fd29446ef, type: 3}
+    _offset: {x: 19, y: 1}
+    _yaw: 0
+    _scale: 1
+  - _prefab: {fileID: 1427016662113696, guid: 1135f5bcd489da04cb5f4fcb4355006b, type: 3}
+    _offset: {x: -16, y: -11}
+    _yaw: 90
+    _scale: 1
+  - _prefab: {fileID: 1595881250035684, guid: d18a58184e042eb4cbffba24a88ad835, type: 3}
+    _offset: {x: 15, y: -12}
+    _yaw: 0
+    _scale: 1
+  _farmScatter:
+  - _prefab: {fileID: 1030394373860896, guid: f1d92f6821039a348b0b295e7a96c45d, type: 3}
+    _weight: 3.0
+    _radius: 0
+    _padding: 1.5
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.6, y: 2.6}
+  - _prefab: {fileID: 1292480058924560, guid: 49683e4468311674398fda816c18b177, type: 3}
+    _weight: 3.0
+    _radius: 0
+    _padding: 1.5
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.6, y: 2.6}
+  - _prefab: {fileID: 1923504114950040, guid: 272677d9f8d9003418e2054d1e88d350, type: 3}
+    _weight: 3.0
+    _radius: 0
+    _padding: 1.5
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.6, y: 2.6}
+  - _prefab: {fileID: 1645245720062498, guid: c738b62174ab09f4eb2d7b486398a6ed, type: 3}
+    _weight: 2.0
+    _radius: 0
+    _padding: 1.5
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.6, y: 2.6}
+  - _prefab: {fileID: 1396899642666884, guid: cd3a9b7b609608042bc161be3e5d4a1c, type: 3}
+    _weight: 0.7
+    _radius: 0
+    _padding: 3.0
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.0, y: 1.0}
+  - _prefab: {fileID: 1042997447125158, guid: 2815f00171ab5244bad75d4a20d0b58c, type: 3}
+    _weight: 0.7
+    _radius: 0
+    _padding: 3.0
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.0, y: 1.0}
+  - _prefab: {fileID: 1750395351432862, guid: 3b9e264b2edb6ab4b824de387d63bf0b, type: 3}
+    _weight: 0.4
+    _radius: 0
+    _padding: 2.0
+    _randomYaw: 1
+    _snapYawToQuarter: 1
+    _scaleRange: {x: 1.0, y: 1.0}
+  - _prefab: {fileID: 1258219557364924, guid: 52e093bb864612f4c98975d0e2a0c302, type: 3}
+    _weight: 0.9
+    _radius: 0
+    _padding: 1.5
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 1.0, y: 1.0}
+  - _prefab: {fileID: 1696853984970666, guid: b326ee74fa555e342b9c3ab6ded4344b, type: 3}
+    _weight: 1.6
+    _radius: 0
+    _padding: 0.8
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 0.9, y: 1.2}
+  - _prefab: {fileID: 1667883723368190, guid: a4d9027086d4d5b40b31d85ce0e979a6, type: 3}
+    _weight: 0.4
+    _radius: 0
+    _padding: 1.5
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 1.0, y: 1.0}
+  - _prefab: {fileID: 1452130660160706, guid: 012abc7abe0517b43ab980b30563df5f, type: 3}
+    _weight: 2.0
+    _radius: 0
+    _padding: 1.0
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 0.9, y: 1.3}
+  - _prefab: {fileID: 1802671203536516, guid: 99c39d367e6112d4c811f0b545bb1da7, type: 3}
+    _weight: 2.0
+    _radius: 0
+    _padding: 1.0
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 0.9, y: 1.3}
+  - _prefab: {fileID: 1738070637598736, guid: 9a754a3f98ec54b4ea019713f5722e3d, type: 3}
+    _weight: 2.0
+    _radius: 0
+    _padding: 1.0
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 0.9, y: 1.3}
+  - _prefab: {fileID: 1710936237239570, guid: 7a49ca0e5bf43fa45b5159d6d6265a09, type: 3}
+    _weight: 1.6
+    _radius: 0
+    _padding: 1.0
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 1.0, y: 1.6}
+  - _prefab: {fileID: 1401117786091214, guid: 144d244740414c641992a2d495f2d345, type: 3}
+    _weight: 1.6
+    _radius: 0
+    _padding: 1.0
+    _randomYaw: 1
+    _snapYawToQuarter: 0
+    _scaleRange: {x: 1.0, y: 1.6}
+  _farmItemCount: 170
+  _placementAttempts: 24
+  _seed: 20260823

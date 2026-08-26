@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe912bd51514f39befb0adf92d574a9, type: 3}
+  m_Name: HomeBuildingCatalog
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.HomeBase.HomeBuildingCatalog
+  _definitions:
+  - {fileID: 11400000, guid: 8d85004849a9d9a4b87498b414f5054f, type: 2}
+  - {fileID: 11400000, guid: 172e990f0b62642469fffece8bc8f014, type: 2}
+  - {fileID: 11400000, guid: edbc6042f059a7642976dcbe43b0e5b0, type: 2}

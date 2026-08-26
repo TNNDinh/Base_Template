@@ -1,0 +1,6 @@
+level,cost_resource,cost_amount,require_kind,require_id,require_value,health,damage,attack_speed,move_speed,attack_range
+1,Gold,0,BuildingLevel,Barracks,3,260,30,0.7,4.5,2.0
+2,Gold,320,None,,0,351,40,0.7,4.5,2.0
+3,Gold,704,None,,0,474,55,0.7,4.5,2.0
+4,Gold,1549,BuildingLevel,TownHall,4,640,74,0.7,4.5,2.0
+5,Gold,3407,None,,0,864,100,0.7,4.5,2.0

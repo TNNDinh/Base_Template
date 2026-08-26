@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d8f920551b4ba3b9fcd722e92b578c, type: 3}
+  m_Name: Barracks
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.HomeBase.BarracksDefinition
+  _type: 1
+  _displayName: "Nh\xE0 l\xEDnh"
+  _unlockedFromStart: 0
+  _table: {fileID: 11400000, guid: 3a09cca6cb0cbf14eb34b4852dca3802, type: 2}
+  _troops:
+  - {fileID: 11400000, guid: 13649e970ccbe7c46ab8df4e012589e2, type: 2}
+  - {fileID: 11400000, guid: c743a3435ac7d6842bea10f89330b5fe, type: 2}
+  - {fileID: 11400000, guid: 8ee5eb99266d18342922f18200d1da6a, type: 2}

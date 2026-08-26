@@ -1,0 +1,6 @@
+level,cost_resource,cost_amount,require_kind,require_id,require_value
+1,Gold,0,None,,0
+2,Gold,500,None,,0
+3,Gold,1500,None,,0
+4,Gold,4000,None,,0
+5,Gold,10000,None,,0

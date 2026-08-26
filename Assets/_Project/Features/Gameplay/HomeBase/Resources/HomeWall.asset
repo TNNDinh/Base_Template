@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: HomeWall
+  m_EditorClassIdentifier: Ezg.Features::HomeWallCollection
+  dataGroups:
+  - level: 1
+    costResource: 1
+    costAmount: 300
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 2
+    health: 1000
+  - level: 2
+    costResource: 1
+    costAmount: 900
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 3
+    health: 2200
+  - level: 3
+    costResource: 1
+    costAmount: 2400
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 4
+    health: 4800
+  - level: 4
+    costResource: 1
+    costAmount: 6000
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 5
+    health: 10000

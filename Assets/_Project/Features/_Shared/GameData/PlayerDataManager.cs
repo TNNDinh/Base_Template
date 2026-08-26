@@ -26,6 +26,8 @@ namespace Ezg.Feature.Shared.GameData
 
         private static PlayerRating _playerRating;
 
+        private static PlayerHomeBase _homeBase;
+
         public static PlayerAccount Account
         {
             get { return _account ??= DataPlayer.GetModule<PlayerAccount>(); }
@@ -100,6 +102,13 @@ namespace Ezg.Feature.Shared.GameData
                 return _playerRating;
             }
             set => _playerRating = value;
+        }
+
+        /// <summary>Cấp từng nhà và từng loại lính trong căn cứ nhà.</summary>
+        public static PlayerHomeBase HomeBase
+        {
+            get { return _homeBase ??= DataPlayer.GetModule<PlayerHomeBase>(); }
+            set => _homeBase = value;
         }
 
         public static void ClearCachedModules()

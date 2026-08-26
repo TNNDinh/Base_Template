@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf58d89d9808a94d873709490757610, type: 3}
+  m_Name: TdRoadTileSet_Farm
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.MapBuilder.TdRoadTileSet
+  _tilePitch: 11.91
+  _straight: {fileID: 1413145884089800, guid: 20f6bd523ebdaf04fa332e6ce565fc03, type: 3}
+  _corner: {fileID: 1046179978238922, guid: 4fb47bcc80d6fb641ab01db776a09a71, type: 3}
+  _tSection: {fileID: 1223247215474342, guid: 684f7c3ce43f90c42bc80935edfdcb6e, type: 3}
+  _intersection: {fileID: 1192999693296500, guid: 78374d7ad5f1b4f4aa2768268016cb6b, type: 3}
+  _end: {fileID: 1510007170413012, guid: b82d8fd9637b1d442929ed23d378d368, type: 3}
+  _straightOffset: 0
+  _cornerOffset: 0
+  _tSectionOffset: 0
+  _intersectionOffset: 0
+  _endOffset: 0
+  _groundTile: {fileID: 1699677130574460, guid: 3a0695e531fc85f4fa3795eec1fef0bc, type: 3}
+  _groundTileScale: 4

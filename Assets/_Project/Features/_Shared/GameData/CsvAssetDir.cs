@@ -1,6 +1,12 @@
 public static class CsvAssetDir
 {
 public const string UIDontDestroy = "UIDontDestroy";
+public const string HomeBarracks = "HomeBarracks";
+public const string HomeTownHall = "HomeTownHall";
+public const string HomeWall = "HomeWall";
+public const string TroopArcher = "TroopArcher";
+public const string TroopKnight = "TroopKnight";
+public const string TroopSwordsman = "TroopSwordsman";
 public const string BundlePack = "BundlePack";
 public const string CoinPack = "CoinPack";
 public const string DailyDealsCostRefresh = "DailyDealsCostRefresh";

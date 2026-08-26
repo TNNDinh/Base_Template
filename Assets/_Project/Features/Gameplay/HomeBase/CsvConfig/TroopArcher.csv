@@ -1,0 +1,6 @@
+level,cost_resource,cost_amount,require_kind,require_id,require_value,health,damage,attack_speed,move_speed,attack_range
+1,Gold,0,BuildingLevel,Barracks,2,70,24,0.8,3.2,9.0
+2,Gold,240,None,,0,94,32,0.8,3.2,9.0
+3,Gold,528,None,,0,128,44,0.8,3.2,9.0
+4,Gold,1162,None,,0,172,59,0.8,3.2,9.0
+5,Gold,2556,None,,0,233,80,0.8,3.2,9.0

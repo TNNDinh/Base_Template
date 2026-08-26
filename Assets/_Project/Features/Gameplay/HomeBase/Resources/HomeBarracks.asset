@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: HomeBarracks
+  m_EditorClassIdentifier: Ezg.Features::HomeBarracksCollection
+  dataGroups:
+  - level: 1
+    costResource: 1
+    costAmount: 250
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 1
+    troopCapacity: 5
+    maxTroopLevel: 1
+  - level: 2
+    costResource: 1
+    costAmount: 800
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 2
+    troopCapacity: 8
+    maxTroopLevel: 2
+  - level: 3
+    costResource: 1
+    costAmount: 2000
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 3
+    troopCapacity: 12
+    maxTroopLevel: 3
+  - level: 4
+    costResource: 1
+    costAmount: 5000
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 4
+    troopCapacity: 16
+    maxTroopLevel: 4
+  - level: 5
+    costResource: 1
+    costAmount: 12000
+    requireKind: 1
+    requireId: TownHall
+    requireValue: 5
+    troopCapacity: 22
+    maxTroopLevel: 5

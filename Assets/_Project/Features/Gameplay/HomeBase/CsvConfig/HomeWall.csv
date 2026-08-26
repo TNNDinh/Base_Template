@@ -1,0 +1,5 @@
+level,cost_resource,cost_amount,require_kind,require_id,require_value,health
+1,Gold,300,BuildingLevel,TownHall,2,1000
+2,Gold,900,BuildingLevel,TownHall,3,2200
+3,Gold,2400,BuildingLevel,TownHall,4,4800
+4,Gold,6000,BuildingLevel,TownHall,5,10000

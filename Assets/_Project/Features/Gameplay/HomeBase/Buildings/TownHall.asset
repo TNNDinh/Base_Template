@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966e87a2a3c6426ea614d0ce71430853, type: 3}
+  m_Name: TownHall
+  m_EditorClassIdentifier: Ezg.Features::Ezg.Feature.HomeBase.TownHallDefinition
+  _type: 0
+  _displayName: "Nh\xE0 ch\xEDnh"
+  _unlockedFromStart: 1
+  _table: {fileID: 11400000, guid: 34eac045de54aeb43af79c3b9e6acf93, type: 2}
